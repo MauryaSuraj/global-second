@@ -29,3 +29,8 @@ Route::get('/admin/location','LocationAdminController@index');
 Route::get('/admin/reviews','ReviewsAdminController@index');
 Route::get('/admin/profile','ProfileAdminController@index');
 Route::get('/admin/listing','BusinessListingAdminController@index');
+Route::get('/admin/contactform','ContactForm@index');
+Route::get('/admin/profile/setting','ProfileAdminController@setting');
+Route::get('/admin/user/paid','AdminUsersController@paid');
+Route::get('/admin/user/registered','AdminUsersController@registereduser');
+Route::get('/admin/user/','AdminUsersController@index');

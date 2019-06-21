@@ -1,7 +1,7 @@
 <nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
         <div class="navbar-logo">
-            <a href="/">
+            <a href="/admin/">
                 <img class="img-fluid" src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/logo2-e1557846477241.png" alt="Global agra vaishchamber" />
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">
@@ -42,27 +42,17 @@
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
-                                <a href="#!">
+                                <a href="/admin/profile/setting/">
                                     <i class="feather icon-settings"></i> Settings
                                 </a>
                             </li>
                             <li>
-                                <a href="#">
+                                <a href="/admin/profile/">
                                     <i class="feather icon-user"></i> Profile
                                 </a>
                             </li>
                             <li>
-                                <a href="email-inbox.html">
-                                    <i class="feather icon-mail"></i> My Messages
-                                </a>
-                            </li>
-                            <li>
-                                <a href="auth-lock-screen.html">
-                                    <i class="feather icon-lock"></i> Lock Screen
-                                </a>
-                            </li>
-                            <li>
-                                <a href="auth-sign-in-social.html">
+                                <a href="#">
                                     <i class="feather icon-log-out"></i> Logout
                                 </a>
                             </li>

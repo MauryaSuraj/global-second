@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfileAdminController extends Controller
+class ContactForm extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,11 +13,7 @@ class ProfileAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.profile.index');
-    }
-
-    public function setting(){
-        return view('admin.profile.setting');
+        return view('admin.contact.index');
     }
 
     /**

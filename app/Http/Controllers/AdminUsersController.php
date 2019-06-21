@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class ProfileAdminController extends Controller
+class AdminUsersController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -13,11 +13,14 @@ class ProfileAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.profile.index');
+        return view('admin.user.index');
     }
-
-    public function setting(){
-        return view('admin.profile.setting');
+    public function registereduser(){
+        return view('admin.user.registred');
+    }
+    public function paid()
+    {
+        return view('admin.user.paid');
     }
 
     /**

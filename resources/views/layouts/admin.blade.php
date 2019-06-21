@@ -24,6 +24,9 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('files/assets/css/widget.css') }}">
 </head>
 <body>
+<div class="loader-bg">
+    <div class="loader-bar"></div>
+</div>
 <div id="app">
     <main class="py-4">
         <div id="pcoded" class="pcoded">

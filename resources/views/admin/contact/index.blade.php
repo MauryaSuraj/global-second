@@ -8,7 +8,7 @@
                     <div class="col-md-12">
                         <div class="card table-card">
                             <div class="card-header">
-                                <h5>Tags</h5>
+                                <h5>Contact Form  </h5>
                                 <div class="card-header-right">
                                     <ul class="list-unstyled card-option">
                                         <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
@@ -25,35 +25,36 @@
                                     <table class="table table-hover m-b-0">
                                         <thead>
                                         <tr>
-                                            <th>Tag ID</th>
-                                            <th>Tag Name</th>
-                                            <th>Tag Description</th>
+                                            <th>Name </th>
+                                            <th>Subject  </th>
+                                            <th>Email </th>
+                                            <th>Phone no.</th>
+                                            <th>Message</th>
                                         </tr>
                                         </thead>
                                         <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>tag 1</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur.</td>
+                                            <td>Dummy Name</td>
+                                            <td>subject name </td>
+                                            <td>dummy@email.com </td>
+                                            <th>11345678</th>
+                                            <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, explicabo fugiat iure pariatur possimus quam quibusdam quis saepe ullam.</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Dummy Name</td>
+                                            <td>subject name </td>
+                                            <td>dummy@email.com </td>
+                                            <th>11345678</th>
+                                            <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, explicabo fugiat iure pariatur possimus quam quibusdam quis saepe ullam.</th>
+                                        </tr>
+                                        <tr>
+                                            <td>Dummy Name</td>
+                                            <td>subject name </td>
+                                            <td>dummy@email.com </td>
+                                            <th>11345678</th>
+                                            <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, explicabo fugiat iure pariatur possimus quam quibusdam quis saepe ullam.</th>
                                         </tr>
 
-                                        <tr>
-                                            <td>1</td>
-                                            <td>tag 1</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur.</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>tag 1</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur.</td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>1</td>
-                                            <td>tag 1</td>
-                                            <td>Lorem ipsum dolor sit amet, consectetur.</td>
-                                        </tr>
                                         </tbody>
                                     </table>
                                 </div>
@@ -64,5 +65,6 @@
             </div>
         </div>
     </div>
+
 
 @endsection
