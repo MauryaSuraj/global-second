@@ -14,7 +14,14 @@ class CreateLocationsTable extends Migration
     public function up()
     {
         Schema::create('locations', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
+            $table->text('address');
+            $table->string('city');
+            $table->string('area');
+            $table->double('pincode');
+            $table->text('longitude');
+            $table->text('latitude');
             $table->timestamps();
         });
     }

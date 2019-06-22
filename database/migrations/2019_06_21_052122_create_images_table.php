@@ -14,8 +14,15 @@ class CreateImagesTable extends Migration
     public function up()
     {
         Schema::create('images', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('listing_id');
+            $table->foreign('listing_id')->references('id')->on('bussiness_listings')->onDelete('cascade');
+            $table->text('images');
+
             $table->timestamps();
+
+
         });
     }
 

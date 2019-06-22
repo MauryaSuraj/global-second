@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateContactFormListingsTable extends Migration
+class CreateFeaturedMemberTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,19 +13,15 @@ class CreateContactFormListingsTable extends Migration
      */
     public function up()
     {
-        Schema::create('contact_form_listings', function (Blueprint $table) {
+        Schema::create('featured_member', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('listing_id');
-            $table->foreign('listing_id')->references('id')->on('bussiness_listings')->onDelete('cascade');
             $table->string('name');
-            $table->string('email');
-            $table->text('phone');
-            $table->text('message');
-
+            $table->text('description');
+            $table->double('price_low');
+            $table->double('price_high');
+            $table->text('duration');
             $table->timestamps();
-
-
         });
     }
 
@@ -36,6 +32,6 @@ class CreateContactFormListingsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('contact_form_listings');
+        Schema::dropIfExists('featured_member');
     }
 }

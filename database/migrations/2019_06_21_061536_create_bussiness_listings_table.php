@@ -14,8 +14,31 @@ class CreateBussinessListingsTable extends Migration
     public function up()
     {
         Schema::create('bussiness_listings', function (Blueprint $table) {
+            $table->engine = 'InnoDB';
             $table->bigIncrements('id');
+            $table->unsignedBigInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->unsignedBigInteger('category_id');
+            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+            $table->unsignedBigInteger('tag_id');
+            $table->foreign('tags_id')->references('id')->on('tags')->onDelete('cascade');
+            $table->unsignedBigInteger('locations');
+            $table->foreign('locations')->references('id')->on('locations')->onDelete('cascade');
+            $table->string('name');
+            $table->text('description');
+            $table->float('price');
+            $table->text('opening_time');
+            $table->text('closing_time');
+            $table->integer('views');
+            $table->text('video');
+
+
             $table->timestamps();
+
+
+
+
+
         });
     }
 
