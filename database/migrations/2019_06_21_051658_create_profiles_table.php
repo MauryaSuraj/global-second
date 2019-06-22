@@ -17,9 +17,7 @@ class CreateProfilesTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->integer('featured_member_id')->unsigned();
-            $table->foreign('featured_member_id')->references('id')->on('featured_member')->onDelete('cascade');
+            $table->unsignedBigInteger('featured_member_id');
             $table->text('phone');
             $table->text('address');
             $table->string('image');
