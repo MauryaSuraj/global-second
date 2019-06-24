@@ -59,7 +59,8 @@ class ProfileAdminController extends Controller
      */
     public function edit($id)
     {
-        return view('profile.edit',compact('id'));
+        $user = Auth::user();
+        return view('profile.edit',compact('user'));
     }
 
     /**

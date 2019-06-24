@@ -15,7 +15,7 @@
                             <label for="phone" class="col-md-4 col-form-label text-md-right">{{ __('Phone No') }}</label>
 
                             <div class="col-md-6">
-                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone" autofocus>
+                                <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') | $user->profile->phone }}" required autocomplete="phone" autofocus>
 
                                 @error('phone')
                                 <span class="invalid-feedback" role="alert">
@@ -29,7 +29,7 @@
                             <label for="address" class="col-md-4 col-form-label text-md-right">{{ __(' Address') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address') }}" required autocomplete="address"></textarea>
+                                <textarea id="address" type="text" class="form-control @error('address') is-invalid @enderror" name="address" value="{{ old('address')  }}" required autocomplete="address">{{ $user->profile->address }}</textarea>
 
                                 @error('address')
                                 <span class="invalid-feedback" role="alert">
@@ -44,7 +44,7 @@
                             <label for="description" class="col-md-4 col-form-label text-md-right">{{ __(' Description') }}</label>
 
                             <div class="col-md-6">
-                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description"></textarea>
+                                <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description')  }}" required autocomplete="description">{{ $user->profile->description }}</textarea>
 
                                 @error('description')
                                 <span class="invalid-feedback" role="alert">
