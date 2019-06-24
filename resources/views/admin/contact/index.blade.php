@@ -33,27 +33,22 @@
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>Dummy Name</td>
-                                            <td>subject name </td>
-                                            <td>dummy@email.com </td>
-                                            <th>11345678</th>
-                                            <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, explicabo fugiat iure pariatur possimus quam quibusdam quis saepe ullam.</th>
-                                        </tr>
-                                        <tr>
-                                            <td>Dummy Name</td>
-                                            <td>subject name </td>
-                                            <td>dummy@email.com </td>
-                                            <th>11345678</th>
-                                            <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, explicabo fugiat iure pariatur possimus quam quibusdam quis saepe ullam.</th>
-                                        </tr>
-                                        <tr>
-                                            <td>Dummy Name</td>
-                                            <td>subject name </td>
-                                            <td>dummy@email.com </td>
-                                            <th>11345678</th>
-                                            <th>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus aperiam, explicabo fugiat iure pariatur possimus quam quibusdam quis saepe ullam.</th>
-                                        </tr>
+                                        @if(count($contactlists)> 0)
+                                            @foreach($contactlists as $contactlist)
+                                                <tr>
+                                                    <td>{{ $contactlist->name }}</td>
+                                                    <td> {{ $contactlist->subject }} </td>
+                                                    <td>{{ $contactlist->email }} </td>
+                                                    <th>{{ $contactlist->phone }}</th>
+                                                    <th>{{ $contactlist->message }} </th>
+                                                    <th>{{ $contactlist->created_at }}</th>
+                                                </tr>
+                                            @endforeach
+                                            @else
+                                            <p>
+                                                No form submitted yet
+                                            </p>
+                                            @endif
 
                                         </tbody>
                                     </table>

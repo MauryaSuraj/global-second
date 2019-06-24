@@ -45,7 +45,7 @@
                                             <i class="feather icon-home bg-c-blue"></i>
                                             <div class="d-inline">
                                                 <h5>Dashboard</h5>
-                                                <span> Welcome <strong class="font-weight-bold">User name Here </strong>, to Global Agra vaishChamber DashBoard </span>
+                                                <span> Welcome <strong class="font-weight-bold"> {{ Auth::user()->name }} </strong>, to Global Agra vaishChamber DashBoard </span>
                                             </div>
                                         </div>
                                     </div>

@@ -17,13 +17,9 @@ class CreateBussinessListingsTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->unsignedBigInteger('category_id');
-            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
             $table->unsignedBigInteger('tag_id');
-            $table->foreign('tags_id')->references('id')->on('tags')->onDelete('cascade');
             $table->unsignedBigInteger('locations');
-            $table->foreign('locations')->references('id')->on('locations')->onDelete('cascade');
             $table->string('name');
             $table->text('description');
             $table->float('price');
@@ -32,6 +28,10 @@ class CreateBussinessListingsTable extends Migration
             $table->integer('views');
             $table->text('video');
 
+            //            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+//            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
+//            $table->foreign('locations')->references('id')->on('locations')->onDelete('cascade');
+            //            $table->foreign('tags_id')->references('id')->on('tags')->onDelete('cascade');
 
             $table->timestamps();
 

@@ -17,11 +17,11 @@ class CreateProfilesTable extends Migration
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
-            $table->unsignedBigInteger('featured_member_id');
+            $table->unsignedBigInteger('featured_member_id')->nullable();
             $table->text('phone');
-            $table->text('address');
-            $table->string('image');
-            $table->text('description');
+            $table->text('address')->nullable();
+            $table->string('image')->nullable();
+            $table->text('description')->nullable();
             $table->timestamps();
 
         });

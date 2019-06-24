@@ -13,11 +13,10 @@
 
 Route::get('/', 'FrontEnd@index');
 Route::get('/about','FrontEnd@about')->name('about');
-Route::get('/contact','FrontEnd@contact')->name('contact');
+//Route::get('/contact','FrontEnd@contact')->name('contact');
 Route::get('/supporter','FrontEnd@supporter')->name('supporter');
 Route::get('/listing','ListingController@index')->name('listing');
 Route::get('/listing/view','ListingController@show');
-
 
 
 Auth::routes();
@@ -25,8 +24,13 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/admin','AdminController@index')->name('admin');
-Route::get('/admin/category','AdminCategoryController@index');
-Route::get('/admin/tag','TagAdminController@index');
+Route::resource('/contact','Contact');
+
+Route::resource('/admin/category','AdminCategoryController');
+Route::resource('/admin/tag','TagAdminController');
+Route::resource('/admin/featuredmember','FeaturedMemberController');
+Route::get('/admin/contactlist','Contact@contactlisting')->name('contactlist');
+
 Route::get('/admin/location','LocationAdminController@index');
 Route::get('/admin/reviews','ReviewsAdminController@index');
 Route::get('/admin/profile','ProfileAdminController@index');

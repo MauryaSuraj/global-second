@@ -2,12 +2,20 @@
 
 @section('content')
     <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                @if(session()->has('success'))
+                    <div class="alert alert-success animated fadeOut delay-3">
+                        {{ session()->get('success') }}
+                    </div>
+                @endif
+            </div>
+        </div>
         <div class="row justify-content-center">
             <div class="col-md-8">
 
                 <form method="POST" action="{{ route('contact.store') }}">
                     @csrf
-
                     <div class="form-group row">
                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
 

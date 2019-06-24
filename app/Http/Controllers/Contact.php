@@ -4,13 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class Contact extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +13,12 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        return view('contact.index');
+    }
+
+    public function contactlisting(){
+        $contactlists = \App\Contact::all();
+        return view('admin.contact.index', compact('contactlists'));
     }
 
     /**
@@ -28,7 +28,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('contact.create');
     }
 
     /**
@@ -39,7 +39,15 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+           'name' => 'required',
+           'email' => 'required|email',
+           'subject' => 'required',
+           'phone' => 'required',
+           'message' => 'required',
+        ]);
+        \App\Contact::create($request->all());
+        return redirect()->route('contact.index')->with('success','Form Submitted Successfully');
     }
 
     /**

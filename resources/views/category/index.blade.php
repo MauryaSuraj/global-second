@@ -19,14 +19,7 @@
                             <div class="card-header">
                                 <h5>Category  </h5>
                                 <div class="card-header-right">
-                                    <ul class="list-unstyled card-option">
-                                        <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                                        <li><i class="feather icon-maximize full-card"></i></li>
-                                        <li><i class="feather icon-minus minimize-card"></i></li>
-                                        <li><i class="feather icon-refresh-cw reload-card"></i></li>
-                                        <li><i class="feather icon-trash close-card"></i></li>
-                                        <li><i class="feather icon-chevron-left open-card-option"></i></li>
-                                    </ul>
+                                    <a href="/admin/category/create" class="btn btn-outline-primary">Add Category</a>
                                 </div>
                             </div>
                             <div class="card-block p-b-0">
@@ -37,29 +30,21 @@
                                             <th>Category Id</th>
                                             <th>Category  Name </th>
                                             <th>Category Description</th>
+                                            <th>Manage</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>category 1</td>
-                                            <td>Lorem ipsum dolor sit amet.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>category 2</td>
-                                            <td>Lorem ipsum dolor sit amet.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>3</td>
-                                            <td>category 3</td>
-                                            <td>Lorem ipsum dolor sit amet.</td>
-                                        </tr>
-                                        <tr>
-                                            <td>4</td>
-                                            <td>category 4</td>
-                                            <td>Lorem ipsum dolor sit amet.</td>
-                                        </tr>
+                                        @foreach($categories as $category)
+                                            <tr>
+                                                <td>{{ $category->id }}</td>
+                                                <td>{{ $category->name }}</td>
+                                                <td>{{ $category->description }}</td>
+                                                <td>
+                                                    <a href="#">Edit </a>
+                                                    <a href="#">Delete</a>
+                                                </td>
+                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>

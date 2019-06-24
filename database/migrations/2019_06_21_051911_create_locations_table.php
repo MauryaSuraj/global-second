@@ -20,8 +20,8 @@ class CreateLocationsTable extends Migration
             $table->string('city');
             $table->string('area');
             $table->double('pincode');
-            $table->text('longitude');
-            $table->text('latitude');
+            $table->text('longitude')->nullable();
+            $table->text('latitude')->nullable();
             $table->timestamps();
         });
     }

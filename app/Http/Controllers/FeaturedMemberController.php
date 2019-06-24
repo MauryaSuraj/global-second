@@ -2,15 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\FeaturedMember;
 use Illuminate\Http\Request;
 
-class AdminController extends Controller
+class FeaturedMemberController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -18,7 +14,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        $featuredmemberships = FeaturedMember::all();
+        return view('featuredmember.index', compact('featuredmemberships'));
     }
 
     /**
@@ -28,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('featuredmember.create');
     }
 
     /**
@@ -39,7 +36,16 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'name' => 'required',
+            'description' => 'required',
+            'price_low' => 'required|numeric',
+            'price_high' => 'required|numeric',
+            'duration' => 'required|numeric',
+        ]);
+        FeaturedMember::create($request->all());
+        return redirect()->route('featuredmember.index')->with('success','Featured MemberShip Created Successfully');
+
     }
 
     /**

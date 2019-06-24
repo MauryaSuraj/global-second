@@ -19,7 +19,7 @@
                             <div class="card-header">
                                 <h5>Tags  </h5>
                                 <div class="card-header-right">
-                                    <a href="/admin/tag/create" class="btn btn-outline-primary">Add Tag</a>
+                                    <a href="/admin/featuredmember/create" class="btn btn-outline-primary">Add MemberShip</a>
                                 </div>
                             </div>
                             <div class="card-block p-b-0">
@@ -27,19 +27,26 @@
                                     <table class="table table-hover m-b-0">
                                         <thead>
                                         <tr>
-                                            <th>Tag Id</th>
-                                            <th>Tag  Name </th>
-                                            <th>Tag Description</th>
+                                            <th> Id</th>
+                                            <th>MemberShip  Name </th>
+                                            <th>MemberShip Description</th>
+                                            <th>Price Range</th>
+                                            <th>Duration (Months)</th>
+                                            <th>Created At </th>
                                             <th>Manage</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                        @if(count($tags)>0)
-                                            @foreach($tags as $tag)
+                                        @if(count($featuredmemberships)>0)
+                                            @foreach($featuredmemberships as $featuredmembership)
                                                 <tr>
-                                                    <td>{{ $tag->id }}</td>
-                                                    <td>{{ $tag->name }}</td>
-                                                    <td>{{ $tag->description }}</td>
+                                                    <td>{{ $featuredmembership->id }}</td>
+                                                    <td>{{ $featuredmembership->name }}</td>
+
+                                                    <td>{{ Str::words($featuredmembership->description, 3) }}</td>
+                                                    <td>Rs. {{ $featuredmembership->price_low }} - {{ $featuredmembership->price_high }}</td>
+                                                    <td> {{ $featuredmembership->duration }}</td>
+                                                    <td> {{ $featuredmembership->created_at }}</td>
                                                     <td>
                                                         <a href="#">Edit </a>
                                                         <a href="#">Delete</a>

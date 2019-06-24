@@ -10,7 +10,7 @@
                             <div class="alert alert-success">
                                 {{ session()->get('success') }}
                             </div>
-                            @endif
+                        @endif
                     </div>
                 </div>
                 <div class="row">
@@ -19,7 +19,7 @@
                             <div class="card-header">
                                 <h5>Tags  </h5>
                                 <div class="card-header-right">
-                                    <a href="/admin/tag/create" class="btn btn-outline-primary">Add Tag</a>
+                                    <a href="#" class="btn btn-outline-primary">Add Tag</a>
                                 </div>
                             </div>
                             <div class="card-block p-b-0">
@@ -46,11 +46,11 @@
                                                     </td>
                                                 </tr>
                                             @endforeach
-                                            @else
+                                        @else
                                             <p class="alert alert-danger m-2">
                                                 Nothing to Show
                                             </p>
-                                            @endif
+                                        @endif
 
                                         </tbody>
                                     </table>

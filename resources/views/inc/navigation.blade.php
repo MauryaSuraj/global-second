@@ -26,7 +26,7 @@
                     <a href="{{ route('supporter') }}" class="nav-link"> {{ _('Supporter') }} </a>
                 </li>
                 <li class="nav-item">
-                    <a href="{{ route('contact') }}" class="nav-link">{{ _('Contact') }}</a>
+                    <a href="/contact" class="nav-link">{{ _('Contact') }}</a>
                 </li>
                 @guest
                     <li class="nav-item">

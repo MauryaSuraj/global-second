@@ -16,8 +16,8 @@ class CreateContactFormListingsTable extends Migration
         Schema::create('contact_form_listings', function (Blueprint $table) {
             $table->engine = 'InnoDB';
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('listing_id');
-            $table->foreign('listing_id')->references('id')->on('bussiness_listings')->onDelete('cascade');
+            $table->unsignedBigInteger('bussiness_listings_id');
+//            $table->foreign('bussiness_listings_id')->references('id')->on('bussiness_listings')->onDelete('cascade');
             $table->string('name');
             $table->string('email');
             $table->text('phone');
