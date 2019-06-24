@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Profile;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ProfileAdminController extends Controller
 {
@@ -13,13 +16,9 @@ class ProfileAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.profile.index');
+        $user = Auth::user();
+        return view('profile.index', compact('user'));
     }
-
-    public function setting(){
-        return view('admin.profile.setting');
-    }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -60,7 +59,7 @@ class ProfileAdminController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('profile.edit',compact('id'));
     }
 
     /**

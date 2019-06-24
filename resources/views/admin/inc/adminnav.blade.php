@@ -42,7 +42,7 @@
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>
-                                <a href="/admin/profile/setting/">
+                                <a href="/admin/profile/{{ Auth::user()->id }}/edit">
                                     <i class="feather icon-settings"></i> Settings
                                 </a>
                             </li>
