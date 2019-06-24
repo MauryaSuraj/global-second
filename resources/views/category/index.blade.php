@@ -6,6 +6,15 @@
             <div class="page-body">
                 <div class="row">
                     <div class="col-md-12">
+                        @if(session()->has('success'))
+                            <div class="alert alert-success">
+                                {{ session()->get('success') }}
+                            </div>
+                            @endif
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
                         <div class="card table-card">
                             <div class="card-header">
                                 <h5>Category  </h5>

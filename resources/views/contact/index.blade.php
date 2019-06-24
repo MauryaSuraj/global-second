@@ -5,7 +5,7 @@
         <div class="row justify-content-center">
             <div class="col-md-8">
 
-                <form method="POST" action="">
+                <form method="POST" action="{{ route('contact.store') }}">
                     @csrf
 
                     <div class="form-group row">
