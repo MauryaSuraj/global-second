@@ -47,16 +47,16 @@
                         <i class="feather icon-layers"></i>
                         </span>
                         <span class="pcoded-mtext">Business Listing</span>
-                        <span class="pcoded-badge label label-danger">100+</span>
+                        <span class="pcoded-badge label label-danger">{{ \App\BussinessListing::count() }}</span>
                     </a>
                     <ul class="pcoded-submenu {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                         <li class="">
-                            <a href="/admin/listing/" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                            <a href="/admin/businesslisting/" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                                 <span class="pcoded-mtext"> Listings </span>
                             </a>
                         </li>
                         <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
-                            <a href="#" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                            <a href="/admin/businesslisting/create" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                                 <span class="pcoded-mtext"> Add Listing </span>
                             </a>
                         </li>
@@ -93,7 +93,7 @@
                             </a>
                         </li>
                         <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
-                            <a href="#" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                            <a href="/admin/tag/create" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                                 <span class="pcoded-mtext"> Add tags </span>
                             </a>
                         </li>

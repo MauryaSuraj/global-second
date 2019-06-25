@@ -27,6 +27,7 @@ class CreateBussinessListingsTable extends Migration
             $table->text('closing_time');
             $table->integer('views');
             $table->text('video');
+            $table->boolean('status')->default('0');
 
             //            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
 //            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');

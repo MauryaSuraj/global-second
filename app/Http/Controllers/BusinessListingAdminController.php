@@ -2,7 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\BussinessListing;
+use App\Category;
+use App\Tags;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 class BusinessListingAdminController extends Controller
 {
@@ -13,7 +18,8 @@ class BusinessListingAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.businesslisting.index');
+        $listings = BussinessListing::all();
+        return view('businesslisting.index', compact('listings'));
     }
 
     /**
@@ -23,7 +29,11 @@ class BusinessListingAdminController extends Controller
      */
     public function create()
     {
-        //
+
+        $categories = Category::all();
+        $tags = Tags::all();
+
+        return view('businesslisting.create',compact('categories','tags'));
     }
 
     /**
@@ -34,7 +44,18 @@ class BusinessListingAdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+     $data = $request->validate([
+            'category_id' => 'required',
+            'tag_id' =>'required',
+            'name' => 'required',
+            'description' => 'required',
+            'price' => 'required',
+            'opening_time' => 'required',
+            'closing_time' => 'required',
+            'video' => 'url',
+        ]);
+     \auth()->user()->listings()->create($data);
+        return redirect()->route('businesslisting.index')->with('success','Listing Created Successfully');
     }
 
     /**
@@ -45,7 +66,10 @@ class BusinessListingAdminController extends Controller
      */
     public function show($id)
     {
-        //
+//        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
+//        $bu_list = BussinessListing::whereIn('id',$id);
+        $bu_list = BussinessListing::find($id);
+        return view('businesslisting.show',compact('bu_list'));
     }
 
     /**

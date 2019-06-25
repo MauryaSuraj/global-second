@@ -8,4 +8,8 @@ class Category extends Model
 {
     //
     protected $guarded = [];
+
+    public function listing(){
+        return $this->hasMany(BussinessListing::class);
+    }
 }
