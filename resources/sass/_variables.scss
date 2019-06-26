@@ -2,10 +2,17 @@
 $body-bg: #ffffff;
 
 // Typography
-$font-family-sans-serif: 'Nunito', sans-serif;
+$font-family-sans-serif: 'Ubuntu', sans-serif;
 $font-size-base: 0.9rem;
 $line-height-base: 1.6;
-
+body{
+    font-family: $font-family-sans-serif !important;
+}
+p{
+    font-family: $font-family-sans-serif;
+    font-size: 17px !important;
+    line-height: 150% !important;
+}
 // Colors
 $blue: #3490dc;
 $indigo: #6574cd;

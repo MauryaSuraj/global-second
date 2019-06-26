@@ -1,43 +1,19 @@
 @extends('layouts.app')
 @section('content')
-    <section class="single-page-title-bar single-post">
+    <section class="single-page-title-bar single-post mt-5">
         <div class="container">
             <div class="row">
                 <div class="col-lg-10 col-xs-12 col-md-10 col-sm-12">
                     <div class="short-detail">
-                        <div class="list-category">
-                            <ul>
-                                <li>  <a href="http://globalagra-vaishchamber.com/categories/makeup-artist/">Makeup &amp; Artist</a> </li>
-                            </ul>
-                        </div>
-                        <div class="list-heading">
-                            <h2>Blush Makeup &amp;Hair </h2>
-                        </div>
+                        <div class="list-category"><ul> <li>  <a href="javascript:void(0)">  @foreach($categories as $category) {{ $category->name  }} @endforeach </a> </li> </ul></div>
+                        <div class="list-heading"> <h2>{{ $bu_list->name }} </h2> </div>
                         <div class="list-meta">
                             <ul>
-                                <li>
-                                    <span class="list-posted-date">February 28, 2018</span>
-                                </li>
-
+                                <li><span class="list-posted-date">{{ $bu_list->created_at }}</span></li>
                                 <li> <span class="ratings"> <i class="fa fa-star color" aria-hidden="true"></i><i class="fa fa-star color" aria-hidden="true"></i><i class="fa fa-star color" aria-hidden="true"></i><i class="fa fa-star-half-o color" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> <i class="rating-counter"> (4 ratings)</i> </span> </li>
-                                <li class="list-meta-with-icons"><a href="javascript:void(0)" data-target=".report-quote" data-toggle="modal"><i class="ti-alert"></i>Report</a></li>
-
-                                <li class="list-meta-with-icons"><a href="javascript:void(0)">Views : 0</a></li>
-                            </ul>		</div>
-                    </div>
-                </div>
-                <div class="col-lg-2 col-xs-12 col-md-2 col-sm-12">
-                    <div class="single-page-buttons-section">
-                        <ul class="list-inline d_action_btnz">
-                            <li class="d-l-favorite">
-                                <a class="tool-tip sonu-button-2591 bookmark-listing" title="Favourite" data-loading-text="<i class='fa fa-spinner fa-spin '></i>" href="javascript:void(0)" data-listing-id="2591">
-                                    <i class="fa fa-heart" aria-hidden="true"></i>
-                                </a>
-                            </li>
-                            <li class="d-l-report">
-                                <a class="tool-tip" title="Report this listing" href="javascript:void(0)" data-target=".report-quote" data-toggle="modal"><i class="ti-alert"></i></a>
-                            </li>
-                        </ul>
+                                <li class="list-meta-with-icons"><a href="javascript:void(0)">Views : {{ $bu_list->views }}</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -52,73 +28,27 @@
                         </div>
                         <div class="col-lg-8 col-xs-12 col-md-8 col-sm-12">
                             <div class="list-detail">
-                                <div class="panel-group" id="accordion_listing_detial" role="tablist"
-                                     aria-multiselectable="true">
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Advertisement </h4></div>
+                                <div class="panel-group" id="accordion_listing_detial" role="tablist" aria-multiselectable="true">
 
-                                        <div class="panel-collapse" role="tabpanel">
-                                            <div class="eds-list">
-                                                <img class="img-responsive center-block" alt="not found"
-                                                     src="https://listing.downtown-directory.com/beauty-salon/wp-content/themes/dwt-listing/assets/images/eds/720x120-1.jpg">
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
                                     <div class="panel panel-default" id="d-desc">
                                         <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Description </h4></div>
                                         <div class="panel-collapse">
-                                            <div class="panel-body">
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium dicta dolor dolore earum fugiat harum, impedit inventore iure maiores maxime quaerat rerum sapiente sed similique ullam unde veritatis, vitae.
-                                                </p>
-                                            </div>
+                                            <div class="panel-body"><p>{{ $bu_list->description }}</p></div>
                                         </div>
                                     </div>
-                                    <div class="panel panel-default" id="dstreet-loc">
-                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Location </h4></div>
-                                        <div class="panel-collapse">
-                                            <div class="panel-body">
-                                                <p class="street-adr"><i class="ti-location-pin"></i> Advocate Ajay
-                                                    Bansal is the Additional
-                                                    Advocate General Punjab and Haryana at Supreme Court</p>
-                                                <div class="street_address">
-                                                    <input type="hidden" id="listing_latt" value="40.7127837">
-                                                    <input type="hidden" id="listing_long"
-                                                           value="-74.00594130000002">
-                                                    <div class="get-directions">
-                                                        <a href="https://www.google.com/maps?daddr=40.7127837,-74.00594130000002"
-                                                           target="_blank">
-                                                            <i class="ti-map-alt"></i>
-                                                            Get Directions </a>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+
                                     <div class="panel panel-default" id="dlisting-video">
                                         <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Video </h4></div>
-                                        <div id="d-video-coll" class="panel-collapse" role="tabpanel"
-                                             aria-labelledby="d_list_video">
-                                            <div class="panel-body">
-
+                                        <div id="d-video-coll" class="panel-collapse" role="tabpanel" aria-labelledby="d_list_video">
+                                        <div class="panel-body">
                                                 <iframe width="100%" height="370"
-                                                        src="https://www.youtube.com/embed/ucxSAUFzxmQ" frameborder="0"
+                                                        src="{{ $bu_list->video }}" frameborder="0"
                                                         allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
                                                         allowfullscreen></iframe>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="panel panel-default">
-                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Advertisement </h4></div>
-                                        <div class="panel-collapse">
-                                            <div class="eds-list">
-                                                <img class="img-responsive center-block" alt="not found"
-                                                     src="https://listing.downtown-directory.com/beauty-salon/wp-content/themes/dwt-listing/assets/images/eds/720x90-2.png">
-                                            </div>
-                                            <div class="clearfix"></div>
-                                        </div>
-                                    </div>
+
                                     <div class="panel panel-default" id="d-comments">
                                         <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Reviews </h4></div>
                                         <div class="panel-collapse">
@@ -157,14 +87,13 @@
                                 <div class="review-box bg-light p-2">
                                     <div class="review-author-left">
                                         <div class="review-author-img">
-                                            <a target="_blank"
-                                               href="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/Global-Agra-vaish-chamber-logo-e1558101072366.png"><img
+                                            <a
+                                               href="#"><img
                                                     src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/Global-Agra-vaish-chamber-logo-e1558101072366.png"
                                                     class="img-responsive" alt="no image"></a>
                                             <div class="reviewer-category">
                                                 <span class="reviewer-category-badge">Amateur</span>
                                                 <span> 37 ratings</span>
-
                                             </div>
                                         </div>
                                     </div>
@@ -178,7 +107,7 @@
                                                             class="fa fa-star"></i><i class="fa fa-star"></i> <i
                                                             class="rating-counter"> (2/5)</i>
                                                     </span>
-                                                By <a target="_blank"
+                                                By <a
                                                       href="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/Global-Agra-vaish-chamber-logo-e1558101072366.png">
                                                     <strong>Melisa</strong></a> on <strong>13 March, 2018</strong>
                                             </div>
@@ -220,22 +149,99 @@
                                 <img src="http://globalagra-vaishchamber.com/wp-content/themes/dwt-listing/assets/images/icons/price.png"
                                      alt="Pricing">
                                 <span class="tool-tip" title="Expensive">Pricing</span>
-                                <span class="price-status  pull-right"> <strong>$ 40 - $ 69</strong> </span>
+                                <span class="price-status  pull-right"> <strong>Rs. {{ $bu_list->price }}</strong> </span>
                             </div>
 
                             <div class="widget">
-                                <div class="claim"> <a href="javascript:void(0)"> <img
-                                            src="http://globalagra-vaishchamber.com/wp-content/themes/dwt-listing/assets/images/icons/label.png"
-                                            alt="Tags">Tags </a> </div>
+                                <div>
+                                     <span class="mr-3"><img src="https://image.flaticon.com/icons/svg/138/138237.svg" style="width: 40px" alt=""></span> Tags
+                                </div>
                                 <div class="listing-tagcloud">
-                                    <a href="http://globalagra-vaishchamber.com/tags/haircut/" title="haircut">
-                                        #haircut </a>
-                                    <a href="http://globalagra-vaishchamber.com/tags/makeup/" title="makeup">
-                                        #makeup </a>
+                                    @foreach($tags as $tag)
+                                        <a href="#"># {{ $tag->name }}</a>
+                                        @endforeach
+                                </div>
+                            </div>
+                            <ul class="nav nav-tabs" id="myTab" role="tablist">
+                                <li class="nav-item w-50  ">
+                                    <a class="nav-link active font-weight-bold" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"  aria-selected="true">Business Listed By</a>
+                                </li>
+                                <li class="nav-item w-50  ">
+                                    <a class="nav-link font-weight-bold" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Contact us</a>
+                                </li>
+
+                            </ul>
+                            <div class="tab-content" id="myTabContent">
+                                <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                    <h3>User Details Here </h3>
+                                </div>
+                                <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                                    <form method="POST" action="{{ route('listing.store') }}">
+                                        @csrf
+                                        <div class="form-group row">
+
+                                            <div class="col-md-12">
+                                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Name" autofocus>
+
+                                                @error('name')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                                                @error('email')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <input id="phone" type="text"  placeholder="Phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                                                @error('phone')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <div class="col-md-12">
+                                                <textarea id="message" type="text" placeholder="Message here" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" required autocomplete="message"></textarea>
+                                                @error('message')
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $message }}</strong>
+                                                </span>
+                                                @enderror
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row mb-0">
+                                            <div class="col-md-6 offset-md-4">
+                                                <button type="submit" class="btn btn-primary">
+                                                    {{ __('Submit') }}
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </form>
+                                    <p>
+                                    @if(session()->has('success'))
+                                        <div class="alert alert-success">
+                                            {{ session()->get('success') }}
+                                        </div>
+                                        @endif
+                                    </p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
-            @endsection
+        </div>
+    </div>
+    @endsection

@@ -1,11 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-    <div style="margin-top: -3rem; margin-bottom: -3rem;">
+    <div style=" margin-bottom: -3rem;">
         <div class="image-bg">
             <div class="container">
                 <div class="row py-5">
-                    <h1 class="text-white h1 font-weight-bold mt-5">
+                    <h1 class="text-white display-3 font-weight-bold mt-5 heading-one animated fadeIn">
                         Find Everything About Agarwal Community
                     </h1>
                     <h2 class="text-white h2">Take advantage of this free of charge and can further strengthen the unity of Agarwal society.</h2>
@@ -23,7 +23,7 @@
         <div class="container my-4 text-center">
             <div class="row">
                 <div class="col-md-12">
-                    <h2 class="text-center h2 my-3 font-weight-bold">Choose Category </h2>
+                    <h2 class="text-center h2 my-5 font-weight-bold">Choose Category </h2>
                 </div>
                 @foreach($categories as $category)
                     <div class="col-md m-2 colhover p-3">
@@ -32,31 +32,54 @@
                     </div>
                     @endforeach
             </div>
-            <div class="row">
-                <div class="col-md-12"><h1 class="text-center">About us</h1>
-                    <hr></div>
-                <div class="col-md-12">
-                    <div class="row">
-                        <div class="col-md-5">
-                            <img src="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/agarsen.png" class="w-100" alt="">
-                        </div>
-                        <div class="col-md-7 p-auto m-auto ">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dicta dolor doloremque dolorum ducimus eaque, eligendi enim incidunt iusto, laboriosam, nisi quae rem repudiandae sapiente velit voluptate voluptatum. Illum, ipsum!
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur, cumque deserunt dicta dignissimos earum illo ipsam itaque magni nam necessitatibus nostrum possimus quasi, repellendus similique sit totam velit.
-                            </p>
+        </div>
+        <div class="bg-about">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 py-3">
+                        <div class="row">
+                            <div class="col-md-5">
+                                <img src="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/agarsen.png" class="w-100" alt="">
+                            </div>
+                            <div class="col-md-7 p-auto m-auto ">
+                                <h1 class="text-center text-white mt-4 mb-2">About us</h1>
+                                <p class="text-white text-justify">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dicta dolor doloremque dolorum ducimus eaque, eligendi enim incidunt iusto, laboriosam, nisi quae rem repudiandae sapiente velit voluptate voluptatum. Illum, ipsum!
+                                </p>
+                                <p class="text-justify text-white">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur, cumque deserunt dicta dignissimos earum illo ipsam itaque magni nam necessitatibus nostrum possimus quasi, repellendus similique sit totam velit.
+                                </p>
+                                <p class="text-justify text-white">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur, cumque deserunt dicta dignissimos earum illo ipsam itaque magni nam necessitatibus nostrum possimus quasi, repellendus similique sit totam velit.
+                                </p><p class="text-justify text-white">
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur, cumque deserunt dicta dignissimos earum illo ipsam itaque magni nam necessitatibus nostrum possimus quasi, repellendus similique sit totam velit.
+                                </p>
 
+
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="bg-app">
+        <div class="container my-4">
+            <div class="row">
+                <div class="col-md-12"> <h1 class="text-center my-5">Business Listing</h1>
+                </div>
+            </div>
+            <div class="row text-center">
+                @foreach($listings as $listing)
+                    <div class="col-md-3">
+                        <img src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w-100" alt="">
+                        <h5 class="text-center h5 my-2">{{ $listing->name }}</h5>
+                    </div>
+                @endforeach
+            </div>
+        </div>
+        <div class="bg-about">
             <div class="container py-5">
                 <div class="row">
-                    <div class="col-xs-12 ">
+                    <div class="col-xs-12">
                         <nav>
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-elite" role="tab" aria-controls="nav-home" aria-selected="true">Elite Aggrawals </a>
@@ -98,22 +121,6 @@
 
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="container-fluid my-4">
-            <div class="row">
-                <div class="col-md-12"> <h1 class="text-center">Business Listing</h1>
-                    <hr> </div>
-            </div>
-            <div class="row text-center">
-                @foreach($listings as $listing)
-                    <div class="col-md-3">
-                        <img src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w-100" alt="">
-                        <h5 class="text-center h5 my-2">{{ $listing->name }}</h5>
-                    </div>
-                    @endforeach
-
-
             </div>
         </div>
         <div class="bg-app">

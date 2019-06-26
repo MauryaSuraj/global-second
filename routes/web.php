@@ -15,8 +15,7 @@ Route::get('/', 'FrontEnd@index');
 Route::get('/about','FrontEnd@about')->name('about');
 //Route::get('/contact','FrontEnd@contact')->name('contact');
 Route::get('/supporter','FrontEnd@supporter')->name('supporter');
-Route::get('/listing','ListingController@index')->name('listing');
-Route::get('/listing/view','ListingController@show');
+Route::resource('/listing','ListingController');
 
 
 Auth::routes();

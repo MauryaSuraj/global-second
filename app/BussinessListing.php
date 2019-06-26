@@ -17,4 +17,8 @@ class BussinessListing extends Model
     public function tag(){
         return $this->belongsTo(Tags::class);
     }
+    public function contact_form(){
+        return $this->hasOne(ContactFormListing::class);
+    }
+
 }

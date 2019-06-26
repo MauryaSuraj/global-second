@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm fixed-top">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
 {{--            {{ config('app.name', '') }}--}}
@@ -12,7 +12,6 @@
             <ul class="navbar-nav mr-auto">
 
             </ul>
-
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
