@@ -3,12 +3,15 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class FrontEnd extends Controller
 {
     public function index()
     {
-        return view('frontend.index');
+        $categories = DB::table('categories')->latest()->paginate(4);
+        $listings = DB::table('bussiness_listings')->latest()->paginate(4);
+        return view('frontend.index',compact('categories','listings'));
     }
 
     public function about()

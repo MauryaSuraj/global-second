@@ -25,23 +25,12 @@
                 <div class="col-md-12">
                     <h2 class="text-center h2 my-3 font-weight-bold">Choose Category </h2>
                 </div>
-                <div class="col-md m-2 colhover p-3">
-                    <img src="https://image.flaticon.com/icons/svg/119/119058.svg" alt="" class="w-75">
-                    <h5 class="font-weight-bold text-center mt-2">Category name</h5>
-                </div>
-                <div class="col-md m-2 colhover p-3">
-                    <img src="https://image.flaticon.com/icons/svg/1795/1795067.svg" alt="" class="w-75">
-                    <h5 class="font-weight-bold text-center mt-2">Category name</h5>
-                </div>
-                <div class="col-md m-2 colhover p-3">
-                    <img src="https://image.flaticon.com/icons/svg/843/843259.svg" alt="" class="w-75">
-                    <h5 class="font-weight-bold text-center mt-2">Category name</h5>
-                </div>
-                <div class="col-md m-2 colhover p-3">
-                    <img src="https://image.flaticon.com/icons/svg/770/770088.svg" alt="" class="w-75">
-                    <h5 class="font-weight-bold text-center mt-2">Category name</h5>
-                </div>
-
+                @foreach($categories as $category)
+                    <div class="col-md m-2 colhover p-3">
+                        <img src="https://image.flaticon.com/icons/svg/119/119058.svg" alt="" class="w-75">
+                        <h5 class="font-weight-bold text-center mt-2">{{ $category->name }}</h5>
+                    </div>
+                    @endforeach
             </div>
             <div class="row">
                 <div class="col-md-12"><h1 class="text-center">About us</h1>
@@ -117,22 +106,14 @@
                     <hr> </div>
             </div>
             <div class="row text-center">
-                <div class="col-md-3">
-                    <img src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w-100" alt="">
-                    <h5 class="text-center h5 my-2">Business name one</h5>
-                </div>
-                <div class="col-md-3">
-                    <img src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w-100" alt="">
-                    <h5 class="text-center h5 my-2">Business name one</h5>
-                </div>
-                <div class="col-md-3">
-                    <img src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w-100" alt="">
-                    <h5 class="text-center h5 my-2">Business name one</h5>
-                </div>
-                <div class="col-md-3">
-                    <img src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w-100" alt="">
-                    <h5 class="text-center h5 my-2">Business name one</h5>
-                </div>
+                @foreach($listings as $listing)
+                    <div class="col-md-3">
+                        <img src="https://images.pexels.com/photos/1415555/pexels-photo-1415555.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w-100" alt="">
+                        <h5 class="text-center h5 my-2">{{ $listing->name }}</h5>
+                    </div>
+                    @endforeach
+
+
             </div>
         </div>
         <div class="bg-app">
