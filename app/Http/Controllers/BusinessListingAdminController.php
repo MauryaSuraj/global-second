@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\BussinessListing;
 use App\Category;
+use App\Profile;
 use App\Tags;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -66,10 +67,10 @@ class BusinessListingAdminController extends Controller
      */
     public function show($id)
     {
-//        $posts = Post::whereIn('user_id', $users)->with('user')->latest()->paginate(5);
-//        $bu_list = BussinessListing::whereIn('id',$id);
         $bu_list = BussinessListing::find($id);
-        return view('businesslisting.show',compact('bu_list'));
+        $profiles = DB::table('profiles')->get()->where('user_id',$bu_list->user->id);
+
+        return view('businesslisting.show',compact('bu_list','profiles'));
     }
 
     /**
