@@ -32,7 +32,7 @@ class ListingController extends Controller
      */
     public function create()
     {
-        //
+
     }
 
     /**
@@ -41,16 +41,21 @@ class ListingController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, BussinessListing $contactFormListing)
+    public function store(Request $request)
     {
-         $request->validate([
+        $listings = BussinessListing::all();
+        $categories = Category::all();
+        $tags = Tags::all();
+
+          $request->validate([
            'name' => 'required',
            'email' => 'required',
            'phone' => 'required',
            'message' => 'required',
         ]);
-//        $contactFormListing->contact_form()->business_list->create($request->all());
-        return view('listing.index')->with('success','Form Submitted Successfully');
+          ContactFormListing::create($request->all());
+
+        return view('listing.index',compact('listings','categories','tags'))->with('success','Form Submitted Successfully');
     }
 
     /**

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div style=" margin-bottom: -3rem;">
+    <div style=" margin-bottom: -3rem; margin-top: -3rem;">
         <div class="image-bg">
             <div class="container">
                 <div class="row py-5">

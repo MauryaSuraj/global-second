@@ -7,24 +7,30 @@
                    <h2 class="h1-responsive font-weight-bold text-center my-2">Our Listings</h2>
                    <p class="grey-text text-center w-responsive mx-auto mb-3">Lorem ipsum dolor sit amet, consectetur
                        adipisicing elit. Fugit, error amet numquam iure provident voluptate esse quasi, veritatis totam voluptas
-                       nostrum quisquam eum porro a pariatur veniam.</p>
+                       nostrum quisquam eum porro a pariatur veniam.
+                   </p>
 
                    <div class="row">
                        <div class="col-md-3">
                            <h2>Category</h2>
                            <ul class="list-group">
+                               @if($categories)
                                @foreach($categories as $category)
                                    <li class="list-group-item text-left">{{ $category->name }}</li>
                                    @endforeach
+                                   @endif
                            </ul>
                            <h2>Tags</h2>
                            <div class="d-flex">
+                               @if($tags)
                                @foreach($tags as $tag)
                                    <span class="bg-primary rounded-pill text-white p-1 mr-1 "> <i class="fas fa-tag p-1"></i> {{ $tag->name }}</span>
                                @endforeach
+                                   @endif
                            </div>
                        </div>
                        <div class="col-md-9">
+                           @if($listings)
                            @foreach($listings as $listing)
                                <div class="col-md-12 my-2">
                                    <div class="card card-cascade narrower card-ecommerce">
@@ -49,6 +55,7 @@
                                    </div>
                                </div>
                            @endforeach
+                               @endif
                        </div>
 
                    </div>

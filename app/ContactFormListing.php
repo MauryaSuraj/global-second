@@ -8,8 +8,8 @@ class ContactFormListing extends Model
 {
     protected $guarded = [];
 
-
-    public function business_list(){
-        return $this->belongsTo(BussinessListing::class);
+    public function bussinessListing(){
+        return $this->hasOne(BussinessListing::class);
     }
+
 }

@@ -12,7 +12,7 @@
 <body>
     <div id="app">
         @include('inc.navigation')
-        <main class="py-4">
+        <main class="py-4 ">
             @yield('content')
         </main>
         <footer class="footer-3">
