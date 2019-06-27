@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\MemberShip;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 
-class AdminUsersController extends Controller
+class MemberShipController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,18 +16,8 @@ class AdminUsersController extends Controller
      */
     public function index()
     {
-        $users = User::all();
-//        dd($users);
-        return view('admin.user.index', compact('users'));
-    }
-    public function registereduser(){
-        $users = User::all();
-
-        return view('admin.user.registred',compact('users'));
-    }
-    public function paid()
-    {
-        return view('admin.user.paid');
+        $memberships = MemberShip::all();
+        return view ('membership.index',compact('memberships'));
     }
 
     /**
@@ -80,7 +72,22 @@ class AdminUsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $memberships = MemberShip::all();
+        foreach ($memberships as $membership){
+            if ($membership->membership_status == 'paid'){
+                $paid_status = 'unpaid';
+            }
+            else{
+                $paid_status = 'paid';
+            }
+        }
+
+        MemberShip::whereId($id)->update([
+            'membership_status' => $paid_status,
+        ]);
+
+        return view ('membership.index',compact('memberships'))->with('success','Update made Successfully');
+
     }
 
     /**

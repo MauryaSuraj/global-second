@@ -29,6 +29,7 @@ Route::resource('/admin/category','AdminCategoryController');
 Route::resource('/admin/tag','TagAdminController');
 Route::resource('/admin/featuredmember','FeaturedMemberController');
 Route::resource('/admin/businesslisting','BusinessListingAdminController');
+Route::resource('/admin/membership','MemberShipcontroller');
 Route::get('/admin/contactlist','Contact@contactlisting')->name('contactlist');
 
 Route::resource('/admin/profile','ProfileAdminController');

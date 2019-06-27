@@ -13,6 +13,7 @@
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>
                         <span class="pcoded-mtext {{ request()->is('sites/*/edit') ? 'active' : '' }}">Users </span>
+                        <span class="pcoded-badge label label-danger">{{ \App\User::count() }}</span>
                     </a>
                     <ul class="pcoded-submenu {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                         <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">

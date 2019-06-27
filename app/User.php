@@ -44,5 +44,8 @@ class User extends Authenticatable
     public function listings(){
         return $this->hasMany(BussinessListing::class);
     }
+    public function membership(){
+        return $this->hasOne(MemberShip::class);
+    }
 
 }
