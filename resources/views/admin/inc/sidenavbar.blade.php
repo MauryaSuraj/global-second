@@ -9,6 +9,12 @@
                         <span class="pcoded-mtext">Dashboard</span>
                     </a>
                 </li>
+                <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                    <a href="/admin/listing_review" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                        <span class="pcoded-mtext"> Business Enquiry </span>
+                    </a>
+                </li>
                 <li class="pcoded-hasmenu {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>

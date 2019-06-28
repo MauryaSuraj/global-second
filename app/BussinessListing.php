@@ -20,4 +20,7 @@ class BussinessListing extends Model
     public function contactformlisting(){
         return $this->belongsTo(ContactFormListing::class);
     }
+    public function reviews(){
+        return $this->belongsTo(Reviews::class);
+    }
 }

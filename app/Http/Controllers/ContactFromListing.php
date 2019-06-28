@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\ContactFormListing;
 use Illuminate\Http\Request;
 
 class ContactFromListing extends Controller
@@ -13,7 +14,8 @@ class ContactFromListing extends Controller
      */
     public function index()
     {
-        //
+         $enquiry = ContactFormListing::all();
+        return view('businessenquiry.index',compact('enquiry'));
     }
 
     /**

@@ -8,6 +8,7 @@ use App\ContactFormListing;
 use App\Listing;
 use App\Tags;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
 
 class ListingController extends Controller
@@ -46,16 +47,26 @@ class ListingController extends Controller
         $listings = BussinessListing::all();
         $categories = Category::all();
         $tags = Tags::all();
+//
+//          $request->validate([
+//           'name' => 'required',
+//           'email' => 'required',
+//           'phone' => 'required',
+//           'message' => 'required',
+//        ]);
+//          ContactFormListing::create($request->all());
+          $insert_data = DB::table('contact_form_listings')->insert([
+             'name' => $request->input('name'),
+             'email' => $request->input('email'),
+             'phone' => $request->input('phone'),
+             'message' => $request->input('message'),
+             'bussiness_listing_id' => $request->input('listing_id'),
+              'created_at' => Carbon::now()->toDateTimeString(),
+        'updated_at' => Carbon::now()->toDateTimeString()
+          ]);
+          if ($insert_data)
 
-          $request->validate([
-           'name' => 'required',
-           'email' => 'required',
-           'phone' => 'required',
-           'message' => 'required',
-        ]);
-          ContactFormListing::create($request->all());
-
-        return view('listing.index',compact('listings','categories','tags'))->with('success','Form Submitted Successfully');
+        return view('listing.show',compact('listings','categories','tags'))->with('success','Form Submitted Successfully');
     }
 
     /**
@@ -66,12 +77,13 @@ class ListingController extends Controller
      */
     public function show($id)
     {
+        $msgs = '';
         $bu_list = BussinessListing::find($id);
         $profiles = DB::table('profiles')->get()->where('user_id',$bu_list->user->id);
         $categories = DB::table('categories')->get()->where('id',$bu_list->category_id);
         $tags = DB::table('tags')->get()->where('id',$bu_list->tag_id);
 
-        return view('listing.show',compact('bu_list','profiles','tags','categories'));
+        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs'));
     }
 
     /**

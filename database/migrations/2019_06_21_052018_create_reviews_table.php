@@ -20,12 +20,11 @@ class CreateReviewsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('listing_id');
             $table->text('description');
-            $table->string('image');
+            $table->string('image')->nullable();
             $table->timestamps();
 
         });
     }
-
     /**
      * Reverse the migrations.
      *

@@ -48,4 +48,8 @@ class User extends Authenticatable
         return $this->hasOne(MemberShip::class);
     }
 
+    public function reviews(){
+        return $this->belongsTo(Reviews::class);
+    }
+
 }

@@ -53,20 +53,58 @@
                                         <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Reviews </h4></div>
                                         <div class="panel-collapse">
                                             <div class="panel-body">
-                                                <div class="alert custom-alert custom-alert--warning" role="alert">
-                                                    <div class="custom-alert__top-side">
+
+                                             @if(\Illuminate\Support\Facades\Auth::check())
+                                                    <form method="POST" action="{{ route('userreview.store') }}">
+                                                        @csrf
+
+                                                        <div class="form-group row">
+                                                            <div class="col-md-12">
+                                                                <input type="hidden" hidden name="listing_id" value="{{ $bu_list->id }}">
+                                                                <textarea id="description" type="text" placeholder="Give Your review here ....." class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description"></textarea>
+                                                                @error('description')
+                                                                <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                @enderror
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row mb-0">
+                                                            <div class="float-right col-md-12">
+                                                                <button type="submit" class="btn btn-primary">
+                                                                    {{ __('Review Us') }}
+                                                                </button>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+                                                    <div class="col-md-12">
+                                                        @if($msgs)
+                                                            <div class="alert alert-success mt-3">
+                                                                {{ $msgs }}
+                                                            </div>
+                                                        @endif
+                                                    </div>
+                                                 @else
+                                                    <div class="alert custom-alert custom-alert--warning" role="alert">
+                                                        <div class="custom-alert__top-side">
                                                             <span
                                                                 class="alert-icon custom-alert__icon  ti-info-alt "></span>
-                                                        <div class="custom-alert__body">
-                                                            <h6 class="custom-alert__heading">
-                                                                Login To Write A Review. </h6>
-                                                            <div class="custom-alert__content">
-                                                                Sorry, you don't have permisson to post a review.
+                                                            <div class="custom-alert__body">
+                                                                <h6 class="custom-alert__heading">
+                                                                    Login To Write A Review. </h6>
+                                                                <div class="custom-alert__content">
+                                                                    Sorry, you don't have permissions to post a review.
+                                                                </div>
+                                                                <div class="row">
+                                                                    <div class="col-md-12">
+                                                                        <a href="/login" class="btn btn-outline-primary">Login</a>
+                                                                    </div>
+                                                                </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                </div>
-
+                                                 @endif
                                             </div>
                                         </div>
                                     </div>
@@ -192,6 +230,7 @@
                                         </div>
                                         <div class="form-group row">
                                             <div class="col-md-12">
+                                                <input type="hidden" hidden name="listing_id" value="{{$bu_list->id}}">
                                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
                                                 @error('email')
                                                 <span class="invalid-feedback" role="alert">

@@ -30,6 +30,7 @@ Route::resource('/admin/tag','TagAdminController');
 Route::resource('/admin/featuredmember','FeaturedMemberController');
 Route::resource('/admin/businesslisting','BusinessListingAdminController');
 Route::resource('/admin/membership','MemberShipcontroller');
+Route::resource('/userreview', 'ReviewsController');
 Route::get('/admin/contactlist','Contact@contactlisting')->name('contactlist');
 
 Route::resource('/admin/profile','ProfileAdminController');
@@ -42,3 +43,4 @@ Route::get('/admin/contactform','ContactForm@index');
 Route::get('/admin/user/paid','AdminUsersController@paid');
 Route::get('/admin/user/registered','AdminUsersController@registereduser');
 Route::get('/admin/user/','AdminUsersController@index');
+Route::get('/admin/listing_review','ContactFromListing@index');
