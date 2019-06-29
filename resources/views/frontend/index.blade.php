@@ -27,8 +27,9 @@
                 </div>
                 @foreach($categories as $category)
                     <div class="col-md m-2 colhover p-3">
-                        <img src="https://image.flaticon.com/icons/svg/119/119058.svg" alt="" class="w-75">
-                        <h5 class="font-weight-bold text-center mt-2">{{ $category->name }}</h5>
+                            <img src="{{ url('/').'/storage/'.$category->image }}" alt="" class="w-75" style="height: 200px;">
+                            <h5 class="font-weight-bold text-center mt-2">{{ $category->name }}</h5>
+                        <a href="{{ route('listing.index',$category->id) }}">View Category</a>
                     </div>
                     @endforeach
             </div>

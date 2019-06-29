@@ -11176,7 +11176,7 @@ p {
 }
 
 .colhover:hover {
-  box-shadow: 0 8px 17px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19) !important;
+  box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
 .socialicon {
@@ -11543,7 +11543,7 @@ section {
 a {
   outline: none;
   color: #333;
-  text-decoration: none;
+  text-decoration: none !important;
   transition: all 0.3s ease 0s;
 }
 
@@ -12461,6 +12461,11 @@ btn-outline-primary:hover {
 .navbar.solid .navbar-nav > li > a {
   color: #C57ED3;
   transition: color 1s ease 0s;
+}
+
+.card-header {
+  background: darkorchid;
+  color: white;
 }
 
 /*!

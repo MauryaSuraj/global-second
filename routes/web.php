@@ -21,23 +21,19 @@ Route::resource('/listing','ListingController');
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
 Route::get('/admin','AdminController@index')->name('admin');
 Route::resource('/contact','Contact');
-
 Route::resource('/admin/category','AdminCategoryController');
 Route::resource('/admin/tag','TagAdminController');
 Route::resource('/admin/featuredmember','FeaturedMemberController');
 Route::resource('/admin/businesslisting','BusinessListingAdminController');
 Route::resource('/admin/membership','MemberShipcontroller');
 Route::resource('/userreview', 'ReviewsController');
+
 Route::get('/admin/contactlist','Contact@contactlisting')->name('contactlist');
-
 Route::resource('/admin/profile','ProfileAdminController');
-
 Route::get('/admin/location','LocationAdminController@index');
 Route::get('/admin/reviews','ReviewsAdminController@index');
-
 Route::get('/admin/listing','BusinessListingAdminController@index');
 Route::get('/admin/contactform','ContactForm@index');
 Route::get('/admin/user/paid','AdminUsersController@paid');

@@ -4,14 +4,18 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class FrontEnd extends Controller
 {
     public function index()
     {
         $categories = DB::table('categories')->latest()->paginate(4);
+        foreach ($categories as $category){
+            $url_category_image = Storage::url($category->image);
+        }
         $listings = DB::table('bussiness_listings')->latest()->paginate(4);
-        return view('frontend.index',compact('categories','listings'));
+        return view('frontend.index',compact('categories','listings', 'url_category_image'));
     }
 
     public function about()

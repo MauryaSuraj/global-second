@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Reviews;
 use Illuminate\Http\Request;
 
 class ReviewsAdminController extends Controller
@@ -13,7 +14,8 @@ class ReviewsAdminController extends Controller
      */
     public function index()
     {
-        return view('admin.reviews.index');
+        $reviews = Reviews::all();
+        return view('admin.reviews.index',compact('reviews'));
     }
 
     /**

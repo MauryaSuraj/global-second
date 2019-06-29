@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class AdminCategoryController extends Controller
 {
@@ -40,9 +41,22 @@ class AdminCategoryController extends Controller
         $request->validate([
            'name' => 'required',
            'description' => 'required',
+            'image' => 'required|max:2048',
         ]);
 
-        Category::create($request->all());
+        if ($request->hasFile('image')){
+            if ($request->file('image')->isValid()){
+                $path = $request->image->store('category');
+            }
+        }
+        $form_data = array(
+            'name'       => $request->name,
+            'description' =>   $request->description,
+            'image'       =>   $path
+        );
+
+        Category::create($form_data);
+
         return redirect()->route('category.index')->with('success','Category Created Successfully');
     }
 

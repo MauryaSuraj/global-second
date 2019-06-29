@@ -22,6 +22,7 @@ class CreateBussinessListingsTable extends Migration
             $table->unsignedBigInteger('locations');
             $table->string('name');
             $table->text('description');
+            $table->text('image');
             $table->float('price');
             $table->text('opening_time');
             $table->text('closing_time');

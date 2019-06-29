@@ -32,8 +32,8 @@ p{
 }
 
 .colhover:hover {
-    -webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)!important;
-    box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)!important;
+    //-webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)!important;
+   box-shadow:  0 0px 6px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19) !important
 }
 
 .socialicon {
@@ -354,7 +354,7 @@ section {
 a {
     outline: none;
     color: #333;
-    text-decoration: none;
+    text-decoration: none !important;
     -webkit-transition: all 0.3s ease 0s;
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
@@ -1110,4 +1110,9 @@ btn-outline-primary:hover{
 
     } //end .navbar-nav
 
+}
+
+.card-header{
+    background: darkorchid;
+    color: white;
 }

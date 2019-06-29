@@ -45,7 +45,7 @@ class BusinessListingAdminController extends Controller
      */
     public function store(Request $request)
     {
-     $data = $request->validate([
+       $request->validate([
             'category_id' => 'required',
             'tag_id' =>'required',
             'name' => 'required',
@@ -54,8 +54,26 @@ class BusinessListingAdminController extends Controller
             'opening_time' => 'required',
             'closing_time' => 'required',
             'video' => 'url',
+            'image' => 'required|image|max:3072'
         ]);
-     \auth()->user()->listings()->create($data);
+       if ($request->hasFile('image')){
+           if ($request->file('image')->isValid()){
+               $path = $request->image->store('listing');
+           }
+       }
+       $form_data = array(
+         'category_id' => $request->category_id,
+         'tag_id' => $request->tag_id,
+         'name' => $request->name,
+         'description' => $request->description,
+          'price' => $request->price,
+          'opening_time' => $request->opening_time,
+          'closing_time' => $request->closing_time,
+          'video' => $request->video,
+          'image' => $path
+       );
+     \auth()->user()->listings()->create($form_data);
+
         return redirect()->route('businesslisting.index')->with('success','Listing Created Successfully');
     }
 

@@ -41,9 +41,14 @@
                                                     <span class="bg-c-lite-green p-1 rounded">Active</span>
                                                         @endif
                                                 </td>
-                                                <td>{{ $listing->description }}</td>
+                                                <td>{{ \Illuminate\Support\Str::words($listing->description, 5) }}</td>
                                                 <td>
-                                                    <a href="/admin/businesslisting/{{$listing->id}}"> <i class="fas fa-eye"></i></a>
+                                                    <a href="/admin/businesslisting/{{$listing->id}}"> <i class="fas fa-2x text-c-purple fa-eye"></i></a>
+                                                    @if($listing->status==0)
+                                                    <a href="#"> <i class="fas fa-toggle-on fa-2x text-danger"></i></a>
+                                                    @else
+                                                    <a href="#"> <i class="fas fa-toggle-off fa-2x text-success"></i></a>
+                                                        @endif
                                                 </td>
                                             </tr>
                                             @endforeach

@@ -8,6 +8,7 @@ use App\Reviews;
 use App\Tags;
 use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
@@ -41,16 +42,22 @@ class ReviewsController extends Controller
      */
     public function store(Request $request)
     {
+        $mytime = Carbon::now();
+         $mytime->toDateTimeString();
         $bu_list = BussinessListing::find($request->input('listing_id'));
         $profiles = DB::table('profiles')->get()->where('user_id',$bu_list->user->id);
         $categories = DB::table('categories')->get()->where('id',$bu_list->category_id);
         $tags = DB::table('tags')->get()->where('id',$bu_list->tag_id);
         $reviews = DB::table('reviews')->insert([
+
            'user_id' => \auth()->user()->id,
             'rating' => '5',
             'listing_id' => $request->input('listing_id'),
             'description' => $request->input('description'),
-            'image' => 'some image path'
+            'image' => 'some image path',
+            'created_at' => $mytime,
+            'updated_at' => $mytime
+
         ]);
         if ($reviews)
             $msgs = 'Review Submitted Successfully';
