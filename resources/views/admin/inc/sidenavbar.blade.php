@@ -75,7 +75,7 @@
                         <i class="feather icon-layers"></i>
                         </span>
                         <span class="pcoded-mtext">Reviews List</span>
-                        <span class="pcoded-badge label label-danger">100+</span>
+                        <span class="pcoded-badge label label-danger">{{ \App\Reviews::count() }}</span>
                     </a>
                     <ul class="pcoded-submenu {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                         <li class="">
