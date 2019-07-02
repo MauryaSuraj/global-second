@@ -8,7 +8,7 @@
             <a href="/membershipdetail"><i class="fas fa-user-alt mx-2"></i> Profile</a>
         </li>
         <li>
-            <a href="/membershipdetail/listedbusiness"><i class="fas fa-business-time mx-2"></i> Business Listed By You</a>
+            <a href="/businesslistingprofile"><i class="fas fa-business-time mx-2"></i> Business Listed By You</a>
         </li>
         <li>
             <a href="{{ route('listing.create') }}"><i class="fas fa-plus-circle mx-2"></i> Add Business</a>

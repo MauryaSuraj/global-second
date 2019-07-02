@@ -31,6 +31,7 @@ Route::resource('/admin/membership','MemberShipcontroller');
 Route::resource('/userreview', 'ReviewsController');
 Route::resource('/membershipdetail', 'MemberShipFrontController');
 Route::resource('/family', 'FamilyController');
+Route::get('/businesslistingprofile','BusinesslistingProfileController@index');
 
 Route::get('/admin/contactlist','Contact@contactlisting')->name('contactlist');
 Route::resource('/admin/profile','ProfileAdminController');
