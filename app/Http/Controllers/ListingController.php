@@ -33,7 +33,10 @@ class ListingController extends Controller
      */
     public function create()
     {
-
+        $listings = BussinessListing::all();
+        $categories = Category::all();
+        $tags = Tags::all();
+        return view('listing.create',compact('categories','tags'));
     }
 
     /**

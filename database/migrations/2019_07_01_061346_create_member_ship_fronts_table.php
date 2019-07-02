@@ -15,26 +15,26 @@ class CreateMemberShipFrontsTable extends Migration
     {
         Schema::create('member_ship_fronts', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('firstname');
-            $table->string('lastname');
+            $table->string('name');
             $table->text('address')->nullable();
             $table->integer('pincode')->nullable();
             $table->string('fax')->nullable();
             $table->string('mobile');
             $table->string('email')->unique();
-            $table->date('birthdate');
-            $table->string('caste');
+            $table->date('birthdate')->nullable();
+            $table->string('caste')->nullable();
             $table->text('originalplace')->nullable();
             $table->string('loksabha')->nullable();
             $table->string('vidhansabha')->nullable();
             $table->string('panchayat')->nullable();
-            $table->text('businessname');
-            $table->text('officeaddress');
+            $table->text('businessname')->nullable();
+            $table->text('officeaddress')->nullable();
             $table->string('category_id')->nullable();
             $table->boolean('celebrity')->nullable();
             $table->text('celebrity_details')->nullable();
             $table->string('married')->nullable();
-            $table->text('image');
+            $table->text('image')->nullable();
+            $table->string('user_id');
 
             $table->unsignedBigInteger('family_id')->nullable();
 

@@ -2,20 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Auth\Access\Gate;
 use Illuminate\Http\Request;
+use Illuminate\Support\Carbon;
+use Illuminate\Support\Facades\DB;
 
-class AdminController extends Controller
+class FamilyController extends Controller
 {
-    public function __construct()
-    {
-        if (!\Gate::allows('isAdmin')){
-            abort(403,'Sorry, you can do this');
-        }
-
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -23,7 +15,7 @@ class AdminController extends Controller
      */
     public function index()
     {
-        return view('admin.index');
+        return redirect('family/create');
     }
 
     /**
@@ -33,7 +25,7 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        return view('family.create');
     }
 
     /**
@@ -44,7 +36,24 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $mytime = Carbon::now();
+         $mytime->toDateTimeString();
+          $request->validate([
+           'name' => 'required',
+           'married' => 'required',
+           'birthdate' => 'required',
+        ]);
+        $submited =  DB::table('family_member')->insert([
+             'fullaname' => $request->input('name'),
+              'birthdate' => $request->input('birthdate'),
+              'married' => $request->input('married'),
+              'membership_id' => auth()->user()->id,
+              'created_at' => $mytime,
+              'updated_at' => $mytime,
+          ]);
+          if ($submited)
+              return view('family.create')->with('success','Family member added');
+
     }
 
     /**

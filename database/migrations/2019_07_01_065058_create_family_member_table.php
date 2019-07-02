@@ -18,7 +18,7 @@ class CreateFamilyMemberTable extends Migration
             $table->string('fullaname');
             $table->date('birthdate');
             $table->string('married');
-            $table->boolean('is_member');
+            $table->boolean('is_member')->default(0);
             $table->unsignedBigInteger('membership_id')->nullable();
             $table->timestamps();
         });

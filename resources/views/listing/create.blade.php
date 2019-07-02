@@ -1,21 +1,34 @@
-@extends('layouts.app')
+@extends('layouts.user')
 @section('content')
 
     <div class="container">
-        <div class="row">
+        <div class="">
             <div class="col-md ">
 
                 <div class="card">
                     <div class="card-header">{{ __('Add Listing') }}</div>
 
                     <div class="card-body">
-                        <form method="POST" action="{{ route('businesslisting.store') }}">
+                        <form method="POST" action="{{ route('businesslisting.store') }}" enctype="multipart/form-data">
                             @csrf
                             <div class="row">
 
                                 <div class="col-md">
                                     <div class="form-group row">
-                                        <label for="category_id" class="col-md-4 col-form-label text-md-right">{{ __('Category Name') }}</label>
+                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Listing  Name') }}</label>
+
+                                        <div class="col-md-6">
+                                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
+
+                                            @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                        <strong>{{ $message }}</strong>
+                                    </span>
+                                            @enderror
+                                        </div>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label for="category_id" class="col-md-4 col-form-label text-md-right">{{ __('Listing Category Name') }}</label>
 
                                         <div class="col-md-6">
                                             <select id="category_id" type="text" class="form-control @error('category_id') is-invalid @enderror" name="category_id" value="{{ old('category_id') }}" required autocomplete="category_id" autofocus>
@@ -32,7 +45,7 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="tag_id" class="col-md-4 col-form-label text-md-right">{{ __('Tag Name') }}</label>
+                                        <label for="tag_id" class="col-md-4 col-form-label text-md-right">{{ __('Listing  Tag Name') }}</label>
 
                                         <div class="col-md-6">
                                             <select id="tag_id" type="text" class="form-control @error('tag_id') is-invalid @enderror" name="tag_id" value="{{ old('tag_id') }}" required autocomplete="tag_id" autofocus>
@@ -51,35 +64,36 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="description" class="col-md-4 col-form-label text-md-right">{{ __(' Description') }}</label>
+                                        <label for="description" class="col-md-4 col-form-label text-md-right">{{ __('Listing Description') }}</label>
 
                                         <div class="col-md-6">
                                             <textarea id="description" type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{ old('description') }}" required autocomplete="description"></textarea>
                                             @error('description')
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                <strong>{{ $message }}</strong>
+                                            </span>
                                             @enderror
                                         </div>
                                     </div>
-                                </div>
-                                <div class="col-md">
                                     <div class="form-group row">
-                                        <label for="name" class="col-md-4 col-form-label text-md-right">{{ __(' Name') }}</label>
+                                        <label for="image" class="col-md-4 col-form-label text-md-right">{{ __('Listing  Image') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-
-                                            @error('name')
+                                            <input id="image" type="file" class="form-control @error('image') is-invalid @enderror" name="image" value="{{ old('image') }}" required autocomplete="image">
+                                            @error('image')
                                             <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
+                                                <strong>{{ $message }}</strong>
+                                            </span>
                                             @enderror
                                         </div>
                                     </div>
 
+                                </div>
+                                <div class="col-md">
+
+
                                     <div class="form-group row">
-                                        <label for="opening_time" class="col-md-4 col-form-label text-md-right">{{ __(' Opening Time') }}</label>
+                                        <label for="opening_time" class="col-md-4 col-form-label text-md-right">{{ __('Opening Time am/pm') }}</label>
                                         <div class="col-md-6">
                                             <input id="opening_time" type="text" class="form-control @error('opening_time') is-invalid @enderror" name="opening_time" value="{{ old('opening_time') }}" required autocomplete="opening_time" autofocus>
                                             @error('opening_time')
@@ -91,7 +105,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="closing_time" class="col-md-4 col-form-label text-md-right">{{ __(' Closing time') }}</label>
+                                        <label for="closing_time" class="col-md-4 col-form-label text-md-right">{{ __(' Closing time am/pm') }}</label>
                                         <div class="col-md-6">
                                             <input id="closing_time" type="text" class="form-control @error('closing_time') is-invalid @enderror" name="closing_time" value="{{ old('closing_time') }}" required autocomplete="closing_time" autofocus>
                                             @error('closing_time')
@@ -103,7 +117,7 @@
                                     </div>
 
                                     <div class="form-group row">
-                                        <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Price') }}</label>
+                                        <label for="" class="col-md-4 col-form-label text-md-right">{{ __('Price  Rs.') }}</label>
 
                                         <div class="col-md-6">
                                             <input id="price" type="text" class="form-control @error('price') is-invalid @enderror" name="price" value="{{ old('price') }}" required autocomplete="price">

@@ -3,10 +3,10 @@
 
     <div class="container">
         <div class="row">
+            @foreach($profiledetails as $profiledetail)
             <div class="col-md ">
-
                 <div class="card">
-                    <div class="card-header">{{ __('Profile Details') }}</div>
+                    <div class="card-header">{{ __('Enter Profile Details ') }}</div>
                     <div class="card-body">
                         <div class="col-md-12">
                             @if(session()->has('message'))
@@ -15,16 +15,15 @@
                                 </div>
                             @endif
                         </div>
-                        <form method="POST" action="{{ route('membershipdetail.store') }}" enctype="multipart/form-data">
+                        <form method="POST" action="{{ route('membershipdetail.update',$profiledetail->id) }}" enctype="multipart/form-data">
                             @csrf
+                            @method('PATCH')
                             <div class="row">
                                 <div class="col-md">
                                     <div class="form-group row">
                                         <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Name') }}</label>
-
                                         <div class="col-md-6">
-                                            <input id="name" type="text" class="form-control @error('firstname') is-invalid @enderror" name="name" value="{{ old('firstname') }}" required autocomplete="firstname" autofocus>
-
+                                            <input id="name" type="text" class="form-control @error('firstname') is-invalid @enderror" name="name" value="{{  $profiledetail->name }}" required autocomplete="firstname" readonly autofocus>
                                             @error('name')
                                             <span class="invalid-feedback" role="alert">
                                         <strong>{{ $message }}</strong>
@@ -36,7 +35,7 @@
                                         <label for="fathername" class="col-md-4 col-form-label text-md-right">{{ __('Father / Husband Name') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="fathername" type="text" class="form-control @error('fathername') is-invalid @enderror" name="fathername" value="{{ old('fathername') }}" required autocomplete="fathername" autofocus>
+                                            <input id="fathername" type="text" class="form-control @error('fathername') is-invalid @enderror" name="fathername" value="{{ old('fathername')  }}" required autocomplete="fathername" autofocus>
 
                                             @error('fathername')
                                             <span class="invalid-feedback" role="alert">
@@ -88,7 +87,7 @@
                                         <label for="mobile" class="col-md-4 col-form-label text-md-right">{{ __('Mobile No.') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{ old('mobile') }}" required autocomplete="mobile" autofocus>
+                                            <input id="mobile" type="text" class="form-control @error('mobile') is-invalid @enderror" name="mobile" value="{{  $profiledetail->mobile }}" readonly required autocomplete="mobile" autofocus>
 
                                             @error('mobile')
                                             <span class="invalid-feedback" role="alert">
@@ -101,7 +100,7 @@
                                         <label for="email" class="col-md-4 col-form-label text-md-right">{{ __(' Email') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
+                                            <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{  $profiledetail->email }}" readonly required autocomplete="email" autofocus>
 
                                             @error('email')
                                             <span class="invalid-feedback" role="alert">
@@ -275,6 +274,7 @@
                     </div>
                 </div>
             </div>
+                @endforeach
 
         </div>
     </div>

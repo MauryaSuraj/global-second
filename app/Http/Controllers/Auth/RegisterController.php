@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Auth;
 
 use App\MemberShip;
+use App\MemberShipFront;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
@@ -29,8 +30,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/admin';
-
+    protected $redirectTo = '/membershipdetail/';
     /**
      * Create a new controller instance.
      *
@@ -53,6 +53,7 @@ class RegisterController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             'password' => ['required', 'string', 'min:8', 'confirmed'],
+            'phone' => ['required', 'numeric'],
         ]);
     }
 
@@ -67,11 +68,18 @@ class RegisterController extends Controller
         $user = User::create([
             'name' => $data['name'],
             'email' => $data['email'],
+            'phone' => $data['phone'],
             'password' => Hash::make($data['password']),
         ]);
         $userId = $user->id;
         MemberShip::create([
             'user_id' => $userId,
+        ]);
+        MemberShipFront::create([
+           'user_id' => $userId,
+           'name' => $data['name'],
+            'email' => $data['email'],
+            'mobile' => $data['phone'],
         ]);
             return $user;
     }

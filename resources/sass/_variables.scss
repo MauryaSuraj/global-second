@@ -13,6 +13,9 @@ p{
     font-size: 17px !important;
     line-height: 150% !important;
 }
+h1, h2,h3,h4,h5,h6{
+    font-family: $font-family-sans-serif !important;
+}
 // Colors
 $blue: #3490dc;
 $indigo: #6574cd;
