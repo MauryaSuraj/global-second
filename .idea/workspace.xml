@@ -1,30 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4413225e-aa72-4dd2-8830-36a6cf51520a" name="Default Changelist" comment="profile index page changes">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminCategoryController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/BusinessListingAdminController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/BusinessListingAdminController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/FrontEnd.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_06_21_061536_create_bussiness_listings_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_06_21_061536_create_bussiness_listings_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/_custom.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/_custom.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/businesslisting/create.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/businesslisting/create.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/businesslisting/show.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/businesslisting/show.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/contact/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/contact/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/about.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/about.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/frontend/supporter.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/frontend/supporter.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/inc/navigation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/inc/navigation.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/listing/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/listing/index.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/listing/listshow.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/listing/listshow.blade.php" afterDir="false" />
-    </list>
+    <list default="true" id="4413225e-aa72-4dd2-8830-36a6cf51520a" name="Default Changelist" comment="profile index page changes" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,12 +383,12 @@
       <workItem from="1561956499400" duration="21134000" />
       <workItem from="1562043119630" duration="71000" />
       <workItem from="1562043207893" duration="28013000" />
-      <workItem from="1562129410762" duration="28164000" />
+      <workItem from="1562129410762" duration="28255000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="247281000" />
+    <option name="totallyTimeSpent" value="247372000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
