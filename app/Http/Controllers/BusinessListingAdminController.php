@@ -58,7 +58,8 @@ class BusinessListingAdminController extends Controller
         ]);
        if ($request->hasFile('image')){
            if ($request->file('image')->isValid()){
-               $path = $request->image->store('listing');
+               $imageName = time().'.'.request()->image->getClientOriginalExtension();
+               request()->image->move(public_path('images/listing'), $imageName);
            }
        }
        $form_data = array(
@@ -70,7 +71,7 @@ class BusinessListingAdminController extends Controller
           'opening_time' => $request->opening_time,
           'closing_time' => $request->closing_time,
           'video' => $request->video,
-          'image' => $path
+          'image' => $imageName
        );
      \auth()->user()->listings()->create($form_data);
 

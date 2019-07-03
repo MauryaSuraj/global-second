@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm ">
+<nav class="navbar navbar-expand-md navbar-light navbg fixed-top shadow-sm ">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
 {{--            {{ config('app.name', '') }}--}}
@@ -19,11 +19,15 @@
                     <a class="nav-link" href="/">{{ _('Home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('about') }}"> {{ _('About') }} </a>
+                    <a href="/listing" class="nav-link"> {{ _('Business Listing') }} </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('supporter') }}" class="nav-link"> {{ _('Supporter') }} </a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('about') }}"> {{ _('About') }} </a>
+                </li>
+
                 <li class="nav-item">
                     <a href="/contact" class="nav-link">{{ _('Contact') }}</a>
                 </li>

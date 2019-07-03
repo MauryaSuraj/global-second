@@ -35,7 +35,7 @@
                             <iframe class="w-100" src="{{ $bu_list->video }}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                         <div class="row mt-3">
-                            <img src="https://images.pexels.com/photos/2421374/pexels-photo-2421374.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" class="w-100">
+                            <img src="{{ url('images/').'/listing/'.$bu_list->image }}" class="w-100">
                         </div>
                     </div>
                 </div>

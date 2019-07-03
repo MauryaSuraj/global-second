@@ -18,29 +18,18 @@ class CreateBussinessListingsTable extends Migration
             $table->bigIncrements('id');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('category_id');
-            $table->unsignedBigInteger('tag_id');
-            $table->unsignedBigInteger('locations');
+            $table->unsignedBigInteger('tag_id')->nullable();
+            $table->unsignedBigInteger('locations')->nullable();
             $table->string('name');
             $table->text('description');
             $table->text('image');
             $table->float('price');
             $table->text('opening_time');
             $table->text('closing_time');
-            $table->integer('views');
-            $table->text('video');
+            $table->integer('views')->nullable();
+            $table->text('video')->nullable();
             $table->boolean('status')->default('0');
-
-            //            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-//            $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-//            $table->foreign('locations')->references('id')->on('locations')->onDelete('cascade');
-            //            $table->foreign('tags_id')->references('id')->on('tags')->onDelete('cascade');
-
             $table->timestamps();
-
-
-
-
-
         });
     }
 

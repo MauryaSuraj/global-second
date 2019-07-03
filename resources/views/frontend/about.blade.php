@@ -1,15 +1,23 @@
 @extends('layouts.app')
 
-@section('content')<div class="container">
+@section('content')
+    <div class="bg-about-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-center py-5">
+                    <h5 class="display-4 text-white my-5">
+                        About Global Agra Vaishchamber
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-4">
             <img src="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/agarsen.png" alt="" class="w-100">
         </div>
         <div class="col-md-8">
-            <h5 class="display-4 ">
-                About Global Agra Vaishchamber
-            </h5>
-            <hr>
             <h2 class="h2">
                 Find Everything About Agarwal Community
             </h2>
@@ -30,16 +38,61 @@
             </p>
         </div>
     </div>
-    <div class="row">
-        <div class="col-md-12 text-center ">
-            <h2 class="h2 my-3 ">
-                Our Story
-            </h2>
-            <h4 class="h4">Aggarwal community</h4>
-            <p class="text-center">
-                We are a group of Global Agra Vaishchamber trying to bring aggarwal samaj together to help the society and increase trade together.
-            </p>
+{{--    <div class="row">--}}
+{{--        <div class="col-md-12 text-center ">--}}
+{{--            <h2 class="h2 my-3 ">--}}
+{{--                Our Story--}}
+{{--            </h2>--}}
+{{--            <h4 class="h4">Aggarwal community</h4>--}}
+{{--            <p class="text-center">--}}
+{{--                We are a group of Global Agra Vaishchamber trying to bring aggarwal samaj together to help the society and increase trade together.--}}
+{{--            </p>--}}
+{{--        </div>--}}
+{{--    </div>--}}
+</div>
+
+    <div class="container my-5">
+        <h2 class="text-left">In LeaderShip With </h2>
+        <hr>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="avatar mx-auto">
+                    <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                    <h3 class="font-weight-bold text-left mt-3">
+                        Rajesh Jindal
+                    </h3>
+                    <p class="text-left">
+                        rajesh jindal sir is one of team member of globalagra-vaishchamber.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="avatar mx-auto">
+                    <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                    <h3 class="font-weight-bold text-left mt-3">
+                        Sachin Gupta
+                    </h3>
+                    <p class="text-left">
+                        sachin gupta sir is one of team member of globalagra-vaishchamber.
+                    </p>
+                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="avatar mx-auto">
+                    <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
+
+                    <h3 class="font-weight-bold text-left mt-3">
+                        Rajeev Gupta
+                    </h3>
+                    <p class="text-left">
+                        rajeev gupta sir is one of team member of globalagra-vaishchamber.
+
+                    </p>
+                    <a href="#" class="btn btn-outline-primary">Read More</a>
+                </div>
+            </div>
         </div>
     </div>
-</div>
 @endsection

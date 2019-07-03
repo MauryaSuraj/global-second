@@ -24,24 +24,40 @@
                                     <table class="table table-hover m-b-0">
                                         <thead>
                                         <tr>
-                                            <th>Tag Id</th>
-                                            <th>Tag  Name </th>
-                                            <th>Tag Description</th>
+                                            <th>Name</th>
+                                            <th>Category</th>
+                                            <th>Tag</th>
+                                            <th>Pricing</th>
+                                            <th>Status</th>
+                                            <th>Description</th>
                                             <th>Manage</th>
                                         </tr>
                                         </thead>
                                         <tbody>
-                                                <tr>
-                                                    <td>1</td>
-                                                    <td>name</td>
-                                                    <td>description</td>
-                                                    <td>
-                                                        <a href="#">Edit </a>
-                                                        <a href="#">Delete</a>
-                                                    </td>
-                                                </tr>
-{{--                                            @endforeach--}}
-
+                                        @foreach($listings as $listing)
+                                            <tr>
+                                                <td>{{ $listing->name }}</td>
+                                                <td>{{ $listing->category->name }}</td>
+                                                <td>{{ $listing->tag->name }}</td>
+                                                <td>{{ $listing->price }}</td>
+                                                <td>
+                                                    @if($listing->status==0)
+                                                        <span class="bg-c-orenge p-1 rounded">Un Active</span>
+                                                    @else
+                                                        <span class="bg-c-lite-green p-1 rounded">Active</span>
+                                                    @endif
+                                                </td>
+                                                <td>{{ \Illuminate\Support\Str::words($listing->description, 5) }}</td>
+                                                <td>
+                                                    <a href="/admin/businesslisting/{{$listing->id}}"> <i class="fas fa-2x text-c-purple fa-eye"></i></a>
+                                                    @if($listing->status==0)
+                                                        <a href="#"> <i class="fas fa-toggle-on fa-2x text-danger"></i></a>
+                                                    @else
+                                                        <a href="#"> <i class="fas fa-toggle-off fa-2x text-success"></i></a>
+                                                    @endif
+                                                </td>
+                                            </tr>
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>

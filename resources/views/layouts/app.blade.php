@@ -36,17 +36,14 @@
                     </div>
                     <div class="col-sm-6 col-md-3 col-xs-12">
                         <div class="footer_block dark_gry">
-                            <h4>Recent Posts</h4>
+                            <h4>Featured Listing</h4>
                             <ul class="recentpost">
-                                <li> <span><a class="plus" href="https://globalagra-vaishchamber.com/rajesh-jindal/21/05/2019/13/14/37/4439/our-team/nehbhahhhv/"><img width="150" height="150" src="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajesh-Jindal-150x150.jpg" class=" wp-post-image" alt="" srcset="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajesh-Jindal-150x150.jpg 150w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajesh-Jindal-100x100.jpg 100w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajesh-Jindal-600x600.jpg 600w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajesh-Jindal-32x32.jpg 32w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajesh-Jindal-300x300.jpg 300w" sizes="(max-width: 150px) 100vw, 150px"><i>+</i></a></span>
-                                    <p><a href="rajesh-jindal.html">Rajesh Jindal</a></p>
-                                    May 21, 2019 </li>
-                                <li> <span><a class="plus" href="https://globalagra-vaishchamber.com/rajeev-gupta/21/05/2019/13/09/30/4430/our-team/nehbhahhhv/"><img width="150" height="150" src="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajeev-Gupta-150x150.jpg" class=" wp-post-image" alt="" srcset="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajeev-Gupta-150x150.jpg 150w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajeev-Gupta-100x100.jpg 100w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajeev-Gupta-600x600.jpg 600w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajeev-Gupta-32x32.jpg 32w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Rajeev-Gupta-300x300.jpg 300w" sizes="(max-width: 150px) 100vw, 150px"><i>+</i></a></span>
-                                    <p><a href="rajeev-gupta.html">Rajeev Gupta</a></p>
-                                    May 21, 2019 </li>
-                                <li> <span><a class="plus" href="https://globalagra-vaishchamber.com/vikash-singhal/21/05/2019/13/00/49/4427/our-team/nehbhahhhv/"><img width="150" height="150" src="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Vikash-Singhal-150x150.jpg" class=" wp-post-image" alt="" srcset="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Vikash-Singhal-150x150.jpg 150w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Vikash-Singhal-100x100.jpg 100w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Vikash-Singhal-600x600.jpg 600w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Vikash-Singhal-32x32.jpg 32w, https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/Vikash-Singhal-300x300.jpg 300w" sizes="(max-width: 150px) 100vw, 150px"><i>+</i></a></span>
-                                    <p><a href="vikash-singhal.html">Vikash Singhal</a></p>
-                                    May 21, 2019 </li>
+                                <li> <span><a class="plus" href="#"></a> <img src="https://images.pexels.com/photos/2546942/pexels-photo-2546942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""></span>
+                                    <p><a href="#">Listing one</a></p>
+                                </li>
+                                <li> <span><a class="plus" href=""></a> <img src="https://images.pexels.com/photos/2546942/pexels-photo-2546942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""> </span>
+                                    <p><a href="#">Listing two</a></p>
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -73,11 +70,7 @@
                                     <p class="text-white">Copyright 2019 © Global Agra Vaishchamber, All Rights Reserved.</p>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <div class="web-page">
-                                        <ul>
-                                            <li class="web-link">Proudly Powered By : <a href="http://mydigitech.in/ " target="_blank">&nbsp; DigiTech Services</a></li>
-                                        </ul>
-                                    </div>
+                                    <p class="text-white">Proudly Powered By : <a href="http://mydigitech.in/ " target="_blank" class="text-white">&nbsp; DigiTech Services</a></p>
                                 </div>
                             </div>
                         </div>

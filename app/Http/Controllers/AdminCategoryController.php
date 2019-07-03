@@ -15,7 +15,7 @@ class AdminCategoryController extends Controller
      */
     public function index()
     {
-        $categories = Category::all();
+        $categories = Category::all()->sortBy('name');
         return view('category.index', compact('categories'));
     }
 
@@ -46,13 +46,15 @@ class AdminCategoryController extends Controller
 
         if ($request->hasFile('image')){
             if ($request->file('image')->isValid()){
-                $path = $request->image->store('category');
+//                $path = $request->image->store('storage/category');
+                $imageName = time().'.'.request()->image->getClientOriginalExtension();
+                request()->image->move(public_path('images/category'), $imageName);
             }
         }
         $form_data = array(
             'name'       => $request->name,
             'description' =>   $request->description,
-            'image'       =>   $path
+            'image'       =>   $imageName
         );
 
         Category::create($form_data);

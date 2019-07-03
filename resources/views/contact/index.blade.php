@@ -1,6 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+    <div class="bg-about-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-center py-5">
+                    <h5 class="display-4 text-white my-5">
+                       Contact Us
+                    </h5>
+                </div>
+            </div>
+        </div>
+    </div>
+<div class="bg-contact">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -11,7 +23,7 @@
                 @endif
             </div>
         </div>
-        <div class="row justify-content-center">
+        <div class="row mt-5 justify-content-center">
             <div class="col-md-8">
 
                 <form method="POST" action="{{ route('contact.store') }}">
@@ -126,4 +138,5 @@
             </div>
         </div>
     </div>
+</div>
 @endsection

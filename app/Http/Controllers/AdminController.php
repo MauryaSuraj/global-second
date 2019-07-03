@@ -9,9 +9,9 @@ class AdminController extends Controller
 {
     public function __construct()
     {
-        if (!\Gate::allows('isAdmin')){
-            abort(403,'Sorry, you can do this');
-        }
+//        if (!\Gate::allows('isAdmin')){
+//            abort(403,'Sorry, you can do this');
+//        }
 
         $this->middleware('auth');
     }

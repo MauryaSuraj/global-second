@@ -10,7 +10,7 @@ class FrontEnd extends Controller
 {
     public function index()
     {
-        $categories = DB::table('categories')->latest()->paginate(4);
+        $categories = DB::table('categories')->latest()->paginate(6);
         foreach ($categories as $category){
             $url_category_image = Storage::url($category->image);
         }
