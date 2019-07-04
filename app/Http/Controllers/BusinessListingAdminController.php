@@ -102,8 +102,9 @@ class BusinessListingAdminController extends Controller
     {
         $bu_list = BussinessListing::find($id);
         $profiles = DB::table('profiles')->get()->where('user_id',$bu_list->user->id);
+        $locations = DB::table('locations')->get()->where('listing_id', $id);
 
-        return view('businesslisting.show',compact('bu_list','profiles'));
+        return view('businesslisting.show',compact('bu_list','profiles','locations'));
     }
 
     /**

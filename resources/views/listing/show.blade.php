@@ -1,5 +1,37 @@
 @extends('layouts.app')
 @section('content')
+    <div class="bg-about-page">
+        <div class="container">
+            <div class="row">
+                <div class="col-md text-center py-5">
+                    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img class="d-block w-100" src="{{ url('images/').'/listing/'.$bu_list->image }}" >
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="{{ url('images/').'/listing/'.$bu_list->image }}" >
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100" src="{{ url('images/').'/listing/'.$bu_list->image }}" >
+                            </div>
+                        </div>
+                        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+{{--                    <h5 class="display-4 text-white my-5">--}}
+{{--                        <img src="" class="w-100">--}}
+{{--                    </h5>--}}
+                </div>
+            </div>
+        </div>
+    </div>
     <section class="single-page-title-bar single-post mt-5">
         <div class="container">
             <div class="row">
@@ -27,6 +59,11 @@
                         <div class="heading-master">
                         </div>
                         <div class="col-lg-8 col-xs-12 col-md-8 col-sm-12">
+                            @if(session()->has('message'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('message') }}
+                                </div>
+                            @endif
                             <div class="list-detail">
                                 <div class="panel-group" id="accordion_listing_detial" role="tablist" aria-multiselectable="true">
 
@@ -122,63 +159,38 @@
                                     </div>
                                 </div>
 
-                                <div class="review-box bg-light p-2">
-                                    <div class="review-author-left">
-                                        <div class="review-author-img">
-                                            <a
-                                               href="#"><img
-                                                    src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/Global-Agra-vaish-chamber-logo-e1558101072366.png"
-                                                    class="img-responsive" alt="no image"></a>
-                                            <div class="reviewer-category">
-                                                <span class="reviewer-category-badge">Amateur</span>
-                                                <span> 37 ratings</span>
+
+                                @foreach($reviews as $review)
+
+                                    <div class="review-box bg-light p-2">
+                                        <div class="review-author-left">
+                                            <div class="review-author-img">
+                                                <a href="#"><img
+                                                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png"
+                                                        class="img-responsive" alt="">
+                                                </a>
                                             </div>
                                         </div>
-                                    </div>
-                                    <div class="review-author-right">
-                                        <div class="review-author-detail">
-                                            <h4>Speaking up for service</h4>
-                                            <div class="review-detail-meta">
+                                        <div class="review-author-right">
+                                            <div class="review-author-detail">
+                                                <h4>{{ $review->description }}</h4>
+                                                <div class="review-detail-meta">
                                                     <span class="ratings">
-                                                        <i class="fa fa-star color"></i><i
-                                                            class="fa fa-star color"></i><i class="fa fa-star"></i><i
-                                                            class="fa fa-star"></i><i class="fa fa-star"></i> <i
-                                                            class="rating-counter"> (2/5)</i>
+                                                        <i class="fa fa-star text-danger"></i>
+                                                        <i class="fa fa-star text-danger"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
+                                                        <i class="fa fa-star"></i>
                                                     </span>
-                                                By <a
-                                                      href="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/Global-Agra-vaish-chamber-logo-e1558101072366.png">
-                                                    <strong>Melisa</strong></a> on <strong>13 March, 2018</strong>
-                                            </div>
-                                            <p>Loved the facility itself with the perfect relaxing atmosphere.
-                                                Extremely friendly staff and very accommodating.</p>
-                                            <p class="image-gallery">
-
-                                                    <span class="review-img-container">
-                                                        <a href="http://globalagra-vaishchamber.com/wp-content/uploads/2018/03/pexels-photo-752823-1.jpeg"
-                                                           data-fancybox="images-preview-35"> <img
-                                                                src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/03/pexels-photo-752823-1-90x54.jpeg"
-                                                                class="img-responsive" alt="image"></a>
-                                                    </span>
-
-                                                <span class="review-img-container">
-                                                        <a href="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/b788f323f87e5fd79d95d5e84930ba17a57eac9f_400x260_crop.jpg"
-                                                           data-fancybox="images-preview-35"> <img
-                                                                src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/b788f323f87e5fd79d95d5e84930ba17a57eac9f_400x260_crop-90x54.jpg"
-                                                                class="img-responsive" alt="image"></a>
-                                                    </span>
-                                            </p>
-                                            <div class="review-helpful"> <span>Your reaction about this
-                                                        review</span>
-                                                <div class="Like">
-
-
+                                                    By
+                                                    <strong>User Name here</strong></a> on <strong>{{ $review->created_at }}</strong>
                                                 </div>
+                                                <p>{{ $review->description }}</p>
                                             </div>
-
                                         </div>
                                     </div>
-                                </div>
 
+                                @endforeach
                                 </div>
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 dwt_listing_listing-detialz">
@@ -211,7 +223,10 @@
                             </ul>
                             <div class="tab-content" id="myTabContent">
                                 <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                    <h3>User Details Here </h3>
+                                    @foreach($profiles as $profile)
+                                       <p>Name :   {{ $profile->name }}</p>
+                                        <p>Email : {{ $profile->email }}  </p>
+                                    @endforeach
                                 </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                                     <form method="POST" action="{{ route('listing.store') }}">

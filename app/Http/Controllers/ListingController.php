@@ -50,26 +50,18 @@ class ListingController extends Controller
         $listings = BussinessListing::all();
         $categories = Category::all();
         $tags = Tags::all();
-//
-//          $request->validate([
-//           'name' => 'required',
-//           'email' => 'required',
-//           'phone' => 'required',
-//           'message' => 'required',
-//        ]);
-//          ContactFormListing::create($request->all());
           $insert_data = DB::table('contact_form_listings')->insert([
              'name' => $request->input('name'),
              'email' => $request->input('email'),
              'phone' => $request->input('phone'),
              'message' => $request->input('message'),
              'bussiness_listing_id' => $request->input('listing_id'),
-              'created_at' => Carbon::now()->toDateTimeString(),
-        'updated_at' => Carbon::now()->toDateTimeString()
+             'created_at' => Carbon::now()->toDateTimeString(),
+             'updated_at' => Carbon::now()->toDateTimeString()
           ]);
           if ($insert_data)
-
-        return view('listing.show',compact('listings','categories','tags'))->with('success','Form Submitted Successfully');
+              return redirect()->back()->with('message', 'You have sended the Query !');
+//        return view('listing.show/{$request->input(\'listing_id\')}',compact('listings','categories','tags'))->with('success','Form Submitted Successfully');
     }
 
     /**
@@ -82,11 +74,16 @@ class ListingController extends Controller
     {
         $msgs = '';
         $bu_list = BussinessListing::find($id);
-        $profiles = DB::table('profiles')->get()->where('user_id',$bu_list->user->id);
+        $profiles = DB::table('users')->get()->where('id',$bu_list->user->id);
         $categories = DB::table('categories')->get()->where('id',$bu_list->category_id);
         $tags = DB::table('tags')->get()->where('id',$bu_list->tag_id);
+        $reviews = DB::table('reviews')->get()->where('listing_id', $id);
+//        dd($reviews);
+//        $name = DB::table('reviews')->where('listing_id', $id)->pluck('user_id');
+//        $reviews_user_details = DB::table('users')->get()->where('id', $name);
+//        dd($reviews_user_details);
 
-        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs'));
+        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs','reviews'));
     }
 
     /**

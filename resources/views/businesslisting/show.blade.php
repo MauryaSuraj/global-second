@@ -23,7 +23,7 @@
                         <p class="font-weight-bold"> Rs.  {{ $bu_list->price }} </p>
                         <h3 class="h6">Opening And Closing time</h3>
                         <p><span class="font-weight-bold">{{ $bu_list->opening_time }}</span> - <span class="font-weight-bold">{{ $bu_list->closing_time }}</span></p>
-                        <h3 class="h6">Opening And Closing time</h3>
+                        <h3 class="h6">Created AT</h3>
                         <p class="font-weight-bold">{{ $bu_list->created_at }}</p>
                     </div>
                 </div>
@@ -37,12 +37,26 @@
                         <div class="row mt-3">
                             <img src="{{ url('images/').'/listing/'.$bu_list->image }}" class="w-100">
                         </div>
+                        <div class="row">
+                            <h4 class="my-2"> Listing Address </h4>
+                            <div class="col-md-12">
+                                <ul class="list-group my-3">
+                                    @foreach($locations as $location)
+                                        <li class="list-group-item py-1 font-weight-bold"> <strong>Address : </strong>  {{ $location->address }}</li>
+                                        <li class="list-group-item py-1 font-weight-bold"> <strong>City : </strong> {{ $location->city }} </li>
+                                        <li class="list-group-item py-1 font-weight-bold"> <strong>Area : </strong> {{ $location->area }}</li>
+                                        <li class="list-group-item py-1 font-weight-bold"> <strong>Pincode : </strong> {{ $location->pincode }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="card">
+
                 <div class="card-body">
                     <h2>Listed By </h2> <hr>
                     <p class="font-weight-bold"> <span>Name : </span> <span>{{ $bu_list->user->name }}</span> </p>

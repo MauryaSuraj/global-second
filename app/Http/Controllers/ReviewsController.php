@@ -60,10 +60,8 @@ class ReviewsController extends Controller
 
         ]);
         if ($reviews)
-            $msgs = 'Review Submitted Successfully';
-        else
-            $msgs ='';
       return view('listing.show',compact('bu_list','categories','tags','profiles','msgs'))->with('success', 'Review submitted successfully');
+//        return redirect()->back()->with('msgs', 'Review Submitted Successfully!');
     }
 
     /**
