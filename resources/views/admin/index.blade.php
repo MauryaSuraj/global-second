@@ -28,28 +28,26 @@
                             <div class="card-body">
                                 <div class="row align-items-center m-b-30">
                                     <div class="col">
-                                        <h6 class="m-b-5 text-white">Total Profit</h6>
-                                        <h3 class="m-b-0 f-w-700 text-white">$1,783</h3>
+                                        <h6 class="m-b-5 text-white">Total Listing</h6>
+                                        <h3 class="m-b-0 f-w-700 text-white">{{ \App\BussinessListing::count() }}</h3>
                                     </div>
                                     <div class="col-auto">
-                                        <i class="fas fa-money-bill-alt text-c-red f-18"></i>
+                                        <i class="fas fa-clipboard-list text-c-red f-18"></i>
                                     </div>
                                 </div>
-                                <p class="m-b-0 text-white"><span class="label label-danger m-r-10">+11%</span>From Previous Month</p>
                             </div>
                         </div>
                         <div class="card prod-p-card card-blue">
                             <div class="card-body">
                                 <div class="row align-items-center m-b-30">
                                     <div class="col">
-                                        <h6 class="m-b-5 text-white">Total Orders</h6>
-                                        <h3 class="m-b-0 f-w-700 text-white">15,830</h3>
+                                        <h6 class="m-b-5 text-white">Total Registration</h6>
+                                        <h3 class="m-b-0 f-w-700 text-white">{{ \App\MemberShipFront::count() }}</h3>
                                     </div>
                                     <div class="col-auto">
                                         <i class="fas fa-database text-c-blue f-18"></i>
                                     </div>
                                 </div>
-                                <p class="m-b-0 text-white"><span class="label label-primary m-r-10">+12%</span>From Previous Month</p>
                             </div>
                         </div>
 
@@ -67,15 +65,15 @@
                                                     <i class="fas fa-cube f-24 text-mute"></i>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <h2 class="m-b-0 text-c-blue">2476</h2>
+                                                    <h2 class="m-b-0 text-c-blue">{{ \App\Reviews::count() }}</h2>
                                                 </div>
                                             </div>
                                             <div class="row align-items-center m-b-15">
                                                 <div class="col-auto">
-                                                    <p class="m-b-0">Total Product</p>
+                                                    <p class="m-b-0">Total Reviews</p>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <p class="m-b-0 text-c-blue"><i class="fas fa-long-arrow-alt-up m-r-10"></i>64%</p>
+                                                    <p class="m-b-0 text-c-blue"><i class="fas fa-long-arrow-alt-up m-r-10"></i>{{ \App\Reviews::count() }}</p>
                                                 </div>
                                             </div>
                                             <div class="progress">
@@ -90,15 +88,14 @@
                                                     <i class="fas fa-tag f-24 text-mute"></i>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <h2 class="m-b-0 text-c-red">843</h2>
+                                                    <h2 class="m-b-0 text-c-red">{{ \App\ContactFormListing::count() }}</h2>
                                                 </div>
                                             </div>
                                             <div class="row align-items-center m-b-15">
                                                 <div class="col-auto">
-                                                    <p class="m-b-0">New Orders</p>
+                                                    <p class="m-b-0">Business Listing Enquiry</p>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <p class="m-b-0 text-c-red"><i class="fas fa-long-arrow-alt-down m-r-10"></i>34%</p>
                                                 </div>
                                             </div>
                                             <div class="progress">
@@ -113,15 +110,14 @@
                                                     <i class="fas fa-random f-24 text-mute"></i>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <h2 class="m-b-0 text-c-yellow">63%</h2>
+                                                    <h2 class="m-b-0 text-c-yellow">{{ \App\FeaturedMember::count() }}</h2>
                                                 </div>
                                             </div>
                                             <div class="row align-items-center m-b-15">
                                                 <div class="col-auto">
-                                                    <p class="m-b-0">Conversion Rate</p>
+                                                    <p class="m-b-0">Featured Members</p>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <p class="m-b-0 text-c-yellow"><i class="fas fa-long-arrow-alt-up m-r-10"></i>64%</p>
                                                 </div>
                                             </div>
                                             <div class="progress">
@@ -136,15 +132,14 @@
                                                     <i class="fas fa-dollar-sign f-24 text-mute"></i>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <h2 class="m-b-0 text-c-green">41M</h2>
+                                                    <h2 class="m-b-0 text-c-green">{{ \App\FeaturedMember::count() }}</h2>
                                                 </div>
                                             </div>
                                             <div class="row align-items-center m-b-15">
                                                 <div class="col-auto">
-                                                    <p class="m-b-0">Conversion Rate</p>
+                                                    <p class="m-b-0">Featured Listing</p>
                                                 </div>
                                                 <div class="col text-right">
-                                                    <p class="m-b-0 text-c-green"><i class="fas fa-long-arrow-alt-up m-r-10"></i>54%</p>
                                                 </div>
                                             </div>
                                             <div class="progress">
@@ -158,10 +153,10 @@
                     </div>
 
 
-                    <div class="col-xl-8 col-md-12">
+                    <div class="col-xl-12 col-md-12">
                         <div class="card table-card">
                             <div class="card-header">
-                                <h5>Application Sales</h5>
+                                <h5>Most Viewed Listing</h5>
                                 <div class="card-header-right">
                                     <ul class="list-unstyled card-option">
                                         <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
@@ -178,10 +173,10 @@
                                     <table class="table table-hover m-b-0  table-borderless">
                                         <thead>
                                         <tr>
-                                            <th>Application</th>
-                                            <th>Sales</th>
-                                            <th>Change</th>
-                                            <th>Avg Price</th>
+                                            <th>#</th>
+                                            <th>Name </th>
+                                            <th>Price </th>
+                                            <th>Posted By</th>
                                             <th>Total</th>
                                         </tr>
                                         </thead>
@@ -231,38 +226,6 @@
                                         </tbody>
                                     </table>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-12">
-                        <div class="card sale-card">
-                            <div class="card-header">
-                                <h5>Realtime Profit</h5>
-                            </div>
-                            <div class="card-block text-center">
-                                <div id="realtime-profit" style="height:315px"></div>
-                            </div>
-                        </div>
-                    </div>
-
-
-                    <div class="col-md-12">
-                        <div class="card">
-                            <div class="card-header">
-                                <h5>Sales Analytics</h5>
-                                <div class="card-header-right">
-                                    <ul class="list-unstyled card-option">
-                                        <li class="first-opt"><i class="feather icon-chevron-left open-card-option"></i></li>
-                                        <li><i class="feather icon-maximize full-card"></i></li>
-                                        <li><i class="feather icon-minus minimize-card"></i></li>
-                                        <li><i class="feather icon-refresh-cw reload-card"></i></li>
-                                        <li><i class="feather icon-trash close-card"></i></li>
-                                        <li><i class="feather icon-chevron-left open-card-option"></i></li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="card-block">
-                                <div id="sales-analytics" style="height: 390px;"></div>
                             </div>
                         </div>
                     </div>

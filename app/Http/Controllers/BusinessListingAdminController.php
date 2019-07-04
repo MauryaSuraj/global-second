@@ -54,7 +54,12 @@ class BusinessListingAdminController extends Controller
             'opening_time' => 'required',
             'closing_time' => 'required',
             'video' => 'url',
-            'image' => 'required|image|max:3072'
+            'image' => 'required|image|max:3072',
+           'area' => 'required',
+           'pincode' => 'required',
+           'address' => 'required',
+           'city' => 'required'
+
         ]);
        if ($request->hasFile('image')){
            if ($request->file('image')->isValid()){
@@ -73,7 +78,16 @@ class BusinessListingAdminController extends Controller
           'video' => $request->video,
           'image' => $imageName
        );
-     \auth()->user()->listings()->create($form_data);
+      $listing_id =   \auth()->user()->listings()->create($form_data);
+
+      $address = DB::table('locations')->insert([
+         'listing_id' => $listing_id->id,
+          'address' => $request->input('address'),
+          'area' => $request->input('area'),
+          'city' => $request->input('city'),
+          'pincode'=> $request->input('pincode')
+      ]);
+      if ($address)
 
         return redirect()->route('businesslisting.index')->with('success','Listing Created Successfully');
     }

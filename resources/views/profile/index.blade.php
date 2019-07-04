@@ -1,6 +1,5 @@
 @extends('layouts.admin')
 @section('content-admin')
-
     <div class="main-body">
         <div class="page-wrapper">
             <div class="page-body">
@@ -11,7 +10,6 @@
                                 <h5>Profile Details</h5>
                                 <a href="/admin/profile/{{ Auth::user()->id }}/edit" class="btn btn-primary pull-left">Edit Profile</a>
                             </div>
-
                             <div class="card-block p-b-0">
                                 <div class="row">
                                     <div class="col-md m-3">
@@ -22,7 +20,7 @@
                                             <div class="col-md-12">
                                                 <h5>Personal Details</h5>
                                                 <h3 class="h3 my-2">{{ $user->name }}</h3>
-                                                <p class="my-1 font-weight-bold">Phone No : <strong>{{ $user->profile->phone }}</strong></p>
+                                                <p class="my-1 font-weight-bold">Phone No : <strong> @if($user->profile->phone) {{ $user->profile->phone }} @else Phone Number Not set @endif </strong></p>
                                                 <p class="my-1 font-weight-bold">Email Id: <strong>{{ $user->email }}</strong></p>
                                                 <div class="d-flex">
                                                     <img src="https://image.flaticon.com/icons/svg/179/179319.svg"  alt="" class="mr-2 " style="height: 40px; width: 40px;">
@@ -34,12 +32,12 @@
                                             <div class="col-md-12 my-2">
                                                 <h2>Description</h2>
                                                 <p class="text-dark text-justify p-2 mx-2">
-                                                   {{ $user->profile->description }}
+                                                   @if($user->profile->description) {{ $user->profile->description }} @else No Profile description @endif
                                                 </p>
 
                                                 <h2>Address</h2>
                                                 <p class="text-dark text-justify p-2 mx-2">
-                                                    {{ $user->profile->address }}
+                                                    @if($user->profile->address) {{ $user->profile->address }} @else No address @endif
                                                 </p>
                                                 <h2>Membership Details</h2>
                                                 <p>

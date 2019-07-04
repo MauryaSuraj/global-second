@@ -19,6 +19,7 @@ class CreateLocationsTable extends Migration
             $table->text('address');
             $table->string('city');
             $table->string('area');
+            $table->unsignedBigInteger('listing_id')->nullable();
             $table->double('pincode');
             $table->text('longitude')->nullable();
             $table->text('latitude')->nullable();
