@@ -20,7 +20,7 @@ class ListingController extends Controller
      */
     public function index()
     {
-        $listings = BussinessListing::all();
+        $listings = BussinessListing::where('status','1')->paginate(6);
         $categories = Category::all();
         $tags = Tags::all();
         return view('listing.index',compact('listings','categories','tags'));
@@ -78,12 +78,8 @@ class ListingController extends Controller
         $categories = DB::table('categories')->get()->where('id',$bu_list->category_id);
         $tags = DB::table('tags')->get()->where('id',$bu_list->tag_id);
         $reviews = DB::table('reviews')->get()->where('listing_id', $id);
-//        dd($reviews);
-//        $name = DB::table('reviews')->where('listing_id', $id)->pluck('user_id');
-//        $reviews_user_details = DB::table('users')->get()->where('id', $name);
-//        dd($reviews_user_details);
-
-        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs','reviews'));
+        $locations = DB::table('locations')->get()->where('listing_id', $id);
+        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs','reviews','locations'));
     }
 
     /**

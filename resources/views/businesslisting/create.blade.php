@@ -4,10 +4,8 @@
     <div class="container">
         <div class="row">
             <div class="col-md ">
-
                 <div class="card">
                     <div class="card-header">{{ __('Add Listing') }}</div>
-
                     <div class="card-body">
                         <form method="POST" action="{{ route('businesslisting.store') }}" enctype="multipart/form-data">
                             @csrf

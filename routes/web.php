@@ -27,6 +27,7 @@ Route::resource('/admin/category','AdminCategoryController');
 Route::resource('/admin/tag','TagAdminController');
 Route::resource('/admin/featuredmember','FeaturedMemberController');
 Route::resource('/admin/businesslisting','BusinessListingAdminController');
+Route::resource('/admin/featuredlisting','FeaturedList');
 Route::resource('/admin/membership','MemberShipcontroller');
 Route::resource('/userreview', 'ReviewsController');
 Route::resource('/membershipdetail', 'MemberShipFrontController');

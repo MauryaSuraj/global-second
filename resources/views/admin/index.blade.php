@@ -5,25 +5,7 @@
         <div class="page-wrapper">
             <div class="page-body">
                 <div class="row">
-
-                    <div class="col-xl-8 col-md-12">
-                        <div class="card sale-card">
-                            <div class="card-header">
-                                <h5>Deals Analytics</h5>
-                            </div>
-                            <div class="card-block">
-                                <div class="row">
-                                    <div class="col-sm-8">
-                                        <div id="allocation-map" class="chart-shadow" style="height:215px"></div>
-                                    </div>
-                                    <div class="col-sm-4">
-                                        <div id="allocation-chart" class="chart-shadow" style="height:215px"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-4 col-md-12">
+                    <div class="col-xl-12 col-md-12">
                         <div class="card prod-p-card card-red">
                             <div class="card-body">
                                 <div class="row align-items-center m-b-30">

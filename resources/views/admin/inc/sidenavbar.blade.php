@@ -48,6 +48,15 @@
                                 <span class="pcoded-badge label label-danger">{{ \App\Contact::count() }}</span>
                     </a>
                 </li>
+                <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                    <a href="{{ route('featuredlisting.index') }}" class="waves-effect waves-dark">
+                            <span class="pcoded-micon">
+                            <i class="feather icon-menu"></i>
+                            </span>
+                        <span class="pcoded-mtext">Featured Listing</span>
+                        <span class="pcoded-badge label label-danger">{{ \App\FeaturedList::count() }}</span>
+                    </a>
+                </li>
                 <li class="pcoded-hasmenu {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                     <a href="javascript:void(0)" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                         <span class="pcoded-micon">

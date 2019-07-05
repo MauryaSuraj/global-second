@@ -157,7 +157,8 @@ class MemberShipFrontController extends Controller
 
         if ($request->hasFile('image')){
             if ($request->file('image')->isValid()){
-                $path = $request->image->store('profile');
+                $imageName = time().'.'.request()->image->getClientOriginalExtension();
+                request()->image->move(public_path('images/profile'), $imageName);
             }
         }
         $mytime = Carbon::now();
@@ -180,7 +181,7 @@ class MemberShipFrontController extends Controller
             'officeaddress' => $request->input('officeaddress'),
             'category_id' => $request->input('category'),
             'celebrity' => $request->input('celeb'),
-            'image' => $path,
+            'image' => $imageName,
             'created_at' => $mytime,
             'updated_at' => $mytime,
         ]);

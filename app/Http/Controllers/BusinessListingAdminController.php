@@ -89,7 +89,16 @@ class BusinessListingAdminController extends Controller
       ]);
       if ($address)
 
-        return redirect()->route('businesslisting.index')->with('success','Listing Created Successfully');
+          $user_id =  \auth()->user()->id;
+        $verify =  DB::table('users')->where('id',$user_id)->pluck('user_role')->first();
+//          dd($verify);
+        if (!($verify == 'admin')){
+            return redirect()->back()->with('success','Listing Added SuccessFully');
+        }
+        else{
+            return redirect()->route('businesslisting.index')->with('success','Listing Created Successfully');
+        }
+
     }
 
     /**
@@ -103,7 +112,6 @@ class BusinessListingAdminController extends Controller
         $bu_list = BussinessListing::find($id);
         $profiles = DB::table('profiles')->get()->where('user_id',$bu_list->user->id);
         $locations = DB::table('locations')->get()->where('listing_id', $id);
-
         return view('businesslisting.show',compact('bu_list','profiles','locations'));
     }
 
@@ -127,7 +135,34 @@ class BusinessListingAdminController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $message ='NoThing Happens';
+        $get_status = DB::table('bussiness_listings')
+            ->where('id', $id)
+            ->pluck('status')
+            ->first();
+        if ($get_status == 0 ){
+            //not active
+            $update = DB::table('bussiness_listings')
+                ->where('id',$id)
+                ->update([
+                   'status' => 1
+                ]);
+            if ($update)
+            { $message = "Activated "; }
+        }else
+        {
+            //active here
+            $update = DB::table('bussiness_listings')
+                ->where('id',$id)
+                ->update([
+                    'status' => 0
+                ]);
+            if ($update)
+            { $message = "DeActivated "; }
+
+        }
+
+        return redirect()->back()->with('success',$message);
     }
 
     /**

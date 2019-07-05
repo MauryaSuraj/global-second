@@ -1,15 +1,15 @@
 @extends('layouts.user')
 @section('content')
-    <div class="container">
+    <div class="container mt-5">
         @foreach($memberdetails as $memberdetail)
             <div class="d-flex justify-content-end mb-2">
-                <a href="{{ route('membershipdetail.edit',$memberdetail->id ) }}" class="btn btn-light mx-2"><i class="fas fa-plus"></i> Add Listing</a>
+                <a href="{{ route('listing.create') }}" class="btn btn-light mx-2"><i class="fas fa-plus"></i> Add Listing</a>
                 <a href="{{ route('membershipdetail.edit',$memberdetail->id ) }}" class="btn btn-light"><i class="fas fa-user-edit"></i> Edit Profile</a>
             </div>
             <div class="row">
                 <div class="col-md-4">
                     <div class="row">
-                        <img class="img-fluid h-auto rounded" src="@if(!$memberdetail->image) {{ '/assets/img/noimage.png' }} @else {{ $memberdetail->image }} @endif " alt="">
+                        <img class="img-fluid h-auto rounded" src="@if(!$memberdetail->image) {{ '/assets/img/noimage.png' }} @else {{ url('images/').'/profile/'.$memberdetail->image }} @endif " alt="">
                     </div>
                 </div>
                 <div class="col-md-8">

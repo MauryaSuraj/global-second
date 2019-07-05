@@ -14,7 +14,7 @@ class FrontEnd extends Controller
         foreach ($categories as $category){
             $url_category_image = Storage::url($category->image);
         }
-        $listings = DB::table('bussiness_listings')->latest()->paginate(4);
+        $listings = DB::table('bussiness_listings')->where('status', '1')->latest()->paginate(4);
         return view('frontend.index',compact('categories','listings', 'url_category_image'));
     }
 

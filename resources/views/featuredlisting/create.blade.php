@@ -19,17 +19,21 @@
                                 </div>
                             @endif
                             <div class="card-block p-b-0">
+                                @if(session()->has('featured'))
+                                    <div class="alert my-2 alert-success">
+                                        {{ session()->get('featured') }}
+                                    </div>
+                                @endif
                                 <div class="table-responsive">
                                     <table class="table table-hover m-b-0">
                                         <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Category</th>
-                                            <th>Tag</th>
-                                            <th>Pricing</th>
-                                            <th>Status</th>
-                                            <th>Description</th>
-                                            <th>Manage</th>
+                                            <th>Listing Name</th>
+                                            <th>Listing Category</th>
+                                            <th>Listing Tag</th>
+                                            <th>Listing Pricing</th>
+                                            <th>Listing Status</th>
+                                            <th>Add to featured Listing</th>
                                         </tr>
                                         </thead>
                                         <tbody>
@@ -38,33 +42,29 @@
                                                 <td>{{ $listing->name }}</td>
                                                 <td>{{ $listing->category->name }}</td>
                                                 <td>{{ $listing->tag->name }}</td>
-                                                <td>{{ $listing->price }}</td>
+                                                <td>Rs. {{ $listing->price }}</td>
                                                 <td>
                                                     @if($listing->status==0)
                                                         <span class="bg-c-orenge p-1 rounded">Un Active</span>
-                                                        @else
-                                                    <span class="bg-c-lite-green p-1 rounded">Active</span>
-                                                        @endif
+                                                    @else
+                                                        <span class="bg-c-lite-green p-1 text-white rounded">Active</span>
+                                                    @endif
                                                 </td>
-                                                <td>{{ \Illuminate\Support\Str::words($listing->description, 5) }}</td>
                                                 <td>
-                                                    <div class="d-flex align-baseline">
-                                                        <span class="align-baseline"><a href="/admin/businesslisting/{{$listing->id}}"> <i class="fas fa-2x text-c-purple fa-eye"></i></a></span>
-                                                        <span class="align-baseline">
-                                                       <form action="{{ route('businesslisting.update',$listing->id) }}" method="post">
+                                                    <div class="text-center">
+
+                                                       <form action="{{ route('featuredlisting.store') }}" method="post">
                                                            @csrf
-                                                           @method('PATCH')
-                                                           @if($listing->status==0)
-                                                               <button type="submit" style="background: transparent; border-color: transparent;"> <i class="fas fa-toggle-on fa-2x text-danger"></i></button >
-                                                           @else
-                                                               <button type="submit" style="background: transparent; border-color: transparent;"> <i class="fas fa-toggle-off fa-2x text-success"></i></button>
-                                                           @endif
+                                                           <input type="hidden"  name="listing_id" id="listing_id" value="{{ $listing->id }}">
+                                                           <input type="number" min="2" class="form-control"  name="days" id="days" placeholder="Days for Featured Listing">
+                                                               <button type="submit" class="colhovers" style="background: transparent; border-color: transparent;">
+                                                                   <img src="https://image.flaticon.com/icons/svg/1873/1873165.svg"  style="width: 40px; height: 40px;" alt="">
+                                                               </button>
                                                    </form>
-                                                   </span>
                                                     </div>
                                                 </td>
                                             </tr>
-                                            @endforeach
+                                        @endforeach
                                         </tbody>
                                     </table>
                                 </div>

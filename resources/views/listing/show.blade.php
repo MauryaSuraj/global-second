@@ -25,9 +25,6 @@
                             <span class="sr-only">Next</span>
                         </a>
                     </div>
-{{--                    <h5 class="display-4 text-white my-5">--}}
-{{--                        <img src="" class="w-100">--}}
-{{--                    </h5>--}}
                 </div>
             </div>
         </div>
@@ -210,6 +207,21 @@
                                     @foreach($tags as $tag)
                                         <a href="#"># {{ $tag->name }}</a>
                                         @endforeach
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <div class="row">
+                                    <h4 class="my-2 ml-2"> Listing Address </h4>
+                                    <div class="col-md-12">
+                                        <ul class="list-group my-3">
+                                            @foreach($locations as $location)
+                                                <li class="list-group-item py-1 font-weight-bold"> <strong>Address : </strong>  {{ $location->address }}</li>
+                                                <li class="list-group-item py-1 font-weight-bold"> <strong>City : </strong> {{ $location->city }} </li>
+                                                <li class="list-group-item py-1 font-weight-bold"> <strong>Area : </strong> {{ $location->area }}</li>
+                                                <li class="list-group-item py-1 font-weight-bold"> <strong>Pincode : </strong> {{ $location->pincode }}</li>
+                                            @endforeach
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                             <ul class="nav nav-tabs" id="myTab" role="tablist">

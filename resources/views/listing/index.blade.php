@@ -54,7 +54,9 @@
                                                    <p class="card-text text-justify">
                                                        {{ substr($listing->description,0,strpos($listing->description, ' ', 250) )  }}
                                                    </p>
+                                                   <p class="card-text text-justify">
 
+                                                   </p>
                                                    <p class="d-flex justify-content-between">
                                                        <span> <strong>Price : </strong>  Rs.{{ $listing->price }}</span>
                                                        <a href="/listing/{{$listing->id}}" class="btn btn-outline-danger ">View</a>
@@ -66,6 +68,7 @@
                                    </div>
                                </div>
                            @endforeach
+                               {{ $listings->links() }}
                                @endif
                        </div>
 

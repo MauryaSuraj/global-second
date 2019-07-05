@@ -47,6 +47,8 @@
                         </a>
 
                         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                            <a href="/membershipdetail" class="dropdown-item">Profile</a>
+                            <a href="/listing/create" class="dropdown-item">Add Listing</a>
                             <a class="dropdown-item" href="{{ route('logout') }}"
                                onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -2,18 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Auth\Access\Gate;
+use App\BussinessListing;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
-class AdminController extends Controller
+class FeaturedList extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
     /**
      * Display a listing of the resource.
      *
@@ -21,15 +15,8 @@ class AdminController extends Controller
      */
     public function index()
     {
-         $user_id =  \auth()->user()->id;
-          $verify =  DB::table('users')->where('id',$user_id)->pluck('user_role')->first();
-//          dd($verify);
-          if (!($verify == 'admin')){
-              return redirect()->back();
-          }
-        else{
-            return view('admin.index');
-        }
+        $featured_listings = \App\FeaturedList::all();
+        return view('featuredlisting.index', compact('featured_listings'));
     }
 
     /**
@@ -39,7 +26,8 @@ class AdminController extends Controller
      */
     public function create()
     {
-        //
+        $listings = BussinessListing::where('status', '1')->get();
+        return view('featuredlisting.create',compact('listings'));
     }
 
     /**
@@ -50,7 +38,12 @@ class AdminController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        \App\FeaturedList::create([
+            'listing_id' => $request->input('listing_id'),
+            'status' => 1,
+            'days' => $request->input('days'),
+        ]);
+            return redirect()->back()->with('featured','Listing Added to Featured Listing for  '.$request->input('days'));
     }
 
     /**
