@@ -25,7 +25,7 @@
                            <ul class="list-group">
                                @if($categories)
                                @foreach($categories as $category)
-                                   <li class="list-group-item text-left"><span class="mr-2"> <img style="width: 40px" src="{{ url('images/').'/category/'.$category->image }}" alt=""> </span> <span class="font-weight-lighter">{{ $category->name }}</span></li>
+                                   <li class="list-group-item text-left"> <a href="{{ route('search.show',$category->id) }}"><span class="mr-2">  <img style="width: 40px" src="{{ url('images/').'/category/'.$category->image }}" alt="" /> </span> <span class="font-weight-lighter">{{ $category->name }}</span></a></li>
                                    @endforeach
                                    @endif
                            </ul>

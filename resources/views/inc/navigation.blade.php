@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md navbar-light navbg fixed-top shadow-sm ">
+<nav class="navbar navbar-expand-md navbar-light navbg fixed-top shadow-sm" id="dynamic">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
 {{--            {{ config('app.name', '') }}--}}

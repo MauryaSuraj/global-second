@@ -12,26 +12,24 @@
                     <h2 class="text-white h2 font-weight-light">Take advantage of this free of charge and can further strengthen the unity of Agarwal society.</h2>
                     <section class="search-sec mt-5">
                         <div class="container">
-                            <form action="#" method="post" novalidate="novalidate">
+                            <form action="{{ route('search.store') }}" method="post" novalidate="novalidate">
+                                @csrf
                                 <div class="row">
                                     <div class="col-md-12">
                                         <div class="row">
                                             <div class="col-lg-3 col-md-3 col-sm-12 p-1">
-                                                <select class="form-control search-slt" id="exampleFormControlSelect1">
+                                                <select class="form-control search-slt" id="category_id" name="category_id">
                                                     <option>Select Category</option>
-                                                    <option> Category 1</option>
-                                                    <option>Category 2</option>
-                                                    <option>Category 3</option>
-                                                    <option>Category 4</option>
-                                                    <option>Category 5</option>
-                                                    <option>Category 6</option>
+                                                    @foreach($categorys as $category)
+                                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                                        @endforeach
                                                 </select>
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-12 p-1">
-                                                <input type="text" class="form-control search-slt" placeholder="Enter Keyword here...">
+                                                <input type="text" required name="query" id="query" class="form-control search-slt" placeholder="Enter Keyword here...">
                                             </div>
                                             <div class="col-lg-3 col-md-3 col-sm-12 p-1">
-                                                <button type="button" class="btn btn-danger wrn-btn">Search</button>
+                                                <button type="submit" class="btn btn-danger wrn-btn">Search</button>
                                             </div>
                                         </div>
                                     </div>
@@ -52,7 +50,8 @@
                     <div class="col-md m-2 colhover p-3">
                             <img src="{{ url('images/').'/category/'.$category->image }}" alt="" class="w-auto h-auto" style="height: 200px;">
                             <h5 class="font-weight-bold text-center mt-2">{{ $category->name }}</h5>
-                        <a href="{{ route('listing.index',$category->id) }}">View Category</a>
+
+                        <a href="{{ route('search.show',$category->id) }}">View Category</a>
                     </div>
                     @endforeach
             </div>
@@ -96,13 +95,16 @@
             <div class="row text-center">
                 @foreach($listings as $listing)
                     <div class="col-md-3">
-                        <img src="{{ url('images/').'/listing/'.$listing->image }}" class="w-100" alt="">
+                        <a href="/listing/{{$listing->id}}" >
+                        <img src="{{ url('images/').'/listing/'.$listing->image }}" class="w-100" alt="" style="width: 255px; height: 170px;">
                         <h5 class="text-left h5 my-2 font-weight-normal text-uppercase">{{ $listing->name }}</h5>
                         <p class="text-left "><strong>Price</strong>   Rs. {{ $listing->price }}</p>
+                        </a>
                     </div>
                 @endforeach
             </div>
         </div>
+
         <div class="bg-about">
             <div class="container py-5">
                 <div class="row">

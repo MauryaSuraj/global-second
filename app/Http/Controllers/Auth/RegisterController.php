@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Mail\RegistrationConfirmMail;
 use App\MemberShip;
 use App\MemberShipFront;
 use App\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -81,6 +83,10 @@ class RegisterController extends Controller
             'email' => $data['email'],
             'mobile' => $data['phone'],
         ]);
+
+        Mail::to($data['email'])->send(new RegistrationConfirmMail());
             return $user;
+
+
     }
 }

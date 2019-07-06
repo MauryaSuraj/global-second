@@ -7,6 +7,15 @@
     <title>{{ config('app.name', 'Glaobal Agra Vaishchamber') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <script>
+        $(window).scroll(function(){
+            if ($(this).scrollTop() > 50) {
+                $('#dynamic').addClass('newClass');
+            } else {
+                $('#dynamic').removeClass('newClass');
+            }
+        });
+    </script>
     <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,700&display=swap" rel="stylesheet">
 </head>
 <body>
@@ -80,4 +89,14 @@
         </section>
     </div>
 </body>
+
+<script>
+    $(window).scroll(function(){
+        if ($(this).scrollTop() > 50) {
+            $('#dynamic').addClass('newClass');
+        } else {
+            $('#dynamic').removeClass('newClass');
+        }
+    });
+</script>
 </html>
