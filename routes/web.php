@@ -34,6 +34,7 @@ Route::resource('/userreview', 'ReviewsController');
 Route::resource('/membershipdetail', 'MemberShipFrontController');
 Route::resource('/family', 'FamilyController');
 Route::get('/businesslistingprofile','BusinesslistingProfileController@index');
+Route::get('/businessenquiry','BusinesslistingProfileController@enquiry');
 
 Route::get('/admin/contactlist','Contact@contactlisting')->name('contactlist');
 Route::resource('/admin/profile','ProfileAdminController');
@@ -45,3 +46,8 @@ Route::get('/admin/user/paid','AdminUsersController@paid');
 Route::get('/admin/user/registered','AdminUsersController@registereduser');
 Route::get('/admin/user/','AdminUsersController@index');
 Route::get('/admin/listing_review','ContactFromListing@index');
+
+//Payment Routes
+
+Route::get('stripe', 'StripePaymentController@stripe');
+Route::post('stripe', 'StripePaymentController@stripePost')->name('stripe.post');

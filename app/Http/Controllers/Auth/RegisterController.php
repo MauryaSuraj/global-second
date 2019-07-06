@@ -84,7 +84,7 @@ class RegisterController extends Controller
             'mobile' => $data['phone'],
         ]);
 
-        Mail::to($data['email'])->send(new RegistrationConfirmMail());
+//        Mail::to($data['email'])->send(new RegistrationConfirmMail());
             return $user;
 
 

@@ -36,6 +36,16 @@ class ListingController extends Controller
         $listings = BussinessListing::all();
         $categories = Category::all();
         $tags = Tags::all();
+        if (!empty(auth()->user()->id)) {
+            if (auth()->user()->id){
+                $id = auth()->user()->id;
+            }
+        }
+        //check For Payment status paid user or not
+        $check_payment_status = DB::table('member_ships')->where('user_id', $id)->pluck('membership_status')->first();
+        if ($check_payment_status == 'unpaid'){
+            return redirect('/stripe');
+        }
         return view('listing.create',compact('categories','tags'));
     }
 

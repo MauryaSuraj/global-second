@@ -9,6 +9,11 @@
                             {{ session()->get('success') }}
                         </div>
                     @endif
+                        @if(session()->has('status'))
+                            <div class="alert alert-success">
+                                {{ session()->get('status') }}
+                            </div>
+                        @endif
                     <div class="card-header">{{ __('Add Listing') }}</div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('businesslisting.store') }}" enctype="multipart/form-data">

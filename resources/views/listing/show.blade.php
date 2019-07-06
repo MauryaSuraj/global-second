@@ -65,14 +65,14 @@
                                 <div class="panel-group" id="accordion_listing_detial" role="tablist" aria-multiselectable="true">
 
                                     <div class="panel panel-default" id="d-desc">
-                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Description </h4></div>
+                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3 ml-3 h3">  Description </h4></div>
                                         <div class="panel-collapse">
                                             <div class="panel-body"><p>{{ $bu_list->description }}</p></div>
                                         </div>
                                     </div>
 
                                     <div class="panel panel-default" id="dlisting-video">
-                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Video </h4></div>
+                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3 ml-3 h3">  Video </h4></div>
                                         <div id="d-video-coll" class="panel-collapse" role="tabpanel" aria-labelledby="d_list_video">
                                         <div class="panel-body">
                                                 <iframe width="100%" height="370"
@@ -84,7 +84,7 @@
                                     </div>
 
                                     <div class="panel panel-default" id="d-comments">
-                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3">  Reviews </h4></div>
+                                        <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3 ml-3 h3">  Reviews </h4></div>
                                         <div class="panel-collapse">
                                             <div class="panel-body">
 
@@ -195,13 +195,13 @@
                             <div class="pricing-widget widget">
                                 <img src="http://globalagra-vaishchamber.com/wp-content/themes/dwt-listing/assets/images/icons/price.png"
                                      alt="Pricing">
-                                <span class="tool-tip" title="Expensive">Pricing</span>
+                                <span class="tool-tip h5" title="Expensive">Pricing</span>
                                 <span class="price-status  pull-right"> <strong>Rs. {{ $bu_list->price }}</strong> </span>
                             </div>
 
                             <div class="widget">
-                                <div>
-                                     <span class="mr-3"><img src="https://image.flaticon.com/icons/svg/138/138237.svg" style="width: 40px" alt=""></span> Tags
+                                <div class="h5">
+                                     <span class="mr-3 h5"><img src="https://image.flaticon.com/icons/svg/138/138237.svg" style="width: 40px" alt=""></span> Tags
                                 </div>
                                 <div class="listing-tagcloud">
                                     @foreach($tags as $tag)
@@ -212,14 +212,28 @@
                             <div class="widget">
                                 <div class="row">
                                     <h4 class="my-2 ml-2"> Listing Address </h4>
+                                    <hr>
                                     <div class="col-md-12">
                                         <ul class="list-group my-3">
                                             @foreach($locations as $location)
-                                                <li class="list-group-item py-1 font-weight-bold"> <strong>Address : </strong>  {{ $location->address }}</li>
-                                                <li class="list-group-item py-1 font-weight-bold"> <strong>City : </strong> {{ $location->city }} </li>
-                                                <li class="list-group-item py-1 font-weight-bold"> <strong>Area : </strong> {{ $location->area }}</li>
-                                                <li class="list-group-item py-1 font-weight-bold"> <strong>Pincode : </strong> {{ $location->pincode }}</li>
+                                                <p> {{ $location->address }} , {{ $location->city }} , {{ $location->area }} , {{ $location->pincode }}</p>
                                             @endforeach
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="widget">
+                                <div class="col-md-12">
+                                    <div class="business-hours">
+                                        <h2 class="h3">Opening Hours</h2>
+                                        <ul class="list-unstyled opening-hours">
+                                            <li>Sunday <span class="pull-right">Closed</span></li>
+                                            <li>Monday <span class="pull-right">{{ $bu_list->opening_time }}- {{ $bu_list->closing_time }}</span></li>
+                                            <li>Tuesday <span class="pull-right">{{ $bu_list->opening_time }}- {{ $bu_list->closing_time }}</span></li>
+                                            <li>Wednesday <span class="pull-right">{{ $bu_list->opening_time }}- {{ $bu_list->closing_time }}</span></li>
+                                            <li>Thursday <span class="pull-right">{{ $bu_list->opening_time }}- {{ $bu_list->closing_time }}</span></li>
+                                            <li>Friday <span class="pull-right">{{ $bu_list->opening_time }}- {{ $bu_list->closing_time }}</span></li>
+                                            <li>Saturday <span class="pull-right">{{ $bu_list->opening_time }}- {{ $bu_list->closing_time }}</span></li>
                                         </ul>
                                     </div>
                                 </div>
