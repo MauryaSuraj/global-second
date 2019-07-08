@@ -11196,6 +11196,8 @@ p {
 
 .colhover {
   box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19) !important;
+  border-radius: 30px 0px;
+  max-width: 130px !important;
 }
 
 .socialicon {
@@ -11263,7 +11265,7 @@ hr {
 }
 
 .bg-app {
-  background-image: linear-gradient(to right, #000000b3, #000000b3), url("http://globalagra-vaishchamber.com//wp-content/uploads/2019/05/global-collage3.jpg");
+  background-image: linear-gradient(to right, #000000b3, #000000b3), url("https://images.pexels.com/photos/2457284/pexels-photo-2457284.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940");
   background-position: center;
   background-attachment: inherit;
   background-size: cover;
@@ -11438,10 +11440,6 @@ nav > div a.nav-item.nav-link:focus {
 .new-title-button-section .list-inline > li {
   padding-right: 0;
   padding-left: 0;
-}
-
-section {
-  padding: 70px 0;
 }
 
 .sidebar.transparen-listing-sidebar.solid {
@@ -12273,7 +12271,7 @@ footer.footer-3 {
   width: 100%;
   background-position: center;
   background-size: 100%;
-  background-color: #333299;
+  background-color: #0f1516f7;
 }
 
 .footer_block p {
@@ -12405,8 +12403,13 @@ footer.footer-3:before {
 }
 
 .footer-bottom-section {
-  padding: 30px;
-  background-color: #342b6d;
+  background-color: #000000;
+}
+
+.footer-bottom-section p {
+  font-size: 13px !important;
+  padding-top: 3px;
+  margin-top: 10px;
 }
 
 .web-page ul {
@@ -12450,8 +12453,8 @@ footer.footer-3:before {
 
 .footer-bottom p {
   list-style: none;
-  font-size: 14px;
-  color: #fff;
+  font-size: 14px !important;
+  color: #ffffffad !important;
   position: relative;
   border-radius: 8px;
   padding: 10px;
@@ -12495,7 +12498,7 @@ ul.personal-info li:first-child {
 }
 
 .footer_block .personal-info li i {
-  color: #ffffff;
+  color: #fecd19d9;
   float: left;
   font-size: 18px;
   margin-right: 10px;
@@ -12585,6 +12588,7 @@ btn-outline-primary:hover {
   padding: 0px 25px;
   border-radius: 60px;
   margin-right: 10px;
+  box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19) !important;
 }
 
 .image-bg .wave {
@@ -12612,8 +12616,8 @@ btn-outline-primary:hover {
   transition: all 0.3s ease 0s;
 }
 
-.listing img:hover {
-  box-shadow: 0 0px 6px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19) !important;
+.listing {
+  background-color: #f8f9fa;
 }
 
 @media (min-width: 992px) {

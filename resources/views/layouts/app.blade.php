@@ -27,9 +27,9 @@
         <footer class="footer-3">
             <div class="container">
                 <div class="row">
-                    <div class="col-sm-6 col-md-3 col-xs-12">
-                        <div class="footer_block">
-                            <img src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/global-footer.jpg.png" alt="logo" class="img-responsive">
+                    <div class="col-sm-6 col-md-3 m-auto col-xs-12">
+                        <div class="footer_block ">
+                            <img src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/logo2-e1557846477241.png" alt="logo" class="img-responsive">
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-2 col-xs-12">
@@ -46,13 +46,11 @@
                     <div class="col-sm-6 col-md-3 col-xs-12">
                         <div class="footer_block dark_gry">
                             <h4>Featured Listing</h4>
-                            <ul class="recentpost">
-                                <li> <span><a class="plus" href="#"></a> <img src="https://images.pexels.com/photos/2546942/pexels-photo-2546942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""></span>
-                                    <p><a href="#">Listing one</a></p>
-                                </li>
-                                <li> <span><a class="plus" href=""></a> <img src="https://images.pexels.com/photos/2546942/pexels-photo-2546942.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt=""> </span>
-                                    <p><a href="#">Listing two</a></p>
-                                </li>
+                            <ul class="footer-links">
+                                <li><a href="#">Category</a></li>
+                                <li><a href="#">Listings</a></li>
+                                <li><a href="#">Login</a></li>
+                                <li><a href="#">Register</a></li>
                             </ul>
                         </div>
                     </div>
@@ -71,18 +69,12 @@
         </footer>
         <section class="footer-bottom-section">
             <div class="container">
-                <div class="row">
-                    <div class="col-md-12 col-sm-12 col-xs-12">
-                        <div class="footer-bottom">
-                            <div class="row">
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <p class="text-white">Copyright 2019 © Global Agra Vaishchamber, All Rights Reserved.</p>
-                                </div>
-                                <div class="col-md-6 col-sm-6 col-xs-12">
-                                    <p class="text-white">Proudly Powered By : <a href="http://mydigitech.in/ " target="_blank" class="text-white">&nbsp; DigiTech Services</a></p>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row text-center">
+                    <div class="col-md my-auto text-center">
+                        <p class="text-white">Copyright 2019 © Global Agra Vaishchamber, All Rights Reserved.</p>
+                    </div>
+                    <div class="col-md my-auto text-center">
+                        <p class="text-white">Proudly Powered By : <a href="http://mydigitech.in/ " target="_blank" class="text-white">&nbsp; DigiTech Services</a></p>
                     </div>
                 </div>
             </div>

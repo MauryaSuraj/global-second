@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="container my-4 text-center">
-            <div class="row">
+            <div class="row d-flex justify-content-center">
                 <div class="col-md-12">
                     <h2 class="text-center h2 my-5 font-weight-bold">Choose Category </h2>
                 </div>
@@ -51,64 +51,62 @@
                             <img src="{{ url('images/').'/category/'.$category->image }}" alt="" class="w-auto h-auto" style="height: 200px;">
                             <h5 class="font-weight-bold text-center mt-2">{{ $category->name }}</h5>
 
-                        <a href="{{ route('search.show',$category->id) }}">View Category</a>
+                        <a href="{{ route('search.show',$category->id) }}">View </a>
                     </div>
                     @endforeach
             </div>
         </div>
         <div class="bg-about">
-
             <div class="wave"></div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-12 py-3">
+                    <div class="col-md-12 py-2">
                         <div class="row">
-                            <div class="col-md-5">
-                                <img src="http://globalagra-vaishchamber.com/wp-content/uploads/2019/05/agarsen.png" class="w-100" alt="">
+                            <div class="col-md-5 m-auto">
+                                <img src="http://globalagra-vaishchamber.com/wp-content/uploads/2019/05/agarsen.png" class="mx-auto" style="width: auto; height: 50vh;" alt="">
                             </div>
                             <div class="col-md-7 p-auto m-auto ">
                                 <h1 class="text-center text-white mt-4 mb-2">About us</h1>
                                 <p class="text-white text-justify">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dicta dolor doloremque dolorum ducimus eaque, eligendi enim incidunt iusto, laboriosam, nisi quae rem repudiandae sapiente velit voluptate voluptatum. Illum, ipsum!
+                                    The Global Agra Vaishchamber app has been created to further extend the prestige of Agrawal society and to extol the agarwal society of Maharaja Agarsen ji at the international level. Crores of brothers can easily download this app on their Android mobile and Apple iPhone.
                                 </p>
                                 <p class="text-justify text-white">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur, cumque deserunt dicta dignissimos earum illo ipsam itaque magni nam necessitatibus nostrum possimus quasi, repellendus similique sit totam velit.
+                                    In the Agarwal Brothers app, information about the world's most respected persons, information about married men and women, Details of the achievements of Agarwal society and details of all the brothers and sisters joining the ``Global Agra Vaishchamber`` app is available, plans to increase their business in the country and abroad.
                                 </p>
                                 <p class="text-justify text-white">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur, cumque deserunt dicta dignissimos earum illo ipsam itaque magni nam necessitatibus nostrum possimus quasi, repellendus similique sit totam velit.
-                                </p><p class="text-justify text-white">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab alias aspernatur, cumque deserunt dicta dignissimos earum illo ipsam itaque magni nam necessitatibus nostrum possimus quasi, repellendus similique sit totam velit.
+                                    By downloading the Global Agra Vaishchamber app on your Android mobile and Apple iPhone, all the foreclosures can take advantage of this free of charge and can further strengthen the unity of Agarwal society.
                                 </p>
-
-
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container my-4 listing">
+        <div class="">
+        <div class="container my-4 ">
             <div class="row">
                 <div class="col-md-12"> <h1 class="text-center my-5">Business Listing</h1>
                 </div>
             </div>
             <div class="row text-center">
                 @foreach($listings as $listing)
-                    <div class="col-md-3">
+                    <div class="col-md mx-2 onhovercd" style="width: 255px; height: 200px;  border-radius: 5px 20px; box-shadow: 0 4px 6px #6e24a833;   background-image: linear-gradient(to bottom , transparent, #000000ba), url('{{ url('images/').'/listing/'.$listing->image }}')">
                         <a href="/listing/{{$listing->id}}" >
-                        <img src="{{ url('images/').'/listing/'.$listing->image }}" class="w-100" alt="" style="width: 255px; height: 170px;">
-                        <h5 class="text-left h5 my-2 font-weight-normal text-uppercase">{{ $listing->name }}</h5>
-                        <p class="text-left "><strong>Price</strong>   Rs. {{ $listing->price }}</p>
+                        <div class="mx-auto pt-5 mt-3  text-white ">
+                            <h5 class="text-left h3  my-2 font-weight-bold text-white text-uppercase">{{ $listing->name }}</h5>
+                            <p class="text-left text-white"><strong>Price</strong>   Rs. {{ $listing->price }}</p>
+                        </div>
                         </a>
                     </div>
                 @endforeach
             </div>
         </div>
+        </div>
 
         <div class="bg-about">
             <div class="container py-5">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-md-12">
                         <nav>
                             <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
                                 <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-elite" role="tab" aria-controls="nav-home" aria-selected="true"><i class="fas fa-star "></i>Elite Aggrawals </a>
@@ -123,28 +121,331 @@
                         </nav>
                         <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                             <div class="tab-pane fade show active p-3" id="nav-elite" role="tabpanel" aria-labelledby="nav-home-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajesh Jindal
+                                            </h3>
+                                            <p class="text-left">
+                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Sachin Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
+
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajeev Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
+
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-great" role="tabpanel" aria-labelledby="nav-profile-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajesh Jindal
+                                            </h3>
+                                            <p class="text-left">
+                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Sachin Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
+
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajeev Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
+
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-matrimonial" role="tabpanel" aria-labelledby="nav-contact-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajesh Jindal
+                                            </h3>
+                                            <p class="text-left">
+                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Sachin Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
+
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajeev Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
+
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-offers" role="tabpanel" aria-labelledby="nav-about-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajesh Jindal
+                                            </h3>
+                                            <p class="text-left">
+                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Sachin Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
+
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajeev Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
+
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-shradhanjali" role="tabpanel" aria-labelledby="nav-about-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajesh Jindal
+                                            </h3>
+                                            <p class="text-left">
+                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Sachin Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
+
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajeev Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
+
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-education" role="tabpanel" aria-labelledby="nav-about-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajesh Jindal
+                                            </h3>
+                                            <p class="text-left">
+                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Sachin Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
+
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajeev Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
+
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-news" role="tabpanel" aria-labelledby="nav-about-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+                                <div class="row">
+                                    <div class="col-md-6">
+                                            <div class="d-flex">
+                                                <img src="https://images.pexels.com/photos/2540653/pexels-photo-2540653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="height: 150px; width: 150px;"  alt="">
+                                                <div class="mx-2">
+                                                    <h3 class="my-2 h3 font-weight-bold">Lorem Heading </h3>
+                                                    <p>
+                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur
+                                                    </p>
+                                                </div>
+                                            </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex">
+                                            <img src="https://images.pexels.com/photos/2540653/pexels-photo-2540653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="height: 150px; width: 150px;"  alt="">
+                                            <div class="mx-2">
+                                                <h3 class="my-2 h3 font-weight-bold">Lorem Heading </h3>
+                                                <p>
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-promotions" role="tabpanel" aria-labelledby="nav-about-tab">
-                                Et et consectetur ipsum labore excepteur est proident excepteur ad velit occaecat qui minim occaecat veniam. Fugiat veniam incididunt anim aliqua enim pariatur veniam sunt est aute sit dolor anim. Velit non irure adipisicing aliqua ullamco irure incididunt irure non esse consectetur nostrud minim non minim occaecat. Amet duis do nisi duis veniam non est eiusmod tempor incididunt tempor dolor ipsum in qui sit. Exercitation mollit sit culpa nisi culpa non adipisicing reprehenderit do dolore. Duis reprehenderit occaecat anim ullamco ad duis occaecat ex.
+
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajesh Jindal
+                                            </h3>
+                                            <p class="text-left">
+                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Sachin Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <div class="avatar mx-auto">
+                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
+
+                                            <h3 class="font-weight-bold text-left mt-3">
+                                                Rajeev Gupta
+                                            </h3>
+                                            <p class="text-left">
+                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
+
+                                            </p>
+                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
 
@@ -156,21 +457,21 @@
             <div class="container pt-3">
                 <div class="row">
                     <div class="col-md-6 text-white m-auto">
-                        <h4>Now On Smart Phones</h4>
+                        <h4 class="text-white">Now On Smart Phones</h4>
                         <h2> Download Our Apps Free </h2>
                         <p class="text-white">More than 17,000 reviews from All over the world, GLOBAL AGRA VAISHCHAMBER will help you to strengthen the unity of Agarwal society</p>
                         <div class="d-flex mt-3">
                             <div class="app-btn">
-                                <img src="https://image.flaticon.com/icons/svg/1532/1532534.svg" alt="" style="width: 60px; height: 60px" class="pr-3"><span class="text-dark">Play Store</span>
+                                <img src="https://image.flaticon.com/icons/svg/1532/1532534.svg" alt="" style="width: 40px; height: 40px" class="pr-3"><span class="text-dark">Play Store</span>
                             </div>
                             <div class="app-btn">
-                                <img src="https://image.flaticon.com/icons/svg/564/564401.svg" alt="" style="width: 60px; height: 60px;" class="pr-3"><span class="text-dark">App Store</span>
+                                <img src="https://image.flaticon.com/icons/svg/564/564401.svg" alt="" style="width: 40px; height: 40px;" class="pr-3"><span class="text-dark">App Store</span>
 
                             </div>
                         </div>
                     </div>
                     <div class="col-md-6">
-                        <img src="http://globalagra-vaishchamber.com//wp-content/uploads/2018/05/app.png" class="w-100" alt="">
+                        <img src="{{ url('images/').'/app.png' }}" class="w-100" alt="">
                     </div>
                 </div>
             </div>
