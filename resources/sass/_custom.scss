@@ -8,10 +8,7 @@ main{
 }
 
 .navbg{
-    background: transparent;
-    //background: #ff00cc;  /* fallback for old browsers */
-    //background: -webkit-linear-gradient(to right, #333399, #ff00cc);  /* Chrome 10-25, Safari 5.1-6 */
-    //background: linear-gradient(to right, #333399, #ff00cc); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background: #000000a8 !important;
 }
 .navbar-light .navbar-nav .nav-link {
     color: white !important;
@@ -1093,7 +1090,6 @@ footer.footer-3:before {
     font-size: 14px;
     color: #fff;
     position: relative;
-    background: #333299;
     border-radius: 8px;
     padding: 10px;
 
@@ -1218,6 +1214,10 @@ btn-outline-primary:hover{
     bottom: 0;
     left: 0;
     background-image: url("/assets/img/wave.png");
+}
+
+.carousel-inner {
+    height: 50vh;
 }
 
 /* Set your background color */

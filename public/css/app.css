@@ -11158,7 +11158,7 @@ main {
 }
 
 .navbg {
-  background: transparent;
+  background: #000000a8 !important;
 }
 
 .navbar-light .navbar-nav .nav-link {
@@ -12453,7 +12453,6 @@ footer.footer-3:before {
   font-size: 14px;
   color: #fff;
   position: relative;
-  background: #333299;
   border-radius: 8px;
   padding: 10px;
 }
@@ -12595,6 +12594,10 @@ btn-outline-primary:hover {
   bottom: 0;
   left: 0;
   background-image: url("/assets/img/wave.png");
+}
+
+.carousel-inner {
+  height: 50vh;
 }
 
 /* Set your background color */
