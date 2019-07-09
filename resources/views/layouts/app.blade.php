@@ -71,10 +71,10 @@
             <div class="container">
                 <div class="row text-center">
                     <div class="col-md my-auto text-center">
-                        <p class="text-white">Copyright 2019 © Global Agra Vaishchamber, All Rights Reserved.</p>
+                        <p class="text-white" style="float: left !important;">Copyright 2019 © Global Agra Vaishchamber, All Rights Reserved.</p>
                     </div>
                     <div class="col-md my-auto text-center">
-                        <p class="text-white">Proudly Powered By : <a href="http://mydigitech.in/ " target="_blank" class="text-white">&nbsp; DigiTech Services</a></p>
+                        <p class="text-white" style="float: right !important;">Proudly Powered By : <a href="http://mydigitech.in/ " target="_blank" class="text-white">&nbsp; DigiTech Services</a></p>
                     </div>
                 </div>
             </div>

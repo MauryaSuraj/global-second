@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MatrimonyProfile;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -10,13 +11,14 @@ class FrontEnd extends Controller
 {
     public function index()
     {
+        $matrimonials = MatrimonyProfile::all();
         $categories = DB::table('categories')->latest()->paginate(8);
         foreach ($categories as $category){
             $url_category_image = Storage::url($category->image);
         }
         $categorys = DB::table('categories')->get();
         $listings = DB::table('bussiness_listings')->where('status', '1')->latest()->paginate(4);
-        return view('frontend.index',compact('categories','listings', 'url_category_image','categorys'));
+        return view('frontend.index',compact('categories','listings', 'url_category_image','categorys','matrimonials'));
     }
 
     public function about()
@@ -32,6 +34,9 @@ class FrontEnd extends Controller
     public function supporter()
     {
         return view('frontend.supporter');
+    }
+    public function matrimony($id){
+        return $id;
     }
 
 }

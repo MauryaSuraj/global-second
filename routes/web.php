@@ -24,6 +24,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/admin','AdminController@index')->name('admin');
 Route::resource('/search' ,'SearchController');
 Route::resource('/contact','Contact');
+
+Route::resource('/matri', 'MatriController');
+
 Route::resource('/admin/category','AdminCategoryController');
 Route::resource('/admin/tag','TagAdminController');
 Route::resource('/admin/featuredmember','FeaturedMemberController');
