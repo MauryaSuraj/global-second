@@ -48,7 +48,7 @@
                 </div>
                 @foreach($categories as $category)
                     <div class="col-md m-2 colhover p-3">
-                            <img src="{{ url('images/').'/category/'.$category->image }}" alt="" class="w-auto h-auto" style="height: 200px;">
+                            <img src="{{ url('images/').'/category/'.$category->image }}" alt="" style="width: 60px;">
                             <h5 class="font-weight-bold text-center mt-2">{{ $category->name }}</h5>
 
                         <a href="{{ route('search.show',$category->id) }}">View </a>
@@ -90,7 +90,7 @@
             </div>
             <div class="row text-center">
                 @foreach($listings as $listing)
-                    <div class="col-md mx-2 onhovercd" style="width: 255px; height: 200px;  border-radius: 5px 20px; box-shadow: 0 4px 6px #6e24a833;   background-image: linear-gradient(to bottom , transparent, #000000ba), url('{{ url('images/').'/listing/'.$listing->image }}')">
+                    <div class="col-md mx-2 my-2 onhovercd" style="width: 255px; height: 200px;  border-radius: 5px 20px; box-shadow: 0 4px 6px #6e24a833;   background-image: linear-gradient(to bottom , transparent, #000000ba), url('{{ url('images/').'/listing/'.$listing->image }}')">
                         <a href="/listing/{{$listing->id}}" >
                         <div class="mx-auto pt-5 mt-3  text-white ">
                             <h5 class="text-left h3  my-2 font-weight-bold text-white text-uppercase">{{ $listing->name }}</h5>
@@ -123,7 +123,7 @@
                             <div class="tab-pane fade show active p-3" id="nav-elite" role="tabpanel" aria-labelledby="nav-home-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -135,7 +135,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -147,7 +147,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
 
@@ -166,7 +166,7 @@
                             <div class="tab-pane fade p-3" id="nav-great" role="tabpanel" aria-labelledby="nav-profile-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -178,7 +178,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -190,7 +190,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
 
@@ -209,7 +209,7 @@
                             <div class="tab-pane fade p-3" id="nav-matrimonial" role="tabpanel" aria-labelledby="nav-contact-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -221,7 +221,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -233,7 +233,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
 
@@ -252,7 +252,7 @@
                             <div class="tab-pane fade p-3" id="nav-offers" role="tabpanel" aria-labelledby="nav-about-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -264,7 +264,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -276,7 +276,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
 
@@ -295,7 +295,7 @@
                             <div class="tab-pane fade p-3" id="nav-shradhanjali" role="tabpanel" aria-labelledby="nav-about-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -307,7 +307,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -319,7 +319,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
 
@@ -338,7 +338,7 @@
                             <div class="tab-pane fade p-3" id="nav-education" role="tabpanel" aria-labelledby="nav-about-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -350,7 +350,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
@@ -362,7 +362,7 @@
                                             <a href="#" class="btn btn-outline-primary">Read More</a>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
+                                    <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
                                             <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
 

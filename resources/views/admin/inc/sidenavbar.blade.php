@@ -15,6 +15,13 @@
                         <span class="pcoded-mtext"> Business Enquiry </span>
                     </a>
                 </li>
+
+                <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                    <a href="{{ route('matrimony.index') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                        <span class="pcoded-mtext"> Matrimony  </span>
+                    </a>
+                </li>
                 <li class="pcoded-hasmenu {{ request()->is('sites/*/edit') ? 'active' : '' }}">
                     <a href="javascript:void(0)" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-sidebar"></i></span>

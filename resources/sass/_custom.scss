@@ -41,7 +41,7 @@ p{
 
 .colhover {
     //-webkit-box-shadow: 0 8px 17px 0 rgba(0,0,0,.2),0 6px 20px 0 rgba(0,0,0,.19)!important;
-   box-shadow:  0 0px 6px 0 rgba(0, 0, 0, 0.2), 0 0px 0px 0 rgba(0, 0, 0, 0.19) !important;
+   box-shadow:  0 0px 6px 0 rgba(0, 0, 0, 0.4), 0 0px 0px 0 rgba(0, 0, 0, 0.19) !important;
     border-radius: 30px 0px;
     max-width: 130px !important;
 }
@@ -1244,14 +1244,62 @@ btn-outline-primary:hover{
     .search-sec{
         border-radius: 60px;
         position: relative;
-        background: #f8f9fa42;
         width: 100%;
     }
 }
 
 @media (max-width: 992px){
     .search-sec{
-        background: #1A4668;
         width: 100%;
     }
+}
+/*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+    //CSS
+
+}
+
+/*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+
+    //CSS
+    .image-bg h1{
+        margin-top: 4rem;
+        font-size: 1.5rem;
+        margin-left: 10px;
+    }
+    .image-bg h2 {
+        margin-left: 10px;
+        font-size: 18px !important;
+    }
+    .search-slt  {
+        height: calc(2rem + 1.5px) !important;;
+    }
+    .wrn-btn{
+        height: calc(2.5rem + 2px) !important;
+    }
+    .onhovercd{
+        width: 100% !important;
+    }
+    .display-4{
+        font-size: 2.5rem !important;
+    }
+    .bg-contact img{
+        width: 50px !important;
+    }
+    .navbar-toggler{
+        background-color: #ffed4a;
+        border-radius: 1rem;
+        line-height: 1.5;
+    }
+
 }

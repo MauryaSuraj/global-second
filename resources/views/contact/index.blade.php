@@ -24,7 +24,7 @@
             </div>
         </div>
         <div class="row mt-5 justify-content-center">
-            <div class="col-md-8">
+            <div class="col-md-8 mb-2">
 
                 <form method="POST" action="{{ route('contact.store') }}">
                     @csrf

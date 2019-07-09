@@ -55,7 +55,7 @@
         <h2 class="text-left">In LeaderShip With </h2>
         <hr>
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-4 my-1">
                 <div class="avatar mx-auto">
                     <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                     <h3 class="font-weight-bold text-left mt-3">
@@ -67,7 +67,7 @@
                     <a href="#" class="btn btn-outline-primary">Read More</a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 my-1">
                 <div class="avatar mx-auto">
                     <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
                     <h3 class="font-weight-bold text-left mt-3">
@@ -79,7 +79,7 @@
                     <a href="#" class="btn btn-outline-primary">Read More</a>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-4 my-1">
                 <div class="avatar mx-auto">
                     <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
 

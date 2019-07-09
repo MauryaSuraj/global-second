@@ -33,6 +33,7 @@ Route::resource('/admin/membership','MemberShipcontroller');
 Route::resource('/userreview', 'ReviewsController');
 Route::resource('/membershipdetail', 'MemberShipFrontController');
 Route::resource('/family', 'FamilyController');
+Route::resource('/admin/matrimony', 'MatrimonyAdminController');
 Route::get('/businesslistingprofile','BusinesslistingProfileController@index');
 Route::get('/businessenquiry','BusinesslistingProfileController@enquiry');
 
