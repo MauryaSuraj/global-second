@@ -13,6 +13,24 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+//Route::middleware('auth:api')->get('/user', function (Request $request) {
+//    return $request->user();
+//});
+
+Route::post('login', 'API\UserController@login');
+Route::post('register', 'API\UserController@register');
+
+//data here
+Route::get('category', 'API\Listing@category');
+Route::get('listing', 'API\Listing@listing');
+
+
+
+Route::get('tags', 'API\Listing@tags');
+//Route::
+//
+Route::get('logout', 'UserController@logout');
+
+Route::group(['middleware' => 'auth:api'], function (){
+    Route::post('contactEnquiry', 'API\Listing@listingEnquiry');
 });
