@@ -90,7 +90,7 @@ var mapStyles = [
 ];
 
 
-// 1. Map for Listing Page
+// 1. Map for ListingOLD Page
 var mapId = document.getElementById("map-canvas")
 if(mapId){
 
@@ -381,7 +381,7 @@ if(mapId){
 }
 
 
-// 2. Map for Listing Details Page
+// 2. Map for ListingOLD Details Page
 var listingDetails = document.getElementById('listing-details');
 if (listingDetails) {
   const urlParams = new URLSearchParams(window.location.search);

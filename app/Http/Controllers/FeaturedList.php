@@ -43,7 +43,7 @@ class FeaturedList extends Controller
             'status' => 1,
             'days' => $request->input('days'),
         ]);
-            return redirect()->back()->with('featured','Listing Added to Featured Listing for  '.$request->input('days'));
+            return redirect()->back()->with('featured','ListingOLD Added to Featured ListingOLD for  '.$request->input('days'));
     }
 
     /**

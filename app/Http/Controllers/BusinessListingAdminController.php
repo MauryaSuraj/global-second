@@ -93,10 +93,10 @@ class BusinessListingAdminController extends Controller
         $verify =  DB::table('users')->where('id',$user_id)->pluck('user_role')->first();
 //          dd($verify);
         if (!($verify == 'admin')){
-            return redirect()->back()->with('success','Listing Added SuccessFully');
+            return redirect()->back()->with('success','ListingOLD Added SuccessFully');
         }
         else{
-            return redirect()->route('businesslisting.index')->with('success','Listing Created Successfully');
+            return redirect()->route('businesslisting.index')->with('success','ListingOLD Created Successfully');
         }
 
     }

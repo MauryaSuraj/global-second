@@ -22,9 +22,9 @@ Route::post('register', 'API\UserController@register');
 
 //data here
 Route::get('category', 'API\Listing@category');
-Route::get('listing', 'API\Listing@listing');
+//Route::get('listing', 'API\Listing@listing');
 
-
+Route::resource('listing','API\Listing');
 
 Route::get('tags', 'API\Listing@tags');
 //Route::
@@ -33,4 +33,5 @@ Route::get('tags', 'API\Listing@tags');
 
 Route::group(['middleware' => 'auth:api'], function (){
     Route::post('contactEnquiry', 'API\Listing@listingEnquiry');
+
 });
