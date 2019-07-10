@@ -29,7 +29,7 @@ Route::get('listing', 'API\Listing@listing');
 Route::get('tags', 'API\Listing@tags');
 //Route::
 //
-Route::get('logout', 'UserController@logout');
+//Route::get('logout', 'UserController@logout');
 
 Route::group(['middleware' => 'auth:api'], function (){
     Route::post('contactEnquiry', 'API\Listing@listingEnquiry');

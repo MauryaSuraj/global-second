@@ -3,6 +3,8 @@
 namespace App\Http\Controllers\API;
 
 use App\Category;
+use App\MemberShip;
+use App\MemberShipFront;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -40,14 +42,24 @@ class UserController extends Controller
         $input = $request->all();
         $input['password'] = bcrypt($input['password']);
         $user = User::create($input);
+        $userId = $user->id;
+        MemberShip::create([
+            'user_id' => $userId,
+        ]);
+        MemberShipFront::create([
+            'user_id' => $userId,
+            'name' => $request->input('name'),
+            'email' => $request->input('email'),
+            'mobile' => $request->input('phone'),
+        ]);
         $success['token'] =  $user->createToken('GlobalAgraVaishChamber')-> accessToken;
         $success['name'] =  $user->name;
         return response()->json(['success'=>$success], $this-> successStatus);
     }
-
-   public function logout(){
-        if (Auth::check()){
-            Auth::user()->AauthAcessToken()->delete();
-        }
-   }
+//
+//   public function logout(){
+//        if (Auth::check()){
+//            Auth::user()->AauthAcessToken()->delete();
+//        }
+//   }
 }
