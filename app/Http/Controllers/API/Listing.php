@@ -2,9 +2,14 @@
 
 namespace App\Http\Controllers\API;
 
+use App\Category;
+use App\ContactFormListing;
+use App\Tags;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 
 class Listing extends Controller
 {
@@ -56,6 +61,7 @@ class Listing extends Controller
         return response()->json(['success' => $listings], $this->successStatus);
     }
 
+
     /**
      * Update the specified resource in storage.
      *
@@ -68,6 +74,7 @@ class Listing extends Controller
         //
     }
 
+
     /**
      * Remove the specified resource from storage.
      *
@@ -78,4 +85,5 @@ class Listing extends Controller
     {
         //
     }
+
 }

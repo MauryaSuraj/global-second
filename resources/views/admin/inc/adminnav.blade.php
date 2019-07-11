@@ -2,7 +2,7 @@
     <div class="navbar-wrapper">
         <div class="navbar-logo">
             <a href="/admin/">
-                <img class="img-fluid" src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/logo2-e1557846477241.png" alt="Global agra vaishchamber" />
+                <img class="img-fluid" src="{{ url('images/').'/logo.png' }}" alt="Global agra vaishchamber" />
             </a>
             <a class="mobile-menu" id="mobile-collapse" href="#!">
                 <i class="feather icon-menu icon-toggle-right"></i>

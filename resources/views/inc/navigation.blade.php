@@ -2,7 +2,7 @@
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
 {{--            --}}
-            <img src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/logo2-e1557846477241.png" alt="{{ config('app.name', '') }}" class="img-fluid">
+            <img src="{{ url('images/').'/logo.png' }}" alt="{{ config('app.name', '') }}" class="img-fluid">
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -19,7 +19,7 @@
                     <a class="nav-link" href="/">{{ _('Home') }}</a>
                 </li>
                 <li class="nav-item">
-                    <a href="/listing" class="nav-link"> {{ _('Business Listing') }} </a>
+                    <a href="/listing" class="nav-link"> Business Listing </a>
                 </li>
                 <li class="nav-item">
                     <a href="{{ route('supporter') }}" class="nav-link"> {{ _('Supporter') }} </a>

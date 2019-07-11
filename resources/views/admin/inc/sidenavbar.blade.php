@@ -15,6 +15,19 @@
                         <span class="pcoded-mtext"> Business Enquiry </span>
                     </a>
                 </li>
+                <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                    <a href="{{ route('support.create') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                        <span class="pcoded-mtext"> Add Supporter </span>
+                    </a>
+                </li>
+
+                <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                    <a href="{{ route('specialCategory.index') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="feather icon-home"></i></span>
+                        <span class="pcoded-mtext"> Special Category </span>
+                    </a>
+                </li>
 
                 <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
                     <a href="{{ route('matrimony.index') }}" class="waves-effect waves-dark">

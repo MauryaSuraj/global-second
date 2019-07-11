@@ -6,6 +6,7 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>{{ config('app.name', 'Glaobal Agra Vaishchamber') }}</title>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <link rel="icon" href="{{ url('images/').'/logo.png' }}" type="image/gif" sizes="16x16">
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script>
         $(window).scroll(function(){
@@ -29,7 +30,7 @@
                 <div class="row">
                     <div class="col-sm-6 col-md-3 m-auto col-xs-12">
                         <div class="footer_block ">
-                            <img src="http://globalagra-vaishchamber.com/wp-content/uploads/2018/02/logo2-e1557846477241.png" alt="logo" class="img-responsive">
+                            <img src="{{ url('images/').'/logo.png' }}" alt="logo" class="img-responsive">
                         </div>
                     </div>
                     <div class="col-sm-6 col-md-2 col-xs-12">

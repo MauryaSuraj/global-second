@@ -63,7 +63,7 @@
                     <div class="col-md-12 py-2">
                         <div class="row">
                             <div class="col-md-5 m-auto">
-                                <img src="http://globalagra-vaishchamber.com/wp-content/uploads/2019/05/agarsen.png" class="mx-auto" style="width: auto; height: 50vh;" alt="">
+                                <img src="{{ url('images/').'/agarsen.png' }}" class="mx-auto" style="width: auto; height: 50vh;" alt="">
                             </div>
                             <div class="col-md-7 p-auto m-auto ">
                                 <h1 class="text-center text-white mt-4 mb-2">About us</h1>

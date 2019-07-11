@@ -15,7 +15,7 @@
     <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-4">
-            <img src="https://globalagra-vaishchamber.com/wp-content/uploads/2019/05/agarsen.png" alt="" class="w-100">
+            <img src="{{ url('images/').'/agarsen.png' }}" alt="" class="w-100">
         </div>
         <div class="col-md-8">
             <h2 class="h2">
@@ -88,7 +88,6 @@
                     </h3>
                     <p class="text-left">
                         rajeev gupta sir is one of team member of globalagra-vaishchamber.
-
                     </p>
                     <a href="#" class="btn btn-outline-primary">Read More</a>
                 </div>

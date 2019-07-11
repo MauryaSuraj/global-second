@@ -33,9 +33,13 @@ Route::resource('/admin/featuredmember','FeaturedMemberController');
 Route::resource('/admin/businesslisting','BusinessListingAdminController');
 Route::resource('/admin/featuredlisting','FeaturedList');
 Route::resource('/admin/membership','MemberShipcontroller');
+Route::resource('/admin/specialCategory', 'SpecialCategoryController');
 Route::resource('/userreview', 'ReviewsController');
 Route::resource('/membershipdetail', 'MemberShipFrontController');
 Route::resource('/family', 'FamilyController');
+
+Route::resource('support', 'SupporterController');
+
 Route::resource('/admin/matrimony', 'MatrimonyAdminController');
 Route::get('/businesslistingprofile','BusinesslistingProfileController@index');
 Route::get('/businessenquiry','BusinesslistingProfileController@enquiry');

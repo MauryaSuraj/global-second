@@ -21,17 +21,20 @@ Route::post('login', 'API\UserController@login');
 Route::post('register', 'API\UserController@register');
 
 //data here
-Route::get('category', 'API\Listing@category');
+Route::get('category', 'API\ListSet@category');
 //Route::get('listing', 'API\Listing@listing');
 
-Route::resource('listing','API\Listing');
+Route::post('contactEnquiry', 'API\ListSet@listingEnquiry');
 
-Route::get('tags', 'API\Listing@tags');
-//Route::
+
+Route::get('tags', 'API\ListSet@tags');
+
+Route::resource('profile', 'API\ProfileController');
+Route::resource('review', 'API\ReviewController');
 //
 //Route::get('logout', 'UserController@logout');
+Route::resource('listing','API\Listing');
 
 Route::group(['middleware' => 'auth:api'], function (){
-    Route::post('contactEnquiry', 'API\Listing@listingEnquiry');
-
+//    Route::resource('listing','API\Listing');
 });
