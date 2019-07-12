@@ -6,10 +6,12 @@ use App\BussinessListing;
 use App\Category;
 use App\ContactFormListing;
 use App\Listing;
+use App\Mail\ListerEnuiryMail;
 use App\Tags;
 use Illuminate\Http\Request;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 
 class ListingController extends Controller
 {
@@ -57,9 +59,7 @@ class ListingController extends Controller
      */
     public function store(Request $request)
     {
-        $listings = BussinessListing::all();
-        $categories = Category::all();
-        $tags = Tags::all();
+
           $insert_data = DB::table('contact_form_listings')->insert([
              'name' => $request->input('name'),
              'email' => $request->input('email'),
@@ -69,7 +69,12 @@ class ListingController extends Controller
              'created_at' => Carbon::now()->toDateTimeString(),
              'updated_at' => Carbon::now()->toDateTimeString()
           ]);
+
+          
+
+
           if ($insert_data)
+              Mail::send(new ListerEnuiryMail($request));
               return redirect()->back()->with('message', 'You have sended the Query !');
 //        return view('listing.show/{$request->input(\'listing_id\')}',compact('listings','categories','tags'))->with('success','Form Submitted Successfully');
     }
