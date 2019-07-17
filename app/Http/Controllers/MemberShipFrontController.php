@@ -22,7 +22,6 @@ class MemberShipFrontController extends Controller
     {
         $user = Auth::user()->email;
         $memberdetails = DB::table('member_ship_fronts')->where('email', $user)->get();
-
         $id = DB::table('member_ship_fronts')->where('email', $user)->value('user_id');
         $familyDetails = DB::table('family_member')->where('membership_id',$id)->get();
         return view('membershipdetail.index',compact('memberdetails','familyDetails'));
@@ -99,7 +98,7 @@ class MemberShipFrontController extends Controller
             'updated_at' => $mytime,
         ]);
       if($register)
-      return redirect('membershipdetail.index');
+      return redirect()->back()->with('success', 'Profile Updated Successfully');
     }
 
     /**

@@ -14,7 +14,7 @@
             </div>
         </div>
     </div>
-   <div class="container-fluid">
+   <div class="container-fluid my-5">
        <div class="row">
            <div class="col-md-12">
                <section class="text-center">
@@ -40,6 +40,22 @@
                            </div>
                        </div>
                        <div class="col-md-9">
+                           <div class="row">
+                               <div class="col-md">
+                                   <table class="table table-bordered">
+                                       <thead>
+                                       <tr>
+                                           <th>Top Result <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
+                                           <th>Popularity <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
+                                           <th>Location <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
+                                           <th>Distance <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
+                                           <th>Rating <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
+                                           <th>Best Deal <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
+                                       </tr>
+                                       </thead>
+                                   </table>
+                               </div>
+                           </div>
                            @if($listings)
                            @foreach($listings as $listing)
                                <div class="col-md-12 my-2">
@@ -50,13 +66,18 @@
                                            </div>
                                            <div class="col-md-6 py-2">
                                                <div class="card-body text-left card-body-cascade">
-                                                   <h4 class="card-title"><strong><a href="">{{ $listing->name }}</a></strong></h4>
+                                                   <h4 class="card-title"><strong><a href="/listing/{{$listing->id}}">{{ $listing->name }}</a></strong></h4>
                                                    <p class="card-text text-justify">
                                                        {{ substr($listing->description,0,strpos($listing->description, ' ', 250) )  }}
                                                    </p>
                                                    <p class="card-text text-justify">
 
                                                    </p>
+                                                   <span> <strong>Opening Closing Time </strong> {{ $listing->opening_time }} {{ $listing->closing_time }}</span>
+                                                   @foreach($address as $add)
+                                                       <br>
+                                                   <span><strong>Location : </strong> {{ $add->city }} </span>
+                                                       @endforeach
                                                    <p class="d-flex justify-content-between">
                                                        <span> <strong>Price : </strong>  Rs.{{ $listing->price }}</span>
                                                        <a href="/listing/{{$listing->id}}" class="btn btn-outline-danger ">View</a>

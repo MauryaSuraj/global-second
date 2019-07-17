@@ -9,6 +9,7 @@ use App\Tags;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 
 class BusinessListingAdminController extends Controller
 {
@@ -71,6 +72,7 @@ class BusinessListingAdminController extends Controller
          'category_id' => $request->category_id,
          'tag_id' => $request->tag_id,
          'name' => $request->name,
+         'slug' =>  Str::slug($request->input('name'), '-'),
          'description' => $request->description,
           'price' => $request->price,
           'opening_time' => $request->opening_time,
@@ -88,7 +90,6 @@ class BusinessListingAdminController extends Controller
           'pincode'=> $request->input('pincode')
       ]);
       if ($address)
-
           $user_id =  \auth()->user()->id;
         $verify =  DB::table('users')->where('id',$user_id)->pluck('user_role')->first();
 //          dd($verify);

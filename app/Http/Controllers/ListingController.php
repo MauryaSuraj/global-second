@@ -22,10 +22,16 @@ class ListingController extends Controller
      */
     public function index()
     {
+
         $listings = BussinessListing::where('status','1')->paginate(6);
+        $listing_id = BussinessListing::all()->pluck('id');
+//        dd($listing_id);
+        foreach ($listing_id as $item){
+            $address = DB::table('locations')->where('listing_id', $item)->get();
+        }
         $categories = Category::all();
         $tags = Tags::all();
-        return view('listing.index',compact('listings','categories','tags'));
+        return view('listing.index',compact('listings','categories','tags','address'));
     }
 
     /**
@@ -70,7 +76,7 @@ class ListingController extends Controller
              'updated_at' => Carbon::now()->toDateTimeString()
           ]);
 
-          
+
 
 
           if ($insert_data)
@@ -89,7 +95,7 @@ class ListingController extends Controller
     {
         $msgs = '';
         $bu_list = BussinessListing::find($id);
-        $profiles = DB::table('users')->get()->where('id',$bu_list->user->id);
+        $profiles = DB::table('member_ship_fronts')->get()->where('id',$bu_list->user->id);
         $categories = DB::table('categories')->get()->where('id',$bu_list->category_id);
         $tags = DB::table('tags')->get()->where('id',$bu_list->tag_id);
         $reviews = DB::table('reviews')->get()->where('listing_id', $id);

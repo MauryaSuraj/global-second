@@ -193,8 +193,8 @@
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 dwt_listing_listing-detialz">
 
                             <div class="pricing-widget widget">
-                                <img src="http://globalagra-vaishchamber.com/wp-content/themes/dwt-listing/assets/images/icons/price.png"
-                                     alt="Pricing">
+                                <img src="{{ url('images/').'/rupee.ico' }}"
+                                     alt="Pricing" style="height: 35px; width: 30px; margin-right: 10px;">
                                 <span class="tool-tip h5" title="Expensive">Pricing</span>
                                 <span class="price-status  pull-right"> <strong>Rs. {{ $bu_list->price }}</strong> </span>
                             </div>
@@ -252,6 +252,7 @@
                                     @foreach($profiles as $profile)
                                        <p>Name :   {{ $profile->name }}</p>
                                         <p>Email : {{ $profile->email }}  </p>
+                                        <a href="{{ route('support.show',$profile->id ) }}">View Profile</a>
                                     @endforeach
                                 </div>
                                 <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">

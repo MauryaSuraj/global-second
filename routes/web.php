@@ -13,8 +13,8 @@
 
 Route::get('/', 'FrontEnd@index');
 Route::get('/about','FrontEnd@about')->name('about');
-//Route::get('/contact','FrontEnd@contact')->name('contact');
 Route::get('/supporter','FrontEnd@supporter')->name('supporter');
+Route::get('/profile/{$id}', 'FrontEnd@profile_details');
 Route::resource('/listing','ListingController');
 
 
@@ -39,6 +39,7 @@ Route::resource('/membershipdetail', 'MemberShipFrontController');
 Route::resource('/family', 'FamilyController');
 
 Route::resource('support', 'SupporterController');
+
 
 Route::resource('/admin/matrimony', 'MatrimonyAdminController');
 Route::get('/businesslistingprofile','BusinesslistingProfileController@index');

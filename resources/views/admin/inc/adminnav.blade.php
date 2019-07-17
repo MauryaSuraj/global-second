@@ -36,9 +36,10 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="{{ asset('files/assets/images/avatar-4.jpg') }}" class="img-radius" alt="User-Profile-Image">
+                            <img src="https://imageog.flaticon.com/icons/png/512/23/23228.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" class="img-radius" alt="User-Profile-Image">
                             <span>  {{ Auth::user()->name }} </span>
                             <i class="feather icon-chevron-down"></i>
+{{--                            url('images/').'/profile/'.$Supporter_profiles->image--}}
                         </div>
                         <ul class="show-notification profile-notification dropdown-menu" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
                             <li>

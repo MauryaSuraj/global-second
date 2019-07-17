@@ -3,7 +3,7 @@
     <div class="container mt-5">
         <div class="row">
             @foreach($profiledetails as $profiledetail)
-            <div class="col-md ">
+            <div class="col-md my-5">
                 <div class="card">
                     <div class="card-header">{{ __('Enter Profile Details ') }}</div>
                     <div class="card-body">

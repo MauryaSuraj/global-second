@@ -6,6 +6,7 @@ use App\MemberShipFront;
 use App\SpecialCategory;
 use App\Supporter;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SupporterController extends Controller
 {
@@ -25,7 +26,8 @@ class SupporterController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {$profiles = MemberShipFront::all();
+    {
+        $profiles = MemberShipFront::all();
         $specialCategory = SpecialCategory::all();
 
         return view('support.create',compact('profiles', 'specialCategory'));
@@ -55,7 +57,13 @@ class SupporterController extends Controller
      */
     public function show($id)
     {
-        //
+        $Supporter_profiles = DB::table('supporters')->where('supporters.id',$id)
+            ->join('member_ship_fronts','member_ship_fronts.id','=','supporters.profile_id')
+            ->select('member_ship_fronts.*')
+            ->get()->first();
+        $user_id = DB::table('member_ship_fronts')->where('id', $id)->pluck('user_id')->first();
+        $listings = DB::table('bussiness_listings')->where('user_id', $user_id)->paginate(4);
+        return view('frontend.profile',compact('Supporter_profiles','listings'));
     }
 
     /**

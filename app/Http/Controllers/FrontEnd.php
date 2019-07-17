@@ -33,8 +33,14 @@ class FrontEnd extends Controller
 
     public function supporter()
     {
-        return view('frontend.supporter');
+        $Supporter_profiles = DB::table('supporters')
+            ->join('member_ship_fronts','member_ship_fronts.id','=','supporters.profile_id')
+            ->select('member_ship_fronts.*')
+            ->paginate(12);
+//        dd($Supporter_profiles);
+        return view('frontend.supporter',compact('Supporter_profiles'));
     }
+
     public function matrimony($id){
         return $id;
     }

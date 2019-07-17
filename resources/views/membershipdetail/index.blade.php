@@ -1,10 +1,18 @@
 @extends('layouts.user')
 @section('content')
     <div class="container mt-5">
+
+        <div class="col-md-12">
+            @if(session()->has('success'))
+                <div class="alert alert-success">
+                    {{ session()->get('success') }}
+                </div>
+            @endif
+        </div>
         @foreach($memberdetails as $memberdetail)
             <div class="d-flex justify-content-end mb-2">
-                <a href="{{ route('listing.create') }}" class="btn btn-light mx-2"><i class="fas fa-plus"></i> Add Listing</a>
-                <a href="{{ route('membershipdetail.edit',$memberdetail->id ) }}" class="btn btn-light"><i class="fas fa-user-edit"></i> Edit Profile</a>
+                <a href="{{ route('listing.create') }}" class="btn btn-light mt-5 mx-2"><i class="fas fa-plus"></i> Add Listing</a>
+                <a href="{{ route('membershipdetail.edit',$memberdetail->id ) }}" class="btn mt-5 btn-light"><i class="fas fa-user-edit"></i> Edit Profile</a>
             </div>
             <div class="row">
                 <div class="col-md-4">
