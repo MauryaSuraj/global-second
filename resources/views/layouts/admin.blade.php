@@ -92,11 +92,15 @@
 <script type="text/javascript" src="{{asset('files/assets/pages/widget/amchart/amcharts.js')}}"></script>
 <script type="text/javascript" src="{{ asset('files/assets/pages/widget/amchart/serial.js') }}"></script>
 <script type="text/javascript" src="{{ asset('files/assets/pages/widget/amchart/light.js') }}"></script>
-
 <script type="text/javascript" src="{{ asset('files/assets/js/pcoded.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('files/assets/js/vertical/vertical-layout.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('files/assets/pages/dashboard/custom-dashboard.min.js') }}"></script>
 <script type="text/javascript" src="{{ asset('files/assets/js/script.min.js') }}"></script>
+<script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
+<script>
+    CKEDITOR.replace( 'editor1' );
+    CKEDITOR.replace('description');
+</script>
 
 <script async src="https://www.googletagmanager.com/gtag/js?id=UA-23581568-13"></script>
 

@@ -60,7 +60,6 @@ class BusinessListingAdminController extends Controller
            'pincode' => 'required',
            'address' => 'required',
            'city' => 'required'
-
         ]);
        if ($request->hasFile('image')){
            if ($request->file('image')->isValid()){
@@ -68,6 +67,23 @@ class BusinessListingAdminController extends Controller
                request()->image->move(public_path('images/listing'), $imageName);
            }
        }
+
+       if (empty($request->has('meta_title'))){
+           $meta_title = $request->input('meta_title');
+       }else{
+           $meta_title = $request->input('name');
+       }
+       if (empty($request->has('meta_tags'))){
+           $meta_tags = '';
+       }else{
+           $meta_tags = $request->input('meta_tags');
+       }
+       if (($request->has('meta_description'))){
+           $meta_desc = strip_tags(Str::limit($request->description, 50));
+       }else{
+           $meta_desc = $request->meta_description;
+       }
+
        $form_data = array(
          'category_id' => $request->category_id,
          'tag_id' => $request->tag_id,
@@ -78,6 +94,9 @@ class BusinessListingAdminController extends Controller
           'opening_time' => $request->opening_time,
           'closing_time' => $request->closing_time,
           'video' => $request->video,
+          'meta_title' => $meta_title,
+          'meta_tags' => $meta_tags,
+          'meta_description' => $meta_desc,
           'image' => $imageName
        );
       $listing_id =   \auth()->user()->listings()->create($form_data);
@@ -92,12 +111,11 @@ class BusinessListingAdminController extends Controller
       if ($address)
           $user_id =  \auth()->user()->id;
         $verify =  DB::table('users')->where('id',$user_id)->pluck('user_role')->first();
-//          dd($verify);
         if (!($verify == 'admin')){
-            return redirect()->back()->with('success','ListingOLD Added SuccessFully');
+            return redirect()->back()->with('success','Listing Added SuccessFully');
         }
         else{
-            return redirect()->route('businesslisting.index')->with('success','ListingOLD Created Successfully');
+            return redirect()->route('businesslisting.index')->with('success','Listing Created Successfully');
         }
 
     }

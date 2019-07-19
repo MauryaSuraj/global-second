@@ -1,3 +1,13 @@
+<?php
+  $image =  \Illuminate\Support\Facades\DB::table('member_ship_fronts')->where('user_id', auth()->user()->id)->pluck('image')->first();
+  if ($image){
+      $url_image =  url('images/').'/profile/'.$image;
+  }
+  else{
+      $url_image = 'https://image.flaticon.com/icons/svg/149/149071.svg';
+  }
+?>
+
 <nav class="navbar header-navbar pcoded-header">
     <div class="navbar-wrapper">
         <div class="navbar-logo">
@@ -36,7 +46,7 @@
                 <li class="user-profile header-notification">
                     <div class="dropdown-primary dropdown">
                         <div class="dropdown-toggle" data-toggle="dropdown">
-                            <img src="https://imageog.flaticon.com/icons/png/512/23/23228.png?size=1200x630f&pad=10,10,10,10&ext=png&bg=FFFFFFFF" class="img-radius" alt="User-Profile-Image">
+                            <img src="{{  $url_image }}" class="img-radius" alt="User-Profile-Image">
                             <span>  {{ Auth::user()->name }} </span>
                             <i class="feather icon-chevron-down"></i>
 {{--                            url('images/').'/profile/'.$Supporter_profiles->image--}}

@@ -121,94 +121,53 @@
                         </nav>
                         <div class="tab-content py-3 px-3 px-sm-0" id="nav-tabContent">
                             <div class="tab-pane fade show active p-3" id="nav-elite" role="tabpanel" aria-labelledby="nav-home-tab">
-
                                 <div class="row">
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajesh Jindal
-                                            </h3>
-                                            <p class="text-left">
-                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
+                                    <div class="col-md-12">
+                                        <h2>Elite Aggrawals </h2>
                                     </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Sachin Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                    @foreach($elite_ag as $edu)
+                                        <div class="col-md-3 my-1">
+                                            <div class="avatar mx-auto">
+                                                <img src="{{ url('images/').'/profile/'.$edu->image }}" class="rounded img-fluid " alt="">
+                                                <h3 class="font-weight-bold text-left mt-3">
+                                                    {{ $edu->name }}
+                                                </h3>
+                                                <p class="text-left">
+                                                    {{ $edu->email }}
+                                                </p>
+                                                <a href="#" class="btn btn-outline-primary">Read More</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
-
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajeev Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
-
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-great" role="tabpanel" aria-labelledby="nav-profile-tab">
-
                                 <div class="row">
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajesh Jindal
-                                            </h3>
-                                            <p class="text-left">
-                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
+                                    <div class="col-md-12">
+                                        <h2>Great Personality </h2>
                                     </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Sachin Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                    @foreach($great_pers as $edu)
+                                        <div class="col-md-3 my-1">
+                                            <div class="avatar mx-auto">
+                                                <img src="{{ url('images/').'/profile/'.$edu->image }}" class="rounded img-fluid " alt="">
+                                                <h3 class="font-weight-bold text-left mt-3">
+                                                    {{ $edu->name }}
+                                                </h3>
+                                                <p class="text-left">
+                                                    {{ $edu->email }}
+                                                </p>
+                                                <a href="#" class="btn btn-outline-primary">Read More</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
-
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajeev Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
-
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-matrimonial" role="tabpanel" aria-labelledby="nav-contact-tab">
 
                                 <div class="row">
+                                    <div class="col-md-12">
+                                        <h2>Matrimonial Profile </h2>
+                                    </div>
                                     @foreach($matrimonials as $matrimonail)
 
                                     <div class="col-md-4 my-1">
@@ -232,198 +191,83 @@
                             <div class="tab-pane fade p-3" id="nav-offers" role="tabpanel" aria-labelledby="nav-about-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajesh Jindal
-                                            </h3>
-                                            <p class="text-left">
-                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Sachin Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
-
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajeev Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
-
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
+                                    <div class="col-md-12">
+                                        <h2>Offers</h2>
                                     </div>
                                 </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-shradhanjali" role="tabpanel" aria-labelledby="nav-about-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajesh Jindal
-                                            </h3>
-                                            <p class="text-left">
-                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
+                                    <div class="col-md-12">
+                                        <h2>Shradhanjali </h2>
                                     </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Sachin Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                    @foreach($Shradhnajali as $edu)
+                                        <div class="col-md-3 my-1">
+                                            <div class="avatar mx-auto">
+                                                <img src="{{ url('images/').'/profile/'.$edu->image }}" class="rounded img-fluid " alt="">
+                                                <h3 class="font-weight-bold text-left mt-3">
+                                                    {{ $edu->name }}
+                                                </h3>
+                                                <p class="text-left">
+                                                    {{ $edu->email }}
+                                                </p>
+                                                <a href="#" class="btn btn-outline-primary">Read More</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
-
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajeev Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
-
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-education" role="tabpanel" aria-labelledby="nav-about-tab">
 
                                 <div class="row">
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajesh Jindal
-                                            </h3>
-                                            <p class="text-left">
-                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
+                                    <div class="col-md-12">
+                                        <h2>Education </h2>
                                     </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Sachin Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
+                                    @foreach($Education as $edu)
+                                        <div class="col-md-3 my-1">
+                                            <div class="avatar mx-auto">
+                                                <img src="{{ url('images/').'/profile/'.$edu->image }}" class="rounded img-fluid " alt="">
+                                                <h3 class="font-weight-bold text-left mt-3">
+                                                    {{ $edu->name }}
+                                                </h3>
+                                                <p class="text-left">
+                                                    {{ $edu->email }}
+                                                </p>
+                                                <a href="#" class="btn btn-outline-primary">Read More</a>
+                                            </div>
                                         </div>
-                                    </div>
-                                    <div class="col-md-4 my-1">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
-
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajeev Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
-
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
-                                    </div>
+                                    @endforeach
                                 </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-news" role="tabpanel" aria-labelledby="nav-about-tab">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
+                                        <h2>News</h2>
+                                    </div>
+                                            @foreach($newses as $news)
+                                        <div class="col-md-6">
+                                            <a href="{{ route('news.show',$news->slug) }}">
                                             <div class="d-flex">
-                                                <img src="https://images.pexels.com/photos/2540653/pexels-photo-2540653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="height: 150px; width: 150px;"  alt="">
+                                                <img src="{{ url('images/').'/news/'.$news->thumbnail }}" style="height: 150px; width: 150px;"  alt="">
                                                 <div class="mx-2">
-                                                    <h3 class="my-2 h3 font-weight-bold">Lorem Heading </h3>
+                                                    <h3 class="my-2 h3 font-weight-bold">{{ $news->name }} </h3>
                                                     <p>
-                                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur
+                                                        {!! \Illuminate\Support\Str::words($news->details, 10) !!}
                                                     </p>
                                                 </div>
                                             </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="d-flex">
-                                            <img src="https://images.pexels.com/photos/2540653/pexels-photo-2540653.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" style="height: 150px; width: 150px;"  alt="">
-                                            <div class="mx-2">
-                                                <h3 class="my-2 h3 font-weight-bold">Lorem Heading </h3>
-                                                <p>
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi aspernatur
-                                                </p>
-                                            </div>
+                                            </a>
                                         </div>
-                                    </div>
+                                            @endforeach
                                 </div>
                             </div>
                             <div class="tab-pane fade p-3" id="nav-promotions" role="tabpanel" aria-labelledby="nav-about-tab">
-
                                 <div class="row">
-                                    <div class="col-md-4">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajesh Jindal
-                                            </h3>
-                                            <p class="text-left">
-                                                rajesh jindal sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/1536619/pexels-photo-1536619.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Sachin Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                sachin gupta sir is one of team member of globalagra-vaishchamber.
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-4">
-                                        <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/839586/pexels-photo-839586.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid" alt="">
-
-                                            <h3 class="font-weight-bold text-left mt-3">
-                                                Rajeev Gupta
-                                            </h3>
-                                            <p class="text-left">
-                                                rajeev gupta sir is one of team member of globalagra-vaishchamber.
-
-                                            </p>
-                                            <a href="#" class="btn btn-outline-primary">Read More</a>
-                                        </div>
+                                    <div class="col-md">
+                                        <h1>
+                                            Promotions
+                                        </h1>
                                     </div>
                                 </div>
                             </div>

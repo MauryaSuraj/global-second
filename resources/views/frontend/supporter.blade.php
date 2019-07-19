@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="bg-team">
         <div class="container">
@@ -18,7 +17,7 @@
                     @foreach($Supporter_profiles as $profile_detail)
                         <div class="col-md-3 my-1">
                             <div class="avatar mx-auto">
-                                <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                <img src="@if($profile_detail->image)  {{ url('images/').'/profile/'.$profile_detail->image }} @else https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png @endif  " class="rounded img-fluid " alt="">
                                 <h3 class="font-weight-bold text-left mt-3">
                                  Name :   {{ $profile_detail->name }}
                                 </h3>

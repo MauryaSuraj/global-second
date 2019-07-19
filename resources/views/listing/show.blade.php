@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('meta_description', strip_tags($bu_list->meta_description))
+@section('meta_keywords', $bu_list->meta_tags)
+@section('title', $bu_list->meta_title)
 @section('content')
     <div class="bg-about-page">
         <div class="container">
@@ -63,14 +66,12 @@
                             @endif
                             <div class="list-detail">
                                 <div class="panel-group" id="accordion_listing_detial" role="tablist" aria-multiselectable="true">
-
                                     <div class="panel panel-default" id="d-desc">
                                         <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3 ml-3 h3">  Description </h4></div>
                                         <div class="panel-collapse">
-                                            <div class="panel-body"><p>{{ $bu_list->description }}</p></div>
+                                            <div class="panel-body"><p>{!!  $bu_list->description !!}</p></div>
                                         </div>
                                     </div>
-
                                     <div class="panel panel-default" id="dlisting-video">
                                         <div class="panel-heading" role="tab" id="ed-slot-1"> <h4 class="panel-title px-2 py-3 ml-3 h3">  Video </h4></div>
                                         <div id="d-video-coll" class="panel-collapse" role="tabpanel" aria-labelledby="d_list_video">
@@ -155,10 +156,7 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 @foreach($reviews as $review)
-
                                     <div class="review-box bg-light p-2">
                                         <div class="review-author-left">
                                             <div class="review-author-img">
@@ -183,8 +181,7 @@
                                                     <strong>User Name here</strong></a> on <strong>{{ $review->created_at }}</strong>
                                                 </div>
                                                 <p>{{ $review->description }}</p>
-                                            </div>
-                                        </div>
+                                            </div></div>
                                     </div>
 
                                 @endforeach
@@ -192,6 +189,39 @@
                         </div>
                         <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12 dwt_listing_listing-detialz">
 
+                                @if(session()->has('success_like'))
+                                    <div class="alert alert-success">
+                                        {{ session()->get('success_like') }}
+                                    </div>
+                                @endif
+
+                            <div class="widget">
+                                <h6>like / Dislike</h6>
+                                <div class="d-flex justify-content-start">
+                                    @if(\Illuminate\Support\Facades\Auth::check())
+                                    <form method="POST" action="{{ route('like') }}">
+                                        @csrf
+                                        <input type="hidden" value="{{ $list_id }}" id="listing_id" name="listing_id">
+                                        <button type="submit" class="" style="background: transparent; border: none;">
+                                            <img src="https://image.flaticon.com/icons/svg/456/456115.svg" alt="" style="width: 30px; height: 30px;">
+                                        </button>
+                                    </form>
+                                    <form method="POST" action="{{ route('dislike') }}">
+                                        @csrf
+                                        <input type="hidden" value="{{ $list_id }}" name="listing_id" id="listing_id">
+                                        <button type="submit" class="" style="background: transparent; border: none;">
+                                            <img src="https://image.flaticon.com/icons/svg/148/148809.svg" alt="" style="width: 30px; height: 30px;">
+                                        </button>
+                                    </form>
+
+                                        @else
+                                       <div class="d-flex justify-content-around align-content-center">
+                                           <h5 class="mt-2"> Login to Like Or Dislike  </h5>
+                                           <a href="/login" class="btn btn-outline-primary mx-3">Login</a>
+                                       </div>
+                                        @endif
+                                </div>
+                            </div>
                             <div class="pricing-widget widget">
                                 <img src="{{ url('images/').'/rupee.ico' }}"
                                      alt="Pricing" style="height: 35px; width: 30px; margin-right: 10px;">

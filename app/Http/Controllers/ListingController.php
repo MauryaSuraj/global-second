@@ -76,9 +76,6 @@ class ListingController extends Controller
              'updated_at' => Carbon::now()->toDateTimeString()
           ]);
 
-
-
-
           if ($insert_data)
               Mail::send(new ListerEnuiryMail($request));
               return redirect()->back()->with('message', 'You have sended the Query !');
@@ -94,13 +91,18 @@ class ListingController extends Controller
     public function show($id)
     {
         $msgs = '';
-        $bu_list = BussinessListing::find($id);
-        $profiles = DB::table('member_ship_fronts')->get()->where('id',$bu_list->user->id);
-        $categories = DB::table('categories')->get()->where('id',$bu_list->category_id);
-        $tags = DB::table('tags')->get()->where('id',$bu_list->tag_id);
-        $reviews = DB::table('reviews')->get()->where('listing_id', $id);
-        $locations = DB::table('locations')->get()->where('listing_id', $id);
-        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs','reviews','locations'));
+        $bu_list = BussinessListing::where('slug', $id)->get()->first();
+        $user_id = DB::table('bussiness_listings')->where('slug', $id)->pluck('user_id')->first();
+        $category_id = DB::table('bussiness_listings')->where('slug', $id)->pluck('category_id')->first();
+        $tag_id = DB::table('bussiness_listings')->where('slug', $id)->pluck('tag_id')->first();
+        $list_id = DB::table('bussiness_listings')->where('slug', $id)->pluck('id')->first();
+        $profiles = DB::table('member_ship_fronts')->get()->where('id',$user_id);
+        $categories = DB::table('categories')->get()->where('id', $category_id);
+        $tags = DB::table('tags')->get()->where('id',$tag_id);
+        $reviews = DB::table('reviews')->get()->where('listing_id', $list_id);
+        $locations = DB::table('locations')->get()->where('listing_id', $list_id);
+
+        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs','reviews','locations','list_id'));
     }
 
     /**

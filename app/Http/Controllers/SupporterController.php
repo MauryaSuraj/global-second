@@ -55,12 +55,19 @@ class SupporterController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show($id, Request $request)
     {
-        $Supporter_profiles = DB::table('supporters')->where('supporters.id',$id)
-            ->join('member_ship_fronts','member_ship_fronts.id','=','supporters.profile_id')
-            ->select('member_ship_fronts.*')
-            ->get()->first();
+         $url =  app('router')->getRoutes()->match(app('request')->create(url()->previous()))->getName();
+         if ($url == 'listing.show'){
+             $Supporter_profiles = DB::table('member_ship_fronts')->where('id',$id)
+                 ->get()->first();
+         }else{
+             $Supporter_profiles = DB::table('supporters')->where('supporters.id',$id)
+                 ->join('member_ship_fronts','member_ship_fronts.id','=','supporters.profile_id')
+                 ->select('member_ship_fronts.*')
+                 ->get()->first();
+         }
+//         dd($Supporter_profiles->address);
         $user_id = DB::table('member_ship_fronts')->where('id', $id)->pluck('user_id')->first();
         $listings = DB::table('bussiness_listings')->where('user_id', $user_id)->paginate(4);
         return view('frontend.profile',compact('Supporter_profiles','listings'));

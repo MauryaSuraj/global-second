@@ -6,27 +6,21 @@
                 <div class="col-md-4">
                     <div class="profile-img">
                         <img src="{{ url('images/').'/profile/'.$Supporter_profiles->image }}" class="img-fluid" alt=""/>
+                        <div class="profile-head mt-4">
+                            <h5>
+                                {{ $Supporter_profiles->name }}
+                            </h5>
+                            <h6>
+                                {{ $Supporter_profiles->businessname }}
+                            </h6>
+                        </div>
                         <div class="profile-work">
                             <p>Details</p>
                             <span href="">EMAIL :   {{ $Supporter_profiles->email }}</span><br/>
                             <span href="">PHONE :  {{ $Supporter_profiles->mobile }}</span><br/>
                         </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="profile-head">
-                        <h5>
-                            {{ $Supporter_profiles->name }}
-                        </h5>
-                        <h6>
-                            {{ $Supporter_profiles->businessname }}
-                        </h6>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-md-4">
 
+                    </div>
                 </div>
                 <div class="col-md-8">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -65,22 +59,7 @@
                                     </p>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Profession</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{ $Supporter_profiles->businessname }}</p>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <label>Profession</label>
-                                </div>
-                                <div class="col-md-6">
-                                    <p>{{ $Supporter_profiles->businessname }}</p>
-                                </div>
-                            </div>
+
                             <div class="row">
                                 <div class="col-md-6">
                                     <label>Profession</label>
@@ -179,16 +158,16 @@
                                                         <div class="card-body text-left card-body-cascade">
                                                             <h4 class="card-title"><strong><a href="/listing/{{$listing->id}}">{{ $listing->name }}</a></strong></h4>
                                                             <p class="card-text text-justify">
-                                                                {{ substr($listing->description,0,strpos($listing->description, ' ', 250) )  }}
+                                                                {!!  substr($listing->description,0,strpos($listing->description, ' ', 250) )  !!}
                                                             </p>
                                                             <p class="card-text text-justify">
 
                                                             </p>
                                                             <span> <strong>Opening Closing Time </strong> {{ $listing->opening_time }} {{ $listing->closing_time }}</span>
-                                                            @foreach($address as $add)
-                                                                <br>
-                                                                <span><strong>Location : </strong> {{ $add->city }} </span>
-                                                            @endforeach
+                                                            {{--                                                            @foreach($address as $add)--}}
+                                                            {{--                                                                <br>--}}
+                                                            {{--                                                                <span><strong>Location : </strong> {{ $add->city }} </span>--}}
+                                                            {{--                                                            @endforeach--}}
                                                             <p class="d-flex justify-content-between">
                                                                 <span> <strong>Price : </strong>  Rs.{{ $listing->price }}</span>
                                                                 <a href="/listing/{{$listing->id}}" class="btn btn-outline-danger ">View</a>

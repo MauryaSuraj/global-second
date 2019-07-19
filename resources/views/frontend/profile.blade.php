@@ -5,7 +5,7 @@
             <div class="row mt-5">
                 <div class="col-md-4">
                     <div class="profile-img">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS52y5aInsxSm31CvHOFHWujqUx_wWTS9iM6s7BAm21oEN_RiGoog" alt=""/>
+                        <img src="@if($Supporter_profiles->image)  {{ url('images/').'/profile/'.$Supporter_profiles->image }} @else https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/No_image_available.svg/1024px-No_image_available.svg.png @endif" alt=""/>
 
                     </div>
                 </div>
@@ -52,7 +52,7 @@
                                     <label>Address</label>
                                 </div>
                                 <div class="col-md-6">
-                                    <p>{{ $Supporter_profiles->	address }}</p>
+                                    <p>{{ $Supporter_profiles->address }}</p>
                                 </div>
                             </div>
                             <div class="row">
@@ -177,21 +177,21 @@
                                                    </div>
                                                    <div class="col-md-6 py-2">
                                                        <div class="card-body text-left card-body-cascade">
-                                                           <h4 class="card-title"><strong><a href="/listing/{{$listing->id}}">{{ $listing->name }}</a></strong></h4>
+                                                           <h4 class="card-title"><strong><a href="/listing/{{$listing->slug}}">{{ $listing->name }}</a></strong></h4>
                                                            <p class="card-text text-justify">
-                                                               {{ substr($listing->description,0,strpos($listing->description, ' ', 250) )  }}
+                                                               {!!   substr($listing->description,0,strpos($listing->description, ' ', 100) )  !!}
                                                            </p>
                                                            <p class="card-text text-justify">
 
                                                            </p>
                                                            <span> <strong>Opening Closing Time </strong> {{ $listing->opening_time }} {{ $listing->closing_time }}</span>
-                                                           @foreach($address as $add)
-                                                               <br>
-                                                               <span><strong>Location : </strong> {{ $add->city }} </span>
-                                                           @endforeach
+{{--                                                           @foreach($address as $add)--}}
+{{--                                                               <br>--}}
+{{--                                                               <span><strong>Location : </strong> {{ $add->city }} </span>--}}
+{{--                                                           @endforeach--}}
                                                            <p class="d-flex justify-content-between">
                                                                <span> <strong>Price : </strong>  Rs.{{ $listing->price }}</span>
-                                                               <a href="/listing/{{$listing->id}}" class="btn btn-outline-danger ">View</a>
+                                                               <a href="/listing/{{$listing->slug}}" class="btn btn-outline-danger ">View</a>
                                                            </p>
                                                        </div>
 

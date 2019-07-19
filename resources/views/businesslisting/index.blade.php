@@ -46,7 +46,7 @@
                                                     <span class="bg-c-lite-green p-1 rounded">Active</span>
                                                         @endif
                                                 </td>
-                                                <td>{{ \Illuminate\Support\Str::words($listing->description, 5) }}</td>
+                                                <td>{!!  \Illuminate\Support\Str::words($listing->description, 5) !!}</td>
                                                 <td>
                                                     <div class="d-flex align-baseline">
                                                         <span class="align-baseline"><a href="/admin/businesslisting/{{$listing->id}}"> <i class="fas fa-2x text-c-purple fa-eye"></i></a></span>

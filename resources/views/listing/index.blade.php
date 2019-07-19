@@ -41,6 +41,15 @@
                        </div>
                        <div class="col-md-9">
                            <div class="row">
+                               <div class="col-md mx-5 my-2">
+                                   @if(session()->has('success'))
+                                       <div class="alert alert-success">
+                                           {{ session()->get('success') }}
+                                       </div>
+                                   @endif
+                               </div>
+                           </div>
+                           <div class="row">
                                <div class="col-md">
                                    <table class="table table-bordered">
                                        <thead>
@@ -62,16 +71,17 @@
                                    <div class="card card-cascade narrower card-ecommerce">
                                        <div class="row">
                                            <div class="col-md-6">
+                                               <a href="/listing/{{$listing->slug}}">
                                                <img src="{{ url('images/').'/listing/'.$listing->image }}" class="h-100 w-100">
+                                               </a>
                                            </div>
                                            <div class="col-md-6 py-2">
                                                <div class="card-body text-left card-body-cascade">
-                                                   <h4 class="card-title"><strong><a href="/listing/{{$listing->id}}">{{ $listing->name }}</a></strong></h4>
+                                                   <h4 class="card-title"><strong><a href="/listing/{{$listing->slug}}">{{ $listing->name }}</a></strong></h4>
                                                    <p class="card-text text-justify">
-                                                       {{ substr($listing->description,0,strpos($listing->description, ' ', 250) )  }}
+                                                       {!! substr($listing->description,0,strpos($listing->description, ' ', 250) )  !!}
                                                    </p>
                                                    <p class="card-text text-justify">
-
                                                    </p>
                                                    <span> <strong>Opening Closing Time </strong> {{ $listing->opening_time }} {{ $listing->closing_time }}</span>
                                                    @foreach($address as $add)
@@ -80,14 +90,82 @@
                                                        @endforeach
                                                    <p class="d-flex justify-content-between">
                                                        <span> <strong>Price : </strong>  Rs.{{ $listing->price }}</span>
-                                                       <a href="/listing/{{$listing->id}}" class="btn btn-outline-danger ">View</a>
                                                    </p>
+                                                   <div class="d-flex align-baseline justify-content-end">
+                                                       <button type="button" data-toggle="modal" data-target="#contactListing" class="btn btn-outline-success mx-1">Contact Us</button>
+                                                       <a href="/listing/{{$listing->slug}}" class="btn btn-outline-danger mx-1">View</a>
+                                                   </div>
                                                </div>
 
                                            </div>
                                        </div>
                                    </div>
                                </div>
+                                   <div class="modal fade" id="contactListing" tabindex="-1" role="dialog" aria-labelledby="contactListing" aria-hidden="true">
+                                       <div class="modal-dialog" role="document">
+                                           <div class="modal-content">
+                                               <div class="modal-header">
+                                                   <h5 class="modal-title" id="contactListingLabel">Enquiry Us</h5>
+                                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                       <span aria-hidden="true">&times;</span>
+                                                   </button>
+                                               </div>
+                                               <div class="modal-body">
+                                                   <form method="POST" action="{{ route('listing.store') }}">
+                                                       @csrf
+                                                       <div class="form-group row">
+                                                           <div class="col-md-12">
+                                                               <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Name" autofocus>
+                                                               @error('name')
+                                                               <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                               @enderror
+                                                           </div>
+                                                       </div>
+                                                       <div class="form-group row">
+                                                           <div class="col-md-12">
+                                                               <input type="hidden" hidden name="listing_id" value="{{$listing->id}}">
+                                                               <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                                                               @error('email')
+                                                               <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                               @enderror
+                                                           </div>
+                                                       </div>
+                                                       <div class="form-group row">
+                                                           <div class="col-md-12">
+                                                               <input id="phone" type="text"  placeholder="Phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                                                               @error('phone')
+                                                               <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                               @enderror
+                                                           </div>
+                                                       </div>
+                                                       <div class="form-group row">
+                                                           <div class="col-md-12">
+                                                               <textarea id="message" type="text" placeholder="Message here" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" required autocomplete="message"></textarea>
+                                                               @error('message')
+                                                               <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                               @enderror
+                                                           </div>
+                                                       </div>
+                                                       <div class="form-group row mb-0">
+                                                           <div class="d-flex justify-content-start">
+                                                               <button type="submit" class="btn btn-primary">
+                                                                   {{ __('Submit') }}
+                                                               </button>
+                                                           </div>
+                                                       </div>
+                                                   </form>
+                                               </div>
+                                           </div>
+                                       </div>
+                                   </div>
                            @endforeach
                                {{ $listings->links() }}
                                @endif
@@ -98,4 +176,5 @@
            </div>
        </div>
    </div>
+
 @endsection
