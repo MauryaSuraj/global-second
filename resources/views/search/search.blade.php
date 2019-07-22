@@ -46,38 +46,194 @@
                                     <h2 class="h2">You have searched for :  <span class="text-success p-1 text-white">{{ $query }}</span> </h2>
                                 </div>
                                 @endif
-                            @if($listings != null)
-                                @foreach($listings as $listing)
-                                    <div class="col-md-12 my-2">
-                                        <div class="card card-cascade narrower card-ecommerce">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <img src="{{ url('images/').'/listing/'.$listing->image }}" class="h-100 w-100">
-                                                </div>
-                                                <div class="col-md-6 py-2">
-                                                    <div class="card-body text-left card-body-cascade">
-                                                        <h4 class="card-title"><strong><a href="">{{ $listing->name }}</a></strong></h4>
-                                                        <p class="card-text text-justify">
-                                                            {{ substr($listing->description,0,strpos($listing->description, ' ', 250) )  }}
-                                                        </p>
-                                                        <p class="card-text text-justify">
 
-                                                        </p>
-                                                        <p class="d-flex justify-content-between">
-                                                            <span> <strong>Price : </strong>  Rs.{{ $listing->price }}</span>
-                                                            <a href="/listing/{{$listing->id}}" class="btn btn-outline-danger ">View</a>
-                                                        </p>
+                                <div class="row">
+                                    <div class="col-md">
+                                        <table class="table table-bordered">
+                                            <thead>
+                                            <tr>
+                                                <th>Top Result <span class="mx-2"><i class="fas fa-chevron-right"></i></span>
+                                                </th>
+                                                <th>
+                                                    <div class="d-flex">
+                                                        <span>Popularity</span>
+                                                        <form method="POST" action="{{ route('filter') }}">
+                                                            @csrf
+                                                            <button type="submit" style="background: transparent; border: none;">
+                                                              <span class="mx-1"><i class="fas fa-sort-amount-up-alt"></i>
+                                                                <i class="fas fa-sort-amount-down"></i></span>
+                                                            </button>
+                                                        </form>
                                                     </div>
+                                                </th>
+                                                <th> <form method="POST" action="{{ route('location') }}">
+                                                        @csrf
+                                                        <div class="d-flex">
+                                                            <input type="text" name="item_search" id="item_search" class="form-control @error('item_search') is-invalid @enderror" placeholder="Enter location Here..">
+                                                            @error('item_search')
+                                                            <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                            @enderror
+                                                            <button type="submit" style="background: transparent; border: none;">
+                                                                <span class="mx-1"><i class="fas fa-search"></i></span>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </th>
+                                                <th>
+                                                    <div class="d-flex">
+                                                        <form method="POST" action="{{ route('latest') }}">
+                                                            @csrf
+                                                            <div class="d-flex">
 
+                                                                <button type="submit" style="background: transparent; border: none;">
+                                                                    <span>Recent</span>
+                                                                    <span class="mx-1"> <img src="https://image.flaticon.com/icons/svg/199/199552.svg"  alt="" style="height: 30px; width: 30px;"> </span>
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <div class="d-flex">
+                                                        <form method="POST" action="{{ route('latest') }}">
+                                                            @csrf
+                                                            <div class="d-flex">
+
+                                                                <button type="submit" style="background: transparent; border: none;">
+                                                                    <span>Rating</span>
+
+                                                                </button>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </th>
+                                                <th>
+                                                    <form method="POST" action="{{ route('best_deal') }}">
+                                                        @csrf
+                                                        <div class="d-flex">
+                                                            <input id="search_term" type="text" placeholder="Listing name or category... you want to search" class="form-control @error('search_term') is-invalid @enderror" name="search_term" value="{{ old('search_term') }}" required autocomplete="search_term">
+                                                            @error('search_term')
+                                                            <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                            @enderror
+                                                            <button type="submit" class="btn btn-primary" style="background: transparent; border: none;">
+                                                                <span class="mx-1"><i class="fas fa-search text-success"></i></span>
+                                                            </button>
+                                                        </div>
+                                                    </form>
+                                                </th>
+                                            </tr>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                @if(count($listings)>0)
+                                    @foreach($listings as $listing)
+                                        <div class="col-md-12 my-2">
+                                            <div class="card card-cascade narrower card-ecommerce">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <a href="/listing/{{$listing->slug}}">
+                                                            <img src="{{ url('images/').'/listing/'.$listing->image }}" class="h-100 w-100">
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-md-6 py-2">
+                                                        <div class="card-body text-left card-body-cascade">
+                                                            <h4 class="card-title"><strong><a href="/listing/{{$listing->slug}}">{{ $listing->name }}</a></strong></h4>
+                                                            <p class="card-text text-justify">
+                                                                {!! substr($listing->description,0,strpos($listing->description, ' ', 250) )  !!}
+                                                            </p>
+                                                            <p class="card-text text-justify">
+                                                            </p>
+                                                            <span> <strong>Opening Closing Time </strong> {{ $listing->opening_time }} {{ $listing->closing_time }}</span>
+
+                                                                <br>
+                                                                <span><strong>Location : </strong> {{ $listing->city }} </span>
+
+                                                            <p class="d-flex justify-content-between">
+                                                                <span> <strong>Price : </strong>  Rs.{{ $listing->price }}</span>
+                                                            </p>
+                                                            <div class="d-flex align-baseline justify-content-end">
+                                                                <button type="button" data-toggle="modal" data-target="#contactListing" class="btn btn-outline-success mx-1">Contact Us</button>
+                                                                <a href="/listing/{{$listing->slug}}" class="btn btn-outline-danger mx-1">View</a>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
-                                @endforeach
-                            @else
-                                <h1 class="text-center">No Listing Found based On your Query</h1>
-                                {{ $listings->links() }}
-                            @endif
+                                        <div class="modal fade" id="contactListing" tabindex="-1" role="dialog" aria-labelledby="contactListing" aria-hidden="true">
+                                            <div class="modal-dialog" role="document">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="contactListingLabel">Enquiry Us</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                    <div class="modal-body">
+                                                        <form method="POST" action="{{ route('listing.store') }}">
+                                                            @csrf
+                                                            <div class="form-group row">
+                                                                <div class="col-md-12">
+                                                                    <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" placeholder="Name" autofocus>
+                                                                    @error('name')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-12">
+                                                                    <input type="hidden" hidden name="listing_id" value="{{$listing->id}}">
+                                                                    <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" placeholder="Email">
+                                                                    @error('email')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-12">
+                                                                    <input id="phone" type="text"  placeholder="Phone" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                                                                    @error('phone')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row">
+                                                                <div class="col-md-12">
+                                                                    <textarea id="message" type="text" placeholder="Message here" class="form-control @error('message') is-invalid @enderror" name="message" value="{{ old('message') }}" required autocomplete="message"></textarea>
+                                                                    @error('message')
+                                                                    <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                    @enderror
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group row mb-0">
+                                                                <div class="d-flex justify-content-start">
+                                                                    <button type="submit" class="btn btn-primary">
+                                                                        {{ __('Submit') }}
+                                                                    </button>
+                                                                </div>
+                                                            </div>
+                                                        </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    @endforeach
+                                    {{ $listings->links() }}
+                                @endif
                         </div>
 
                     </div>

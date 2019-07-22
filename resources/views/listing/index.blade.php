@@ -112,17 +112,27 @@
                                                </div>
                                                </th>
                                            <th>
-                                               <div class="d-flex">
-                                                   <button type="button" data-toggle="modal" data-target="#customFilter" class="btn btn-outline-primary">  <span class="mx-1"><i class="fas fa-sort-amount-up-alt"></i>
-                                                                <i class="fas fa-sort-amount-down"></i></span>  Custom Filter</button>
-                                               </div>
+                                                   <form method="POST" action="{{ route('best_deal') }}">
+                                                       @csrf
+                                                       <div class="d-flex">
+                                                                   <input id="search_term" type="text" placeholder="Listing name or category... you want to search" class="form-control @error('search_term') is-invalid @enderror" name="search_term" value="{{ old('search_term') }}" required autocomplete="search_term">
+                                                                   @error('search_term')
+                                                                   <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                   @enderror
+                                                                   <button type="submit" class="btn btn-primary" style="background: transparent; border: none;">
+                                                                       <span class="mx-1"><i class="fas fa-search text-success"></i></span>
+                                                                   </button>
+                                                       </div>
+                                                   </form>
                                            </th>
                                        </tr>
                                        </thead>
                                    </table>
                                </div>
-                           </di v>
-                           @if($listings)
+                           </div>
+                           @if(count($listings)>0)
                            @foreach($listings as $listing)
                                <div class="col-md-12 my-2">
                                    <div class="card card-cascade narrower card-ecommerce">
@@ -158,45 +168,6 @@
                                        </div>
                                    </div>
                                </div>
-
-                                       <div class="modal fade" id="customFilter" tabindex="-1" role="dialog" aria-labelledby="customFilter" aria-hidden="true">
-                                           <div class="modal-dialog" role="document">
-                                               <div class="modal-content">
-                                                   <div class="modal-header">
-                                                       <h5 class="modal-title" id="customFilter">Custom Filter</h5>
-                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                           <span aria-hidden="true">&times;</span>
-                                                       </button>
-                                                   </div>
-                                                   <div class="modal-body">
-                                                       <form method="POST" action="{{ route('best_deal') }}">
-                                                           @csrf
-
-                                                           <div class="container">
-                                                               <div class="form-group row">
-                                                                   <div class="col-md-12">
-                                                                       <input id="search_term" type="text" placeholder="Enter Location or Lisiting name or category... you want to search" class="form-control @error('search_term') is-invalid @enderror" name="search_term" value="{{ old('search_term') }}" required autocomplete="search_term">
-                                                                       @error('search_term')
-                                                                       <span class="invalid-feedback" role="alert">
-                                                                    <strong>{{ $message }}</strong>
-                                                                </span>
-                                                                       @enderror
-                                                                   </div>
-                                                               </div>
-                                                               <div class="form-group row mb-0">
-                                                                   <div class="col-md-8 offset-2">
-                                                                       <button type="submit" class="btn btn-primary">
-                                                                           {{ __('Search Here') }}
-                                                                       </button>
-                                                                   </div>
-                                                               </div>
-                                                           </div>
-                                                       </form>
-                                                   </div>
-                                               </div>
-                                           </div>
-                                       </div>
-
                                    <div class="modal fade" id="contactListing" tabindex="-1" role="dialog" aria-labelledby="contactListing" aria-hidden="true">
                                        <div class="modal-dialog" role="document">
                                            <div class="modal-content">

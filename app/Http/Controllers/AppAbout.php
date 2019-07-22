@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\BussinessListing;
-use App\Category;
-use App\Tags;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class SearchController extends Controller
+class AppAbout extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +15,10 @@ class SearchController extends Controller
      */
     public function index()
     {
-        //
+        $result = DB::table('app_abouts')
+            ->orderByDesc('created_at')
+            ->get();
+        return view('about.index',compact('result'));
     }
 
     /**
@@ -26,7 +28,7 @@ class SearchController extends Controller
      */
     public function create()
     {
-        //
+        return view('about.create');
     }
 
     /**
@@ -37,27 +39,27 @@ class SearchController extends Controller
      */
     public function store(Request $request)
     {
-        $categories = Category::all();
-        $tags = Tags::all();
         $request->validate([
-            'category_id' => 'required',
-            'query' => 'required',
+           'title' => 'required',
+           'content' => 'required',
+           'image' => ['required', 'image', 'max:2048']
         ]);
-        $category_id = $request->input('category_id');
-        if ($category_id == null){
-            $category_id = '';
+        if ($request->hasFile('image')){
+            if ($request->file('image')->isValid()){
+                $image_name = time().'.'.\request()->image->getClientOriginalExtension();
+                \request()->image->move(public_path('images/appAbout'), $image_name);
+            }
         }
-        $query = $request->input('query');
-        if ($query == null)
-        {
-            $query ='';
-        }
-        $results = BussinessListing::where('name', 'LIKE','%'.$query.'%')
-            ->orWhere('category_id', $category_id)
-            ->orWhere('description', 'LIKE','%'.$query.'%')
-            ->paginate(15);
-        $listings = $results;
-        return view('search.search',compact('categories','listings','tags', 'query'));
+
+        $result = DB::table('app_abouts')
+            ->insert([
+               'title' => $request->input('title'),
+               'content' => $request->input('content'),
+               'image' => $image_name ,
+               'created_at' => Carbon::now()->toDateTimeString(),
+               'updated_at' => Carbon::now()->toDateTimeString()
+            ]);
+        return redirect()->back()->with('success', 'About Added for Application');
     }
 
     /**
@@ -68,14 +70,9 @@ class SearchController extends Controller
      */
     public function show($id)
     {
-        $categories = Category::all();
-        $tags = Tags::all();
-        $results = BussinessListing::where('category_id', $id)
-            ->paginate(15);
-        $listings = $results;
-        $query ='';
-        return view('search.search',compact('categories','listings','tags', 'query'));
+        //
     }
+
     /**
      * Show the form for editing the specified resource.
      *

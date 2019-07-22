@@ -34,6 +34,9 @@ Route::resource('review', 'API\ReviewController');
 //
 //Route::get('logout', 'UserController@logout');
 Route::resource('listing','API\Listing');
+Route::resource('banners','API\Banner');
+Route::resource('about','API\About');
+Route::resource('specialCat','API\SpecialCat');
 
 Route::group(['middleware' => 'auth:api'], function (){
 //    Route::resource('listing','API\Listing');

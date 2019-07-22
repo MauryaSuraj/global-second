@@ -28,7 +28,6 @@ class Listing extends Controller
             ->join('locations','locations.listing_id','=','bussiness_listings.id')
             ->select('bussiness_listings.*','categories.name as category_name', 'tags.name as tag_name','users.name as user_name', 'users.email as user_email', 'users.phone as phone','locations.address','locations.city','locations.area','locations.pincode' )
             ->get();
-//        dd($listings);
         return response()->json(['success' => $listings], $this->successStatus);
     }
 

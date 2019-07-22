@@ -2,21 +2,17 @@
 
 namespace App\Http\Controllers\API;
 
-use App\Category;
 use App\MemberShip;
 use App\MemberShipFront;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
     public $successStatus = 200;
-
-
     public function login(){
         if(Auth::attempt(['email' => request('email'), 'password' => request('password')])){
             $user = Auth::user();

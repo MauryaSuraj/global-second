@@ -9,6 +9,26 @@
                         <span class="pcoded-mtext">Dashboard</span>
                     </a>
                 </li>
+                <li class="pcoded-hasmenu {{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                    <a href="javascript:void(0)" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                        <span class="pcoded-micon">
+                        <i class="feather icon-layers"></i>
+                        </span>
+                        <span class="pcoded-mtext">Mobile App</span>
+                    </a>
+                    <ul class="pcoded-submenu {{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                        <li class="">
+                            <a href="/admin/banners" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                                <span class="pcoded-mtext"> Add Banners </span>
+                            </a>
+                        </li>
+                        <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                            <a href="/admin/about" class="waves-effect waves-dark {{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                                <span class="pcoded-mtext"> Add About </span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
                 <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
                     <a href="{{ route('assign.index') }}" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-settings"></i></span>

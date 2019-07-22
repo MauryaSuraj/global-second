@@ -37,6 +37,8 @@ Route::resource('/userreview', 'ReviewsController');
 Route::resource('/membershipdetail', 'MemberShipFrontController');
 Route::resource('/family', 'FamilyController');
 Route::resource('/admin/assign', 'AssignAdminController');
+Route::resource('/admin/banners', 'AppBanners');
+Route::resource('/admin/about', 'AppAbout');
 
 Route::post('filter', 'FilterListingController@filter')->name('filter');
 Route::post('location', 'FilterListingController@location')->name('location');
