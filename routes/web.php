@@ -36,10 +36,14 @@ Route::resource('/admin/specialCategory', 'SpecialCategoryController');
 Route::resource('/userreview', 'ReviewsController');
 Route::resource('/membershipdetail', 'MemberShipFrontController');
 Route::resource('/family', 'FamilyController');
+Route::resource('/admin/assign', 'AssignAdminController');
+
+Route::post('filter', 'FilterListingController@filter')->name('filter');
+Route::post('location', 'FilterListingController@location')->name('location');
+Route::post('latest', 'FilterListingController@latest')->name('latest');
+Route::post('best_deal' , 'FilterListingController@best_deal')->name('best_deal');
 
 Route::resource('support', 'SupporterController');
-
-
 Route::resource('/admin/matrimony', 'MatrimonyAdminController');
 Route::get('/businesslistingprofile','BusinesslistingProfileController@index');
 Route::get('/businessenquiry','BusinesslistingProfileController@enquiry');

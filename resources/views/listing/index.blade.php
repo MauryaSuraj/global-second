@@ -54,17 +54,74 @@
                                    <table class="table table-bordered">
                                        <thead>
                                        <tr>
-                                           <th>Top Result <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
-                                           <th>Popularity <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
-                                           <th>Location <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
-                                           <th>Distance <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
-                                           <th>Rating <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
-                                           <th>Best Deal <span class="mx-2"><i class="fas fa-sort-amount-up-alt"></i> <i class="fas fa-sort-amount-down"></i></span></th>
+                                           <th>Top Result <span class="mx-2"><i class="fas fa-chevron-right"></i></span>
+                                           </th>
+                                           <th>
+                                               <div class="d-flex">
+                                                   <span>Popularity</span>
+                                                   <form method="POST" action="{{ route('filter') }}">
+                                                       @csrf
+                                                       <button type="submit" style="background: transparent; border: none;">
+                                                              <span class="mx-1"><i class="fas fa-sort-amount-up-alt"></i>
+                                                                <i class="fas fa-sort-amount-down"></i></span>
+                                                       </button>
+                                                   </form>
+                                               </div>
+                                           </th>
+                                           <th> <form method="POST" action="{{ route('location') }}">
+                                                   @csrf
+                                                   <div class="d-flex">
+                                                       <input type="text" name="item_search" id="item_search" class="form-control @error('item_search') is-invalid @enderror" placeholder="Enter location Here..">
+                                                       @error('item_search')
+                                                       <span class="invalid-feedback" role="alert">
+                                                            <strong>{{ $message }}</strong>
+                                                        </span>
+                                                       @enderror
+                                                       <button type="submit" style="background: transparent; border: none;">
+                                                           <span class="mx-1"><i class="fas fa-search"></i></span>
+                                                       </button>
+                                                   </div>
+                                               </form>
+                                           </th>
+                                           <th>
+                                            <div class="d-flex">
+                                                <form method="POST" action="{{ route('latest') }}">
+                                                    @csrf
+                                                    <div class="d-flex">
+
+                                                        <button type="submit" style="background: transparent; border: none;">
+                                                            <span>Recent</span>
+                                                            <span class="mx-1"> <img src="https://image.flaticon.com/icons/svg/199/199552.svg"  alt="" style="height: 30px; width: 30px;"> </span>
+                                                        </button>
+                                                    </div>
+                                                </form>
+                                            </div>
+                                           </th>
+                                           <th>
+                                               <div class="d-flex">
+                                                   <form method="POST" action="{{ route('latest') }}">
+                                                       @csrf
+                                                       <div class="d-flex">
+
+                                                           <button type="submit" style="background: transparent; border: none;">
+                                                               <span>Rating</span>
+
+                                                           </button>
+                                                       </div>
+                                                   </form>
+                                               </div>
+                                               </th>
+                                           <th>
+                                               <div class="d-flex">
+                                                   <button type="button" data-toggle="modal" data-target="#customFilter" class="btn btn-outline-primary">  <span class="mx-1"><i class="fas fa-sort-amount-up-alt"></i>
+                                                                <i class="fas fa-sort-amount-down"></i></span>  Custom Filter</button>
+                                               </div>
+                                           </th>
                                        </tr>
                                        </thead>
                                    </table>
                                </div>
-                           </div>
+                           </di v>
                            @if($listings)
                            @foreach($listings as $listing)
                                <div class="col-md-12 my-2">
@@ -101,6 +158,45 @@
                                        </div>
                                    </div>
                                </div>
+
+                                       <div class="modal fade" id="customFilter" tabindex="-1" role="dialog" aria-labelledby="customFilter" aria-hidden="true">
+                                           <div class="modal-dialog" role="document">
+                                               <div class="modal-content">
+                                                   <div class="modal-header">
+                                                       <h5 class="modal-title" id="customFilter">Custom Filter</h5>
+                                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                           <span aria-hidden="true">&times;</span>
+                                                       </button>
+                                                   </div>
+                                                   <div class="modal-body">
+                                                       <form method="POST" action="{{ route('best_deal') }}">
+                                                           @csrf
+
+                                                           <div class="container">
+                                                               <div class="form-group row">
+                                                                   <div class="col-md-12">
+                                                                       <input id="search_term" type="text" placeholder="Enter Location or Lisiting name or category... you want to search" class="form-control @error('search_term') is-invalid @enderror" name="search_term" value="{{ old('search_term') }}" required autocomplete="search_term">
+                                                                       @error('search_term')
+                                                                       <span class="invalid-feedback" role="alert">
+                                                                    <strong>{{ $message }}</strong>
+                                                                </span>
+                                                                       @enderror
+                                                                   </div>
+                                                               </div>
+                                                               <div class="form-group row mb-0">
+                                                                   <div class="col-md-8 offset-2">
+                                                                       <button type="submit" class="btn btn-primary">
+                                                                           {{ __('Search Here') }}
+                                                                       </button>
+                                                                   </div>
+                                                               </div>
+                                                           </div>
+                                                       </form>
+                                                   </div>
+                                               </div>
+                                           </div>
+                                       </div>
+
                                    <div class="modal fade" id="contactListing" tabindex="-1" role="dialog" aria-labelledby="contactListing" aria-hidden="true">
                                        <div class="modal-dialog" role="document">
                                            <div class="modal-content">
@@ -171,6 +267,7 @@
                                @endif
                        </div>
 
+                   </div>
                    </div>
                </section>
            </div>

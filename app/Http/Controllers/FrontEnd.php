@@ -11,7 +11,6 @@ class FrontEnd extends Controller
 {
     public function index()
     {
-        $matrimonials = MatrimonyProfile::all();
         $categories = DB::table('categories')->latest()->paginate(8);
         foreach ($categories as $category){
             $url_category_image = Storage::url($category->image);
@@ -37,6 +36,8 @@ class FrontEnd extends Controller
             ->paginate(4);
 
         // special category here
+        //Matrimony Profiles
+        $matrimonials = DB::table('matrimony_profiles')->get()->take(4);
         return view('frontend.index',compact('categories','listings', 'url_category_image','categorys','matrimonials','newses','great_pers','Shradhnajali','Education','elite_ag'));
     }
 

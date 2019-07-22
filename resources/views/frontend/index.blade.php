@@ -91,7 +91,7 @@
             <div class="row text-center">
                 @foreach($listings as $listing)
                     <div class="col-md mx-2 my-2 onhovercd" style="width: 255px; height: 200px;  border-radius: 5px 20px; box-shadow: 0 4px 6px #6e24a833;   background-image: linear-gradient(to bottom , transparent, #000000ba), url('{{ url('images/').'/listing/'.$listing->image }}')">
-                        <a href="/listing/{{$listing->id}}" >
+                        <a href="/listing/{{$listing->slug}}" >
                         <div class="mx-auto pt-5 mt-3  text-white ">
                             <h5 class="text-left h3  my-2 font-weight-bold text-white text-uppercase">{{ $listing->name }}</h5>
                             <p class="text-left text-white"><strong>Price</strong>   Rs. {{ $listing->price }}</p>
@@ -169,10 +169,9 @@
                                         <h2>Matrimonial Profile </h2>
                                     </div>
                                     @foreach($matrimonials as $matrimonail)
-
                                     <div class="col-md-4 my-1">
                                         <div class="avatar mx-auto">
-                                            <img src="https://images.pexels.com/photos/736716/pexels-photo-736716.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="rounded img-fluid " alt="">
+                                            <img src="" class="rounded img-fluid " alt="">
                                             <h3 class="font-weight-bold text-left mt-3">
                                                 {{$matrimonail->name}}
                                             </h3>

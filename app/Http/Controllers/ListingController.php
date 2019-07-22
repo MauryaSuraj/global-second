@@ -25,13 +25,15 @@ class ListingController extends Controller
 
         $listings = BussinessListing::where('status','1')->paginate(6);
         $listing_id = BussinessListing::all()->pluck('id');
-//        dd($listing_id);
         foreach ($listing_id as $item){
             $address = DB::table('locations')->where('listing_id', $item)->get();
         }
+        $like_dislike = DB::table('like')
+            ->join('bussiness_listings', 'bussiness_listings.id','=','like.listing_id')
+            ->get();
         $categories = Category::all();
         $tags = Tags::all();
-        return view('listing.index',compact('listings','categories','tags','address'));
+        return view('listing.index',compact('listings','categories','tags','address','like_dislike'));
     }
 
     /**
@@ -102,7 +104,8 @@ class ListingController extends Controller
         $reviews = DB::table('reviews')->get()->where('listing_id', $list_id);
         $locations = DB::table('locations')->get()->where('listing_id', $list_id);
 
-        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs','reviews','locations','list_id'));
+         $like_table_count =  DB::table('like')->where('listing_id',$list_id)->get()->count();
+        return view('listing.show',compact('bu_list','profiles','tags','categories','msgs','reviews','locations','list_id', 'like_table_count'));
     }
 
     /**

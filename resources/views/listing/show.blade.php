@@ -43,7 +43,7 @@
                             <ul>
                                 <li><span class="list-posted-date">{{ $bu_list->created_at }}</span></li>
                                 <li> <span class="ratings"> <i class="fa fa-star color" aria-hidden="true"></i><i class="fa fa-star color" aria-hidden="true"></i><i class="fa fa-star color" aria-hidden="true"></i><i class="fa fa-star-half-o color" aria-hidden="true"></i><i class="fa fa-star" aria-hidden="true"></i> <i class="rating-counter"> (4 ratings)</i> </span> </li>
-                                <li class="list-meta-with-icons"><a href="javascript:void(0)">Views : {{ $bu_list->views }}</a></li>
+                                <li class="list-meta-with-icons"><a href="javascript:void(0)"> Popularity : {{ $like_table_count }}</a></li>
                             </ul>
                         </div>
                     </div>

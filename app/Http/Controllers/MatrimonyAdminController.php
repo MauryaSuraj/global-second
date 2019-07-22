@@ -16,7 +16,7 @@ class MatrimonyAdminController extends Controller
      */
     public function index()
     {
-         $matri_profiles =   MatrimonyProfile::all();
+         $matri_profiles =   MatrimonyProfile::all()->sortByDesc('created_at');
         return view('matrimony.index', compact('matri_profiles'));
     }
 
@@ -50,7 +50,7 @@ class MatrimonyAdminController extends Controller
             'mother_toungue' => 'required',
             'salary' => 'required',
             'mobile_no' => 'required',
-            'email' => 'required',
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:matrimony_profiles'],
             'age' => 'required',
             'height' => 'required',
             'sun' => 'required',
@@ -58,8 +58,15 @@ class MatrimonyAdminController extends Controller
             'location' => 'required',
             'profession' =>'required',
             'family' => 'required',
-            'partner' => 'required'
+            'partner' => 'required',
+            'profile_image' => 'image'
         ]);
+        if ($request->hasFile('profile_image')){
+            if ($request->file('profile_image')->isValid()){
+                $mainimage = time().'.'.request()->profile_image->getClientOriginalExtension();
+                request()->profile_image->move(public_path('images/matrimony'), $mainimage);
+            }
+        }
 
         $dt = Carbon::now();
         $dt->toDateString();
@@ -85,11 +92,12 @@ class MatrimonyAdminController extends Controller
             'moon_sign' => $request->input('moon'),
             'family_bg' => $request->input('family'),
             'partner_expectation' => $request->input('partner'),
+            'profile_image' => $mainimage,
             'created_at' => $dt,
             'updated_at' => $dt
         ]);
         if ($success)
-            return view('matrimony.index');
+            return redirect()->back()->with('success', 'Profile added Successfully');
     }
 
     /**

@@ -12804,6 +12804,13 @@ btn-outline-primary:hover {
   }
 }
 
+@media (min-width: 576px) {
+  #customFilter .modal-dialog {
+    max-width: 700px;
+    margin: 5.75rem auto;
+  }
+}
+
 .wrapper {
   display: -webkit-flex;
   display: flex;

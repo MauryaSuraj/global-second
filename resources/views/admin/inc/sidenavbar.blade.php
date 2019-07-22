@@ -10,6 +10,13 @@
                     </a>
                 </li>
                 <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
+                    <a href="{{ route('assign.index') }}" class="waves-effect waves-dark">
+                        <span class="pcoded-micon"><i class="feather icon-settings"></i></span>
+                        <span class="pcoded-mtext">Assign Privilege </span>
+                    </a>
+                </li>
+
+                <li class="{{ request()->is('sites/*/edit') ? 'active' : '' }}">
                     <a href="/admin/listing_review" class="waves-effect waves-dark">
                         <span class="pcoded-micon"><i class="feather icon-home"></i></span>
                         <span class="pcoded-mtext"> Business Enquiry </span>

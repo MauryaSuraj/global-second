@@ -1225,7 +1225,6 @@ ul.footer-menu {
     border-right: none
 }
 
-
 footer .personal-info li {
     color: #fff;
     display: inline-block;
@@ -1404,4 +1403,11 @@ btn-outline-primary:hover{
         line-height: 1.5;
     }
 
+}
+
+@media (min-width: 576px) {
+    #customFilter .modal-dialog {
+        max-width: 700px;
+        margin: 5.75rem auto;
+    }
 }
